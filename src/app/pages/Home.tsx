@@ -44,7 +44,7 @@ export default function Home() {
           <ImageWithFallback
             src="https://images.unsplash.com/photo-1746211986963-6b642702fb6a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZWdnYWUlMjBmZXN0aXZhbCUyMGNyb3dkfGVufDF8fHx8MTc3Mjc5Mjk0M3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
             alt="Festival crowd"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-center"
           />
         </div>
 
@@ -202,7 +202,7 @@ export default function Home() {
             <ImageWithFallback
               src="https://images.unsplash.com/photo-1645536729519-134e3b7e9e88?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzb3VuZHN5c3RlbSUyMHNwZWFrZXJzJTIwcmVnZ2FlfGVufDF8fHx8MTc3Mjc5Mjk0NXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
               alt="Soundsystem speakers"
-              className="w-full h-96 object-cover rounded-3xl border-4 border-black shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] transform rotate-2"
+              className="w-full h-96 object-cover object-center rounded-3xl border-4 border-black shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] transform rotate-2"
             />
           </div>
           <div className="bg-white rounded-3xl border-4 border-black shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] p-8 transform -rotate-1">
@@ -233,17 +233,17 @@ export default function Home() {
           <ImageWithFallback
             src="https://images.unsplash.com/photo-1573463908761-567b9356c64f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxvdXRkb29yJTIwbXVzaWMlMjBmZXN0aXZhbCUyMHN0YWdlfGVufDF8fHx8MTc3Mjc5Mjk0NXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
             alt="Festival stage"
-            className="w-full h-64 object-cover rounded-2xl border-3 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transform -rotate-1 hover:rotate-0 transition-transform"
+            className="w-full h-64 object-cover object-center rounded-2xl border-3 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transform -rotate-1 hover:rotate-0 transition-transform"
           />
           <ImageWithFallback
             src="https://images.unsplash.com/photo-1593152961455-b943e1cea86b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx5b2dhJTIwbWVkaXRhdGlvbiUyMG91dGRvb3JzfGVufDF8fHx8MTc3Mjc5Mjk0NXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
             alt="Yoga session"
-            className="w-full h-64 object-cover rounded-2xl border-3 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transform rotate-1 hover:rotate-0 transition-transform"
+            className="w-full h-64 object-cover object-center rounded-2xl border-3 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transform rotate-1 hover:rotate-0 transition-transform"
           />
           <ImageWithFallback
             src="https://images.unsplash.com/photo-1629332791370-77208e6cbb67?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoZW5uYSUyMGFydCUyMGhhbmR8ZW58MXx8fHwxNzcyNzkyOTQ1fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
             alt="Henna art"
-            className="w-full h-64 object-cover rounded-2xl border-3 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transform -rotate-2 hover:rotate-0 transition-transform"
+            className="w-full h-64 object-cover object-center rounded-2xl border-3 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transform -rotate-2 hover:rotate-0 transition-transform"
           />
         </div>
       </section>

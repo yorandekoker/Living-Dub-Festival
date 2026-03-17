@@ -1,4 +1,5 @@
 import ArtistCard from '../components/ArtistCard';
+import { getCrewImage, getWorkshopImage } from '../utils/imageLookup';
 
 export default function Lineup() {
   const woodenRootsFloor = [
@@ -52,6 +53,7 @@ export default function Lineup() {
                 name={artist}
                 stage="Wooden Roots Floor"
                 color="#F48C06"
+                imageSrc={getCrewImage(artist)}
               />
             ))}
           </div>
@@ -75,6 +77,7 @@ export default function Lineup() {
                 name={artist}
                 stage="Steppin' Grass Field"
                 color="#138A5A"
+                imageSrc={getCrewImage(artist)}
               />
             ))}
           </div>
@@ -98,6 +101,7 @@ export default function Lineup() {
                 name={activity}
                 stage="Irie Knowledge Hut"
                 color="#2EC4B6"
+                imageSrc={getWorkshopImage(activity)}
               />
             ))}
           </div>

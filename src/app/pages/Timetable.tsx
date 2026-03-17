@@ -6,7 +6,8 @@ import {
   DialogTitle,
 } from "../components/ui/dialog";
 import Button from "../components/Button";
-import WorkshopCard from "../components/WorkshopCard";
+import { ImageWithFallback } from "../components/figma/ImageWithFallback";
+import { getCrewImage, getWorkshopImage } from "../utils/imageLookup";
 
 interface TimetableEvent {
   artist: string;
@@ -20,8 +21,10 @@ interface ArtistDetail {
   name: string;
   stage: string;
   time: string;
+  color: string;
   playingAgainst?: string;
   description: string;
+  imageSrc?: string | null;
 }
 
 export default function Timetable() {
@@ -29,6 +32,12 @@ export default function Timetable() {
     "friday",
   );
   const [selectedArtist, setSelectedArtist] = useState<ArtistDetail | null>(
+    null,
+  );
+  const [activeWorkshopDay, setActiveWorkshopDay] = useState<
+    "friday" | "saturday" | "sunday"
+  >("friday");
+  const [selectedWorkshop, setSelectedWorkshop] = useState<ArtistDetail | null>(
     null,
   );
 
@@ -45,11 +54,31 @@ export default function Timetable() {
         playingAgainst: "Creativ Dubs",
       },
       {
+        artist: "Selah Techniques ft. Della",
+        stage: "Wooden Roots Floor",
+        time: "14:00 – 20:00",
+        color: "#E6392F",
+      },
+      {
         artist: "Creativ Dubs",
         stage: "Wooden Roots Floor",
         time: "14:00 – 20:00",
         color: "#E6392F",
         playingAgainst: "Guiding Youth",
+      },
+      {
+        artist: "Ital Brew",
+        stage: "Wooden Roots Floor",
+        time: "20:00 – 23:00",
+        color: "#E6392F",
+        playingAgainst: "Little Man",
+      },
+      {
+        artist: "Little Man",
+        stage: "Wooden Roots Floor",
+        time: "20:00 – 23:00",
+        color: "#E6392F",
+        playingAgainst: "Ital Brew",
       },
       {
         artist: "Dreadical Warriors",
@@ -58,184 +87,284 @@ export default function Timetable() {
         color: "#138A5A",
       },
       {
-        artist: "Henna Workshop",
-        stage: "Irie Knowledge Hut",
-        time: "15:00 – 17:00",
-        color: "#F7C600",
-      },
-    ],
-    saturday: [
-      {
-        artist: "Ital Brew",
-        stage: "Wooden Roots Floor",
-        time: "12:00 – 18:00",
-        color: "#E6392F",
-        playingAgainst: "Little Man",
-      },
-      {
-        artist: "Little Man",
-        stage: "Wooden Roots Floor",
-        time: "12:00 – 18:00",
-        color: "#E6392F",
-        playingAgainst: "Ital Brew",
-      },
-      {
-        artist: "Steppin' Ground",
+        artist: "Steppin' Ground ft. Ras TimBo",
         stage: "Steppin' Grass Field",
-        time: "14:00 – 20:00",
+        time: "16:00 – 22:00",
         color: "#138A5A",
       },
       {
         artist: "Jahmateur Hi Power",
         stage: "Steppin' Grass Field",
-        time: "20:00 – 02:00",
+        time: "22:00 – 03:00",
         color: "#138A5A",
       },
       {
-        artist: "Yoga Flow",
+        artist: "Bloodhound ft. MC Kingten",
+        stage: "Steppin' Grass Field",
+        time: "22:00 – 03:00",
+        color: "#138A5A",
+      },
+    ],
+    saturday: [
+      {
+        artist: "Unification",
+        stage: "Wooden Roots Floor",
+        time: "12:00 – 20:00",
+        color: "#E6392F",
+        playingAgainst: "Fishermen ft. Wiseman Jarne, Deliverance, Poa Annua",
+      },
+      {
+        artist: "Fishermen ft. Wiseman Jarne",
+        stage: "Wooden Roots Floor",
+        time: "12:00 – 20:00",
+        color: "#E6392F",
+        playingAgainst: "Unification, Deliverance, Poa Annua",
+      },
+      {
+        artist: "Poa Annua",
+        stage: "Wooden Roots Floor",
+        time: "12:00 – 20:00",
+        color: "#E6392F",
+        playingAgainst: "Fishermen ft. Wiseman Jarne, Deliverance, Unification",
+      },
+      {
+        artist: "Deliverance",
+        stage: "Wooden Roots Floor",
+        time: "12:00 – 20:00",
+        color: "#E6392F",
+        playingAgainst: "Fishermen ft. Wiseman Jarne, Unification, Poa Annua",
+      },
+      {
+        artist: "UFO Collective (Unlisted Fanatic, MariJah & Moonshine Horns)",
+        stage: "Wooden Roots Floor",
+        time: "20:15 – 21:45",
+        color: "#E6392F",
+      },
+      {
+        artist: "Crucial ft. MC Tubbie",
+        stage: "Wooden Roots Floor",
+        time: "21:45 – 03:00",
+        color: "#E6392F",
+        playingAgainst: "Suncharm ft. Crownless I",
+      },
+      {
+        artist: "Suncharm ft. Crownless I",
+        stage: "Wooden Roots Floor",
+        time: "21:45 – 03:00",
+        color: "#E6392F",
+        playingAgainst: "Crucial ft. MC Tubbie",
+      },
+      {
+        artist: "Lowie",
+        stage: "Steppin' Grass Field",
+        time: "12:00 – 13:00",
+        color: "#138A5A",
+      },
+      {
+        artist: "Moksha Vibrations",
+        stage: "Steppin' Grass Field",
+        time: "13:00 – 15:00",
+        color: "#138A5A",
+      },
+      {
+        artist: "Pathseeker",
+        stage: "Steppin' Grass Field",
+        time: "15:00 – 17:00",
+        color: "#138A5A",
+      },
+      {
+        artist: "Untzslag",
+        stage: "Steppin' Grass Field",
+        time: "17:00 – 19:00",
+        color: "#138A5A",
+      },
+      {
+        artist: "Saga Sound Station",
+        stage: "Steppin' Grass Field",
+        time: "19:00 – 21:00",
+        color: "#138A5A",
+      },
+      {
+        artist: "Drijfkracht",
+        stage: "Steppin' Grass Field",
+        time: "21:00 – 03:00",
+        color: "#138A5A",
+        playingAgainst: "Tune",
+      },
+      {
+        artist: "Tune",
+        stage: "Steppin' Grass Field",
+        time: "21:00 – 03:00",
+        color: "#138A5A",
+        playingAgainst: "Drijfkracht",
+      },
+    ],
+    sunday: [
+      {
+        artist: "MUDA @ Living Dub",
+        stage: "Wooden Roots Floor",
+        time: "13:15 – 14:15",
+        color: "#E6392F",
+      },
+      {
+        artist: "Ventus",
+        stage: "Wooden Roots Floor",
+        time: "14:45 – 15:45",
+        color: "#E6392F",
+      },
+      {
+        artist: "MITCH & Paleo",
+        stage: "Wooden Roots Floor",
+        time: "16:15 – 17:15",
+        color: "#E6392F",
+      },
+      {
+        artist: "DJ Dédé",
+        stage: "Wooden Roots Floor",
+        time: "18:00 – 20:00",
+        color: "#E6392F",
+      },
+      {
+        artist: "DJ Ceductive",
+        stage: "Wooden Roots Floor",
+        time: "20:00 – 22:00",
+        color: "#E6392F",
+      },
+      {
+        artist: "Sotabosc",
+        stage: "Steppin' Grass Field",
+        time: "13:00 – 14:00",
+        color: "#138A5A",
+      },
+      {
+        artist: "Not Surrender",
+        stage: "Steppin' Grass Field",
+        time: "14:00 – 16:00",
+        color: "#138A5A",
+      },
+      {
+        artist: "Drijfkracht",
+        stage: "Steppin' Grass Field",
+        time: "16:00 – 18:00",
+        color: "#138A5A",
+        playingAgainst: "Tune",
+      },
+      {
+        artist: "Tune",
+        stage: "Steppin' Grass Field",
+        time: "16:00 – 18:00",
+        color: "#138A5A",
+        playingAgainst: "Drijfkracht",
+      },
+      {
+        artist: "Indica Dubs ft. Danman",
+        stage: "Steppin' Grass Field",
+        time: "18:00 – 22:00",
+        color: "#138A5A",
+      },
+    ],
+  };
+
+  const workshopTimetableData: Record<
+    "friday" | "saturday" | "sunday",
+    TimetableEvent[]
+  > = {
+    friday: [
+      {
+        artist: "Henna Workshop",
         stage: "Irie Knowledge Hut",
-        time: "10:00 – 11:30",
+        time: "15:00 – 17:00",
         color: "#F7C600",
       },
       {
-        artist: "Ecstatic Dance",
+        artist: "Fire show",
         stage: "Irie Knowledge Hut",
-        time: "16:00 – 18:00",
+        time: "23:00 – 00:00",
+        color: "#F7C600",
+      },
+    ],
+    saturday: [
+      {
+        artist: "Mindfulness & Meditatie (Patricia van Wegen)",
+        stage: "Irie Knowledge Hut",
+        time: "12:00 – 13:00",
+        color: "#F7C600",
+      },
+      {
+        artist: "Integrale Yoga (Patricia van Wegen)",
+        stage: "Irie Knowledge Hut",
+        time: "13:15 – 14:15",
+        color: "#F7C600",
+      },
+      {
+        artist: "Airbrush & Kindergrime (Ellumine)",
+        stage: "Irie Knowledge Hut",
+        time: "14:30 – 18:30",
+        color: "#F7C600",
+      },
+      {
+        artist: "Roots and Colors: Graffiti Workshop (Jote & Elmo)",
+        stage: "Irie Knowledge Hut",
+        time: "19:00 – 20:00",
+        color: "#F7C600",
+      },
+      {
+        artist: "Natural Shapes (Burak)",
+        stage: "Irie Knowledge Hut",
+        time: "21:00 – 22:00",
+        color: "#F7C600",
+      },
+      {
+        artist: "Performance by Rodkint (Elise Deryckere)",
+        stage: "Irie Knowledge Hut",
+        time: "23:00 – 00:00",
         color: "#F7C600",
       },
     ],
     sunday: [
       {
-        artist: "Unification",
-        stage: "Wooden Roots Floor",
-        time: "11:00 – 17:00",
-        color: "#E6392F",
-      },
-      {
-        artist: "Crucial",
-        stage: "Wooden Roots Floor",
-        time: "17:00 – 22:00",
-        color: "#E6392F",
-      },
-      {
-        artist: "Tune",
-        stage: "Steppin' Grass Field",
-        time: "13:00 – 19:00",
-        color: "#138A5A",
-      },
-      {
-        artist: "Meditation",
+        artist: "Bio-landbouw en menselijke zorg (Vzw Gooikenshoeve)",
         stage: "Irie Knowledge Hut",
-        time: "09:00 – 10:00",
+        time: "13:00 – 14:00",
         color: "#F7C600",
       },
       {
-        artist: "Fire Dance",
+        artist: "Naaldvilten (Studio Imela)",
         stage: "Irie Knowledge Hut",
-        time: "20:00 – 21:00",
+        time: "14:30 – 16:30",
+        color: "#F7C600",
+      },
+      {
+        artist: "Waarzegster: gratis kaartlegging (Jules Tingles)",
+        stage: "Irie Knowledge Hut",
+        time: "17:00 – 18:00, 19:00 – 20:00, 21:00 – 22:00",
         color: "#F7C600",
       },
     ],
   };
 
-  const workshops = [
-    {
-      title: "Henna Workshop",
-      time: "Friday: 15:00 - 16:00 & 16:15 - 17:15",
-      instructor: "Ellumine",
-      description:
-        "Learn the ancient art of henna design. Create beautiful temporary body art using traditional techniques and natural henna.",
-      color: "#E6392F",
-    },
-    {
-      title: "Henna Tattoos",
-      time: "All Days: Walk-in Sessions",
-      instructor: "Ellumine",
-      description:
-        "Get your own custom henna tattoo throughout the festival. Walk-in sessions available all weekend.",
-      color: "#E6392F",
-    },
-    {
-      title: "Integrale Yoga",
-      time: "Saturday: 10:00 - 11:30",
-      instructor: "Yoga Masters",
-      description:
-        "Start your day with mindful movement. Integrate body, breath, and awareness in this comprehensive yoga flow.",
-      color: "#138A5A",
-    },
-    {
-      title: "Mindfulness / Meditation",
-      time: "Sunday: 09:00 - 10:00",
-      instructor: "Meditation Guide",
-      description:
-        "Begin the final day with stillness. Guided meditation to center yourself and cultivate inner peace.",
-      color: "#F7C600",
-    },
-    {
-      title: "Ecstatic Dance",
-      time: "Saturday: 16:00 - 18:00",
-      instructor: "Dance Facilitators",
-      description:
-        "Free-form movement and expression. Let the music move through you in this liberating dance experience.",
-      color: "#F7C600",
-    },
-    {
-      title: "Fire Dance",
-      time: "Saturday: 22:00 - 23:00",
-      instructor: "Fire Performers",
-      description:
-        "Mesmerizing fire performance and introduction to fire dancing. Watch the flames dance under the stars.",
-      color: "#E6392F",
-    },
-    {
-      title: "Graffiti Workshop",
-      time: "Saturday: 14:00 - 16:00",
-      instructor: "Street Artists",
-      description:
-        "Learn the fundamentals of graffiti art and street art culture. Create your own piece to take home.",
-      color: "#E6392F",
-    },
-    {
-      title: "Living Art",
-      time: "All Days: Ongoing",
-      instructor: "Community Artists",
-      description:
-        "Collaborative art space where everyone contributes. Add your mark to the collective festival canvas.",
-      color: "#138A5A",
-    },
-    {
-      title: "Airbrush & Kids Facepainting",
-      time: "All Days: 12:00 - 18:00",
-      instructor: "Face Painters",
-      description:
-        "Fun face painting for all ages. Transform yourself with colorful designs and creative airbrush art.",
-      color: "#F7C600",
-    },
-    {
-      title: "Natural Shapes",
-      time: "Saturday: 11:00 - 13:00",
-      instructor: "Nature Artist",
-      description:
-        "Create art using natural materials. Connect with nature through organic shapes and earth-based creativity.",
-      color: "#138A5A",
-    },
-    {
-      title: "Performance Rodkint",
-      time: "Sunday: 17:00 - 18:00",
-      instructor: "Rodkint Collective",
-      description:
-        "Live performance art experience. Witness boundary-pushing creative expression.",
-      color: "#E6392F",
-    },
-  ];
-
   const handleArtistClick = (event: TimetableEvent) => {
+    const imageSrc = getCrewImage(event.artist);
+
     setSelectedArtist({
       name: event.artist,
       stage: event.stage,
       time: `${activeDay.toUpperCase().slice(0, 3)} ${event.time}`,
+      color: event.color,
       playingAgainst: event.playingAgainst,
       description: `Experience ${event.artist} bringing heavyweight dub and roots reggae vibes to ${event.stage}.`,
+      imageSrc,
+    });
+  };
+
+  const handleWorkshopClick = (event: TimetableEvent) => {
+    setSelectedWorkshop({
+      name: event.artist,
+      stage: event.stage,
+      time: `${activeWorkshopDay.toUpperCase().slice(0, 3)} ${event.time}`,
+      color: event.color,
+      description: `Join ${event.artist} at ${event.stage} for a creative and mindful festival workshop experience.`,
+      imageSrc: getWorkshopImage(event.artist),
     });
   };
 
@@ -300,12 +429,6 @@ export default function Timetable() {
               Steppin' Grass Field
             </span>
           </div>
-          <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full border-2 border-black">
-            <div className="w-4 h-4 rounded-full bg-[#F7C600] border-2 border-black"></div>
-            <span className="font-['Poppins'] text-sm font-medium">
-              Irie Knowledge Hut
-            </span>
-          </div>
         </div>
 
         {/* Timetable Grid */}
@@ -317,6 +440,23 @@ export default function Timetable() {
               className="bg-white rounded-2xl border-3 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-6 hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-all cursor-pointer"
               style={{ transform: `rotate(${Math.random() * 2 - 1}deg)` }}
             >
+              <div className="w-full h-44 rounded-xl border-2 border-black mb-3 overflow-hidden bg-gray-100">
+                {getCrewImage(event.artist) ? (
+                  <ImageWithFallback
+                    src={getCrewImage(event.artist) ?? ""}
+                    alt={event.artist}
+                    className="w-full h-full object-cover object-center"
+                  />
+                ) : (
+                  <div
+                    className="w-full h-full flex items-center justify-center font-['Bangers'] text-xl text-white"
+                    style={{ backgroundColor: event.color }}
+                  >
+                    {event.artist}
+                  </div>
+                )}
+              </div>
+
               {/* Time */}
               <div
                 className="inline-block px-3 py-1 rounded-lg border-2 border-black mb-3 font-['Fredoka'] text-sm font-bold text-white"
@@ -362,6 +502,23 @@ export default function Timetable() {
 
             {selectedArtist && (
               <div className="space-y-4">
+                <div className="w-full h-48 rounded-2xl border-2 border-black overflow-hidden bg-gray-100">
+                  {selectedArtist.imageSrc ? (
+                    <ImageWithFallback
+                      src={selectedArtist.imageSrc}
+                      alt={selectedArtist.name}
+                      className="w-full h-full object-cover object-center"
+                    />
+                  ) : (
+                    <div
+                      className="w-full h-full flex items-center justify-center font-['Bangers'] text-2xl text-white"
+                      style={{ backgroundColor: selectedArtist.color }}
+                    >
+                      {selectedArtist.name}
+                    </div>
+                  )}
+                </div>
+
                 <div className="bg-[#FFF3D6] rounded-2xl border-2 border-black p-4">
                   <div className="mb-3">
                     <h4 className="font-['Fredoka'] font-bold text-sm text-gray-600 mb-1">
@@ -408,23 +565,142 @@ export default function Timetable() {
               Festival Workshops
             </h2>
             <p className="font-['Poppins'] text-lg text-gray-700 max-w-3xl mx-auto">
-              Workshops are also part of the festival program. Find every
-              session from Irie Knowledge Hut here in the timetable page.
+              Workshops are grouped per day in a dedicated timetable. Click a
+              workshop card to see details.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {workshops.map((workshop) => (
-              <WorkshopCard
-                key={workshop.title}
-                title={workshop.title}
-                time={workshop.time}
-                instructor={workshop.instructor}
-                description={workshop.description}
-                color={workshop.color}
-              />
+          <div className="flex justify-center gap-4 mb-10">
+            <button
+              onClick={() => setActiveWorkshopDay("friday")}
+              className={`font-['Bangers'] text-xl px-8 py-4 rounded-full border-3 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all transform ${
+                activeWorkshopDay === "friday"
+                  ? "bg-[#E6392F] text-white scale-105 rotate-2"
+                  : "bg-white text-black hover:scale-105 hover:rotate-1"
+              }`}
+            >
+              Friday
+            </button>
+            <button
+              onClick={() => setActiveWorkshopDay("saturday")}
+              className={`font-['Bangers'] text-xl px-8 py-4 rounded-full border-3 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all transform ${
+                activeWorkshopDay === "saturday"
+                  ? "bg-[#F7C600] text-black scale-105 -rotate-2"
+                  : "bg-white text-black hover:scale-105 hover:-rotate-1"
+              }`}
+            >
+              Saturday
+            </button>
+            <button
+              onClick={() => setActiveWorkshopDay("sunday")}
+              className={`font-['Bangers'] text-xl px-8 py-4 rounded-full border-3 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all transform ${
+                activeWorkshopDay === "sunday"
+                  ? "bg-[#138A5A] text-white scale-105 rotate-1"
+                  : "bg-white text-black hover:scale-105 hover:rotate-0.5"
+              }`}
+            >
+              Sunday
+            </button>
+          </div>
+
+          <div className="flex justify-center mb-8">
+            <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full border-2 border-black">
+              <div className="w-4 h-4 rounded-full bg-[#F7C600] border-2 border-black"></div>
+              <span className="font-['Poppins'] text-sm font-medium">Irie Knowledge Hut</span>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {workshopTimetableData[activeWorkshopDay].map((event, index) => (
+              <div
+                key={index}
+                onClick={() => handleWorkshopClick(event)}
+                className="bg-white rounded-2xl border-3 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-6 hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-all cursor-pointer"
+                style={{ transform: `rotate(${Math.random() * 2 - 1}deg)` }}
+              >
+                <div className="w-full h-44 rounded-xl border-2 border-black mb-3 overflow-hidden bg-gray-100">
+                  {getWorkshopImage(event.artist) ? (
+                    <ImageWithFallback
+                      src={getWorkshopImage(event.artist) ?? ""}
+                      alt={event.artist}
+                      className="w-full h-full object-cover object-center"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center font-['Bangers'] text-2xl text-white bg-[#F7C600]">
+                      Workshop
+                    </div>
+                  )}
+                </div>
+
+                <div className="inline-block px-3 py-1 rounded-lg border-2 border-black mb-3 font-['Fredoka'] text-sm font-bold text-black bg-[#F7C600]">
+                  {event.time}
+                </div>
+
+                <h3 className="font-['Fredoka'] text-xl font-bold mb-2 text-[#F7C600]">
+                  {event.artist}
+                </h3>
+
+                <p className="font-['Poppins'] text-sm text-gray-600 mb-2">
+                  📍 {event.stage}
+                </p>
+              </div>
             ))}
           </div>
+
+          <Dialog
+            open={selectedWorkshop !== null}
+            onOpenChange={() => setSelectedWorkshop(null)}
+          >
+            <DialogContent className="bg-white rounded-3xl border-4 border-black shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] max-w-md">
+              <DialogHeader>
+                <DialogTitle className="font-['Bangers'] text-3xl text-[#F7C600]">
+                  {selectedWorkshop?.name}
+                </DialogTitle>
+              </DialogHeader>
+
+              {selectedWorkshop && (
+                <div className="space-y-4">
+                  <div className="w-full h-48 rounded-2xl border-2 border-black overflow-hidden bg-gray-100">
+                    {selectedWorkshop.imageSrc ? (
+                      <ImageWithFallback
+                        src={selectedWorkshop.imageSrc}
+                        alt={selectedWorkshop.name}
+                        className="w-full h-full object-cover object-center"
+                      />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center font-['Bangers'] text-2xl text-white bg-[#F7C600]">
+                        Workshop
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="bg-[#FFF3D6] rounded-2xl border-2 border-black p-4">
+                    <div className="mb-3">
+                      <h4 className="font-['Fredoka'] font-bold text-sm text-gray-600 mb-1">
+                        Stage
+                      </h4>
+                      <p className="font-['Poppins'] text-base">
+                        {selectedWorkshop.stage}
+                      </p>
+                    </div>
+
+                    <div className="mb-3">
+                      <h4 className="font-['Fredoka'] font-bold text-sm text-gray-600 mb-1">
+                        Time
+                      </h4>
+                      <p className="font-['Poppins'] text-base">
+                        {selectedWorkshop.time}
+                      </p>
+                    </div>
+                  </div>
+
+                  <p className="font-['Poppins'] text-sm text-gray-700 leading-relaxed">
+                    {selectedWorkshop.description}
+                  </p>
+                </div>
+              )}
+            </DialogContent>
+          </Dialog>
         </section>
       </div>
 

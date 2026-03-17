@@ -46,7 +46,7 @@ export default function Festival2026() {
               <ImageWithFallback
                 src="https://images.unsplash.com/photo-1746211986963-6b642702fb6a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZWdnYWUlMjBmZXN0aXZhbCUyMGNyb3dkfGVufDF8fHx8MTc3Mjc5Mjk0M3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
                 alt="Living Dub Festival 2026"
-                className="w-full h-[500px] object-cover rounded-3xl border-4 border-black shadow-[12px_12px_0px_0px_rgba(0,0,0,1)]"
+                className="w-full h-[500px] object-cover object-center rounded-3xl border-4 border-black shadow-[12px_12px_0px_0px_rgba(0,0,0,1)]"
               />
             </div>
 

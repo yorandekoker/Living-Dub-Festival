@@ -1,4 +1,5 @@
 import WorkshopCard from '../components/WorkshopCard';
+import { getWorkshopImage } from '../utils/imageLookup';
 
 export default function Workshops() {
   const workshops = [
@@ -116,6 +117,7 @@ export default function Workshops() {
               instructor={workshop.instructor}
               description={workshop.description}
               color={workshop.color}
+              imageSrc={getWorkshopImage(workshop.title)}
             />
           ))}
         </div>

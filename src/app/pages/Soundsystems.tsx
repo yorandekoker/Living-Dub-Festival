@@ -1,24 +1,36 @@
+import { ImageWithFallback } from '../components/figma/ImageWithFallback';
+import { getSoundsystemImage } from '../utils/imageLookup';
+
 interface SoundsystemCardProps {
   name: string;
   description: string;
   style: string;
   color: string;
+  imageSrc?: string | null;
 }
 
-function SoundsystemCard({ name, description, style, color }: SoundsystemCardProps) {
+function SoundsystemCard({ name, description, style, color, imageSrc }: SoundsystemCardProps) {
   return (
     <div
       className="bg-white rounded-3xl border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-6 hover:shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-all"
       style={{ transform: `rotate(${Math.random() * 3 - 1.5}deg)` }}
     >
       {/* Soundsystem Image Placeholder */}
-      <div
-        className="w-full h-40 rounded-2xl border-3 border-black mb-4 flex items-center justify-center"
-        style={{ backgroundColor: color }}
-      >
-        <div className="font-['Luckiest_Guy'] text-3xl text-white text-center px-4">
-          🔊
-        </div>
+      <div className="w-full h-36 rounded-2xl border-3 border-black mb-4 overflow-hidden bg-gray-100">
+        {imageSrc ? (
+          <ImageWithFallback
+            src={imageSrc}
+            alt={name}
+            className="w-full h-full object-cover object-center"
+          />
+        ) : (
+          <div
+            className="w-full h-full flex items-center justify-center"
+            style={{ backgroundColor: color }}
+          >
+            <div className="font-['Luckiest_Guy'] text-3xl text-white text-center px-4">🔊</div>
+          </div>
+        )}
       </div>
 
       {/* Name */}
@@ -144,6 +156,7 @@ export default function Soundsystems() {
               description={soundsystem.description}
               style={soundsystem.style}
               color={soundsystem.color}
+              imageSrc={getSoundsystemImage(soundsystem.name)}
             />
           ))}
         </div>
