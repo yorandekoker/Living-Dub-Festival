@@ -606,7 +606,9 @@ export default function Timetable() {
           <div className="flex justify-center mb-8">
             <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full border-2 border-black">
               <div className="w-4 h-4 rounded-full bg-[#F7C600] border-2 border-black"></div>
-              <span className="font-['Poppins'] text-sm font-medium">Irie Knowledge Hut</span>
+              <span className="font-['Poppins'] text-sm font-medium">
+                Irie Knowledge Hut
+              </span>
             </div>
           </div>
 

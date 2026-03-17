@@ -1,5 +1,5 @@
-import { ImageWithFallback } from '../components/figma/ImageWithFallback';
-import { getSoundsystemImage } from '../utils/imageLookup';
+import { ImageWithFallback } from "../components/figma/ImageWithFallback";
+import { getSoundsystemImage } from "../utils/imageLookup";
 
 interface SoundsystemCardProps {
   name: string;
@@ -9,7 +9,13 @@ interface SoundsystemCardProps {
   imageSrc?: string | null;
 }
 
-function SoundsystemCard({ name, description, style, color, imageSrc }: SoundsystemCardProps) {
+function SoundsystemCard({
+  name,
+  description,
+  style,
+  color,
+  imageSrc,
+}: SoundsystemCardProps) {
   return (
     <div
       className="bg-white rounded-3xl border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-6 hover:shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-all"
@@ -28,7 +34,9 @@ function SoundsystemCard({ name, description, style, color, imageSrc }: Soundsys
             className="w-full h-full flex items-center justify-center"
             style={{ backgroundColor: color }}
           >
-            <div className="font-['Luckiest_Guy'] text-3xl text-white text-center px-4">🔊</div>
+            <div className="font-['Luckiest_Guy'] text-3xl text-white text-center px-4">
+              🔊
+            </div>
           </div>
         )}
       </div>
@@ -54,70 +62,81 @@ function SoundsystemCard({ name, description, style, color, imageSrc }: Soundsys
 export default function Soundsystems() {
   const soundsystems = [
     {
-      name: 'Ital Brew Soundsystem',
-      description: 'Heavyweight roots and dub from the heart. Known for deep bass and conscious selection.',
-      style: 'Roots & Dub',
-      color: '#E6392F',
+      name: "Ital Brew Soundsystem",
+      description:
+        "Heavyweight roots and dub from the heart. Known for deep bass and conscious selection.",
+      style: "Roots & Dub",
+      color: "#E6392F",
     },
     {
-      name: 'Guiding Youth Soundsystem',
-      description: 'Young energy meets classic soundsystem culture. Fresh perspectives on traditional vibes.',
-      style: 'Roots Reggae',
-      color: '#138A5A',
+      name: "Guiding Youth Soundsystem",
+      description:
+        "Young energy meets classic soundsystem culture. Fresh perspectives on traditional vibes.",
+      style: "Roots Reggae",
+      color: "#138A5A",
     },
     {
-      name: 'Dreadical Warriors Soundsystem',
-      description: 'Warriors of the bass. Bringing militant dub and steppers riddims.',
-      style: 'Steppers & Dub',
-      color: '#F48C06',
+      name: "Dreadical Warriors Soundsystem",
+      description:
+        "Warriors of the bass. Bringing militant dub and steppers riddims.",
+      style: "Steppers & Dub",
+      color: "#F48C06",
     },
     {
-      name: 'Jahmateur Hi Power Soundsystem',
-      description: 'High power, high energy. Modern dub with serious bass weight.',
-      style: 'Hi-Power Dub',
-      color: '#2EC4B6',
+      name: "Jahmateur Hi Power Soundsystem",
+      description:
+        "High power, high energy. Modern dub with serious bass weight.",
+      style: "Hi-Power Dub",
+      color: "#2EC4B6",
     },
     {
       name: "Steppin' Ground Soundsystem",
-      description: 'Natural steppers vibes. Grounded in roots, reaching for the sky.',
-      style: 'Steppers',
-      color: '#F7C600',
+      description:
+        "Natural steppers vibes. Grounded in roots, reaching for the sky.",
+      style: "Steppers",
+      color: "#F7C600",
     },
     {
-      name: 'Tune Soundsystem',
-      description: 'Pure vibes and selection. Tuned to perfection, playing the finest cuts.',
-      style: 'Selection Culture',
-      color: '#E6392F',
+      name: "Tune Soundsystem",
+      description:
+        "Pure vibes and selection. Tuned to perfection, playing the finest cuts.",
+      style: "Selection Culture",
+      color: "#E6392F",
     },
     {
-      name: 'Drijfkracht Soundsystem',
-      description: 'Driving force in the scene. Pushing the culture forward with heavyweight sound.',
-      style: 'Dub & Roots',
-      color: '#138A5A',
+      name: "Drijfkracht Soundsystem",
+      description:
+        "Driving force in the scene. Pushing the culture forward with heavyweight sound.",
+      style: "Dub & Roots",
+      color: "#138A5A",
     },
     {
-      name: 'Saga Sound Station',
-      description: 'Every set tells a story. Journey through reggae, dub, and beyond.',
-      style: 'Reggae & Dub',
-      color: '#F48C06',
+      name: "Saga Sound Station",
+      description:
+        "Every set tells a story. Journey through reggae, dub, and beyond.",
+      style: "Reggae & Dub",
+      color: "#F48C06",
     },
     {
-      name: 'Untzslag Soundsystem',
-      description: 'Conscious lyrics and deep bass. Sound clash ready with heavyweight selection.',
-      style: 'Soundclash Specialists',
-      color: '#2EC4B6',
+      name: "Untzslag Soundsystem",
+      description:
+        "Conscious lyrics and deep bass. Sound clash ready with heavyweight selection.",
+      style: "Soundclash Specialists",
+      color: "#2EC4B6",
     },
     {
-      name: 'Unification Soundsystem',
-      description: 'Bringing people together through music. Unity is strength, music is the weapon.',
-      style: 'Roots & Culture',
-      color: '#E6392F',
+      name: "Unification Soundsystem",
+      description:
+        "Bringing people together through music. Unity is strength, music is the weapon.",
+      style: "Roots & Culture",
+      color: "#E6392F",
     },
     {
-      name: 'Crucial Soundsystem',
-      description: 'Essential vibes only. Crucial cuts and heavyweight dubplates.',
-      style: 'Dub & Steppers',
-      color: '#138A5A',
+      name: "Crucial Soundsystem",
+      description:
+        "Essential vibes only. Crucial cuts and heavyweight dubplates.",
+      style: "Dub & Steppers",
+      color: "#138A5A",
     },
   ];
 
@@ -140,10 +159,12 @@ export default function Soundsystems() {
             Soundsystem Culture
           </h2>
           <p className="font-['Poppins'] text-lg text-gray-700 text-center leading-relaxed max-w-3xl mx-auto">
-            At the heart of Living Dub Festival is authentic soundsystem culture. These are more than just 
-            speakers—each soundsystem is a community, a crew, a movement. They carry the legacy of reggae 
-            and dub forward, selecting the deepest cuts, dropping the heaviest bass, and holding space for 
-            the culture. Respect to all the soundsystems making this gathering possible.
+            At the heart of Living Dub Festival is authentic soundsystem
+            culture. These are more than just speakers—each soundsystem is a
+            community, a crew, a movement. They carry the legacy of reggae and
+            dub forward, selecting the deepest cuts, dropping the heaviest bass,
+            and holding space for the culture. Respect to all the soundsystems
+            making this gathering possible.
           </p>
         </section>
 

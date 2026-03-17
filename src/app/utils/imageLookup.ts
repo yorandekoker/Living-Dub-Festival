@@ -11,7 +11,9 @@ const normalizeKey = (value: string) =>
     .replace(/\s+/g, "");
 
 const buildMap = (pairs: Array<[string, string]>) =>
-  Object.fromEntries(pairs.map(([name, fileName]) => [normalizeKey(name), fileName]));
+  Object.fromEntries(
+    pairs.map(([name, fileName]) => [normalizeKey(name), fileName]),
+  );
 
 const crewImageMap = buildMap([
   ["Guiding Youth", "guiding youth.jpg"],
@@ -30,6 +32,8 @@ const crewImageMap = buildMap([
   ["Little Man", "little man.jpg"],
   ["Lowie", "lowie.jpg"],
   ["MITCH and Paleo", "mitch&paleo.jpg"],
+  ["MUDA @ Living Dub", "muda livingdub.png"],
+  ["MUDA", "muda livingdub.png"],
   ["Moksha Vibrations", "moshka vibrations.jpg"],
   ["Pathseeker", "pathseeker.jpg"],
   ["Poa Annua", "poa anua.jpg"],

@@ -1,4 +1,4 @@
-import { ImageWithFallback } from './figma/ImageWithFallback';
+import { ImageWithFallback } from "./figma/ImageWithFallback";
 
 interface WorkshopCardProps {
   title: string;
@@ -9,7 +9,14 @@ interface WorkshopCardProps {
   imageSrc?: string | null;
 }
 
-export default function WorkshopCard({ title, time, instructor, description, color = '#2EC4B6', imageSrc }: WorkshopCardProps) {
+export default function WorkshopCard({
+  title,
+  time,
+  instructor,
+  description,
+  color = "#2EC4B6",
+  imageSrc,
+}: WorkshopCardProps) {
   return (
     <div
       className="bg-white rounded-3xl border-3 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-6 hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-all"
@@ -33,7 +40,7 @@ export default function WorkshopCard({ title, time, instructor, description, col
       </div>
 
       {/* Workshop Title */}
-      <div 
+      <div
         className="inline-block px-4 py-2 rounded-xl border-2 border-black mb-3"
         style={{ backgroundColor: color }}
       >

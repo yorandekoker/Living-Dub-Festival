@@ -1,25 +1,51 @@
-import ArtistCard from '../components/ArtistCard';
-import { getCrewImage, getWorkshopImage } from '../utils/imageLookup';
+import ArtistCard from "../components/ArtistCard";
+import { getCrewImage, getWorkshopImage } from "../utils/imageLookup";
 
 export default function Lineup() {
   const woodenRootsFloor = [
-    'Guiding Youth', 'Selah Techniques', 'Creativ Dubs', 'Ital Brew',
-    'Little Man', 'Unification', 'Fishermen', 'Poa Annua',
-    'Deliverance', 'Crucial', 'Suncharm', 'MUDA',
-    'Ventus', 'MITCH & Paleo', 'DJ Dédé'
+    "Guiding Youth",
+    "Selah Techniques",
+    "Creativ Dubs",
+    "Ital Brew",
+    "Little Man",
+    "Unification",
+    "Fishermen",
+    "Poa Annua",
+    "Deliverance",
+    "Crucial",
+    "Suncharm",
+    "MUDA",
+    "Ventus",
+    "MITCH & Paleo",
+    "DJ Dédé",
   ];
 
   const steppinGrassField = [
-    'Dreadical Warriors', "Steppin' Ground", 'Jahmateur Hi Power',
-    'Bloodhound', 'Lowie', 'Moksha Vibrations', 'Pathseeker',
-    'Untzslag', 'Saga Sound Station', 'Drijfkracht', 'Tune'
+    "Dreadical Warriors",
+    "Steppin' Ground",
+    "Jahmateur Hi Power",
+    "Bloodhound",
+    "Lowie",
+    "Moksha Vibrations",
+    "Pathseeker",
+    "Untzslag",
+    "Saga Sound Station",
+    "Drijfkracht",
+    "Tune",
   ];
 
   const irieKnowledgeHut = [
-    'Henna Workshop', 'Henna Tattoos', 'Living Art', 'Ecstatic Dance',
-    'Fire Dance', 'Mindfulness / Meditation', 'Integrale Yoga',
-    'Airbrush & Kids Facepainting', 'Graffiti Workshop', 'Natural Shapes',
-    'Performance Rodkint'
+    "Henna Workshop",
+    "Henna Tattoos",
+    "Living Art",
+    "Ecstatic Dance",
+    "Fire Dance",
+    "Mindfulness / Meditation",
+    "Integrale Yoga",
+    "Airbrush & Kids Facepainting",
+    "Graffiti Workshop",
+    "Natural Shapes",
+    "Performance Rodkint",
   ];
 
   return (
