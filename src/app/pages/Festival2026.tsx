@@ -1,26 +1,29 @@
-import { ImageWithFallback } from '../components/figma/ImageWithFallback';
-import Button from '../components/Button';
-import StageCard from '../components/StageCard';
+import { ImageWithFallback } from "../components/figma/ImageWithFallback";
+import Button from "../components/Button";
+import StageCard from "../components/StageCard";
 
 export default function Festival2026() {
   const stages = [
     {
-      name: 'Wooden Roots Floor',
-      description: 'The main indoor stage featuring heavyweight soundsystem clashes and roots reggae sessions. Deep bass, conscious lyrics, and authentic dub culture. This is where the heaviest riddims drop and the deepest vibes flow.',
-      color: '#E6392F',
-      rotation: '-1.5deg',
+      name: "Wooden Roots Floor",
+      description:
+        "The main indoor stage featuring heavyweight soundsystem clashes and roots reggae sessions. Deep bass, conscious lyrics, and authentic dub culture. This is where the heaviest riddims drop and the deepest vibes flow.",
+      color: "#E6392F",
+      rotation: "-1.5deg",
     },
     {
       name: "Steppin' Grass Field",
-      description: 'Open-air soundsystem stage on the grass field. Dance under the sky, feel the earth beneath your feet, and step to the natural rhythm. A perfect blend of nature and bass culture.',
-      color: '#138A5A',
-      rotation: '1deg',
+      description:
+        "Open-air soundsystem stage on the grass field. Dance under the sky, feel the earth beneath your feet, and step to the natural rhythm. A perfect blend of nature and bass culture.",
+      color: "#138A5A",
+      rotation: "1deg",
     },
     {
-      name: 'Irie Knowledge Hut',
-      description: 'Community learning and healing space. Join workshops in henna art, yoga, meditation, graffiti, fire dance, and more. A sanctuary for creative expression, personal growth, and community connection.',
-      color: '#F7C600',
-      rotation: '-0.5deg',
+      name: "Irie Knowledge Hut",
+      description:
+        "Community learning and healing space. Join workshops in henna art, yoga, meditation, graffiti, fire dance, and more. A sanctuary for creative expression, personal growth, and community connection.",
+      color: "#F7C600",
+      rotation: "-0.5deg",
     },
   ];
 
@@ -52,48 +55,71 @@ export default function Festival2026() {
               <h2 className="font-['Bangers'] text-4xl text-[#138A5A] mb-6">
                 Join Us This Summer
               </h2>
-              
+
               <div className="space-y-4 mb-8">
                 <div className="flex items-start gap-3">
                   <div className="text-3xl">📅</div>
                   <div>
-                    <h4 className="font-['Fredoka'] text-xl font-bold text-gray-800">Date</h4>
-                    <p className="font-['Poppins'] text-lg text-gray-700">3-5 July 2026</p>
+                    <h4 className="font-['Fredoka'] text-xl font-bold text-gray-800">
+                      Date
+                    </h4>
+                    <p className="font-['Poppins'] text-lg text-gray-700">
+                      3-5 July 2026
+                    </p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3">
                   <div className="text-3xl">📍</div>
                   <div>
-                    <h4 className="font-['Fredoka'] text-xl font-bold text-gray-800">Location</h4>
-                    <p className="font-['Poppins'] text-lg text-gray-700">Beautiful Natural Grounds</p>
-                    <p className="font-['Poppins'] text-sm text-gray-600">Full details shared with ticket holders</p>
+                    <h4 className="font-['Fredoka'] text-xl font-bold text-gray-800">
+                      Location
+                    </h4>
+                    <p className="font-['Poppins'] text-lg text-gray-700">
+                      Beautiful Natural Grounds
+                    </p>
+                    <p className="font-['Poppins'] text-sm text-gray-600">
+                      Full details shared with ticket holders
+                    </p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3">
                   <div className="text-3xl">🎵</div>
                   <div>
-                    <h4 className="font-['Fredoka'] text-xl font-bold text-gray-800">Music</h4>
-                    <p className="font-['Poppins'] text-lg text-gray-700">Reggae, Dub & Soundsystem Culture</p>
+                    <h4 className="font-['Fredoka'] text-xl font-bold text-gray-800">
+                      Music
+                    </h4>
+                    <p className="font-['Poppins'] text-lg text-gray-700">
+                      Reggae, Dub & Soundsystem Culture
+                    </p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3">
                   <div className="text-3xl">⛺</div>
                   <div>
-                    <h4 className="font-['Fredoka'] text-xl font-bold text-gray-800">Camping</h4>
-                    <p className="font-['Poppins'] text-lg text-gray-700">On-site camping available</p>
+                    <h4 className="font-['Fredoka'] text-xl font-bold text-gray-800">
+                      Camping
+                    </h4>
+                    <p className="font-['Poppins'] text-lg text-gray-700">
+                      On-site camping available
+                    </p>
                   </div>
                 </div>
               </div>
 
               <p className="font-['Poppins'] text-base leading-relaxed text-gray-700 mb-6">
-                Three days of heavyweight dub, roots reggae, soundsystem culture, workshops, 
-                healing arts, and community connection in a beautiful natural setting.
+                Three days of heavyweight dub, roots reggae, soundsystem
+                culture, workshops, healing arts, and community connection in a
+                beautiful natural setting.
               </p>
 
-              <Button href="https://example.com/tickets" external variant="primary">
+              <Button
+                href="https://example.com/tickets"
+                external
+                variant="primary"
+              >
                 Get Your Tickets
               </Button>
             </div>
@@ -130,7 +156,7 @@ export default function Festival2026() {
           <h3 className="font-['Bangers'] text-4xl text-white text-center mb-8">
             Explore More
           </h3>
-          
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             <Button to="/timetable" variant="primary">
               View Timetable
@@ -138,7 +164,7 @@ export default function Festival2026() {
             <Button to="/lineup" variant="secondary">
               View Line-up
             </Button>
-            <Button to="/workshops" variant="outline">
+            <Button to="/timetable#festival-workshops" variant="outline">
               Workshops
             </Button>
             <Button to="/soundsystems" variant="primary">
@@ -162,8 +188,9 @@ export default function Festival2026() {
                 Authentic Soundsystem Culture
               </h4>
               <p className="font-['Poppins'] text-base leading-relaxed text-gray-700">
-                Experience the true power of dub with heavyweight soundsystems, soundclashes, 
-                and sessions from the best selectors and operators in the scene.
+                Experience the true power of dub with heavyweight soundsystems,
+                soundclashes, and sessions from the best selectors and operators
+                in the scene.
               </p>
             </div>
 
@@ -173,8 +200,9 @@ export default function Festival2026() {
                 Natural Setting
               </h4>
               <p className="font-['Poppins'] text-base leading-relaxed text-gray-700">
-                Surrounded by nature, our festival grounds provide the perfect backdrop for 
-                music, camping, and connection with both the earth and each other.
+                Surrounded by nature, our festival grounds provide the perfect
+                backdrop for music, camping, and connection with both the earth
+                and each other.
               </p>
             </div>
 
@@ -184,8 +212,9 @@ export default function Festival2026() {
                 Workshops & Healing Arts
               </h4>
               <p className="font-['Poppins'] text-base leading-relaxed text-gray-700">
-                Beyond the music, expand your horizons with yoga, meditation, art workshops, 
-                henna, fire dance, and more at the Irie Knowledge Hut.
+                Beyond the music, expand your horizons with yoga, meditation,
+                art workshops, henna, fire dance, and more at the Irie Knowledge
+                Hut.
               </p>
             </div>
 
@@ -195,8 +224,9 @@ export default function Festival2026() {
                 Community Connection
               </h4>
               <p className="font-['Poppins'] text-base leading-relaxed text-gray-700">
-                Meet like-minded souls, make new friends, and be part of a community built 
-                on respect, connection, and shared love for the culture.
+                Meet like-minded souls, make new friends, and be part of a
+                community built on respect, connection, and shared love for the
+                culture.
               </p>
             </div>
           </div>

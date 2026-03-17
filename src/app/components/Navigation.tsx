@@ -1,21 +1,20 @@
-import { Link, useLocation } from 'react-router';
-import { Menu, X } from 'lucide-react';
-import { useState } from 'react';
+import { Link, useLocation } from "react-router";
+import { Menu, X } from "lucide-react";
+import { useState } from "react";
 
 export default function Navigation() {
   const location = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { path: '/', label: 'Home' },
-    { path: '/about', label: 'About Living Dub' },
-    { path: '/festival-2026', label: 'Festival 2026' },
-    { path: '/timetable', label: 'Timetable' },
-    { path: '/lineup', label: 'Line-up' },
-    { path: '/workshops', label: 'Workshops' },
-    { path: '/soundsystems', label: 'Soundsystems' },
-    { path: '/info', label: 'Info' },
-    { path: '/contact', label: 'Contact' },
+    { path: "/", label: "Home" },
+    { path: "/about", label: "About Living Dub" },
+    { path: "/festival-2026", label: "Festival 2026" },
+    { path: "/timetable", label: "Timetable" },
+    { path: "/lineup", label: "Line-up" },
+    { path: "/soundsystems", label: "Soundsystems" },
+    { path: "/info", label: "Info" },
+    { path: "/contact", label: "Contact" },
   ];
 
   return (
@@ -28,12 +27,14 @@ export default function Navigation() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex justify-between items-center h-24">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <div className="font-['Luckiest_Guy'] text-2xl md:text-3xl text-[#138A5A] transform -rotate-2">
-              Living Dub Festival
-            </div>
+            <img
+              src="/images/logo.png"
+              alt="Living Dub Festival"
+              className="h-[4.5rem] md:h-[5.25rem] w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -44,14 +45,14 @@ export default function Navigation() {
                 to={link.path}
                 className={`font-['Poppins'] font-medium text-sm transition-colors hover:text-[#E6392F] ${
                   location.pathname === link.path
-                    ? 'text-[#E6392F] border-b-2 border-[#E6392F]'
-                    : 'text-gray-700'
+                    ? "text-[#E6392F] border-b-2 border-[#E6392F]"
+                    : "text-gray-700"
                 }`}
               >
                 {link.label}
               </Link>
             ))}
-            
+
             {/* Buy Tickets Button */}
             <a
               href="https://example.com/tickets"
@@ -84,14 +85,14 @@ export default function Navigation() {
                 onClick={() => setMobileMenuOpen(false)}
                 className={`block font-['Poppins'] font-medium py-3 px-4 rounded-lg transition-colors ${
                   location.pathname === link.path
-                    ? 'bg-[#E6392F] text-white'
-                    : 'text-gray-700 hover:bg-gray-100'
+                    ? "bg-[#E6392F] text-white"
+                    : "text-gray-700 hover:bg-gray-100"
                 }`}
               >
                 {link.label}
               </Link>
             ))}
-            
+
             {/* Mobile Buy Tickets Button */}
             <a
               href="https://example.com/tickets"

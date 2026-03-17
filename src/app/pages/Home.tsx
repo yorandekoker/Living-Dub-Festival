@@ -1,35 +1,38 @@
-import { ImageWithFallback } from '../components/figma/ImageWithFallback';
-import Button from '../components/Button';
-import StageCard from '../components/StageCard';
-import WorkshopCard from '../components/WorkshopCard';
+import { ImageWithFallback } from "../components/figma/ImageWithFallback";
+import Button from "../components/Button";
+import StageCard from "../components/StageCard";
+import WorkshopCard from "../components/WorkshopCard";
 
 export default function Home() {
   const stages = [
     {
-      name: 'Wooden Roots Floor',
-      description: 'The main stage featuring heavyweight dub and roots reggae vibes. Where the deepest bass meets conscious lyrics.',
-      color: '#E6392F',
-      rotation: '-1deg',
+      name: "Wooden Roots Floor",
+      description:
+        "The main stage featuring heavyweight dub and roots reggae vibes. Where the deepest bass meets conscious lyrics.",
+      color: "#E6392F",
+      rotation: "-1deg",
     },
     {
       name: "Steppin' Grass Field",
-      description: 'Outdoor soundsystem stage on the grass. Feel the earth beneath your feet as you step to the riddim.',
-      color: '#138A5A',
-      rotation: '1.5deg',
+      description:
+        "Outdoor soundsystem stage on the grass. Feel the earth beneath your feet as you step to the riddim.",
+      color: "#138A5A",
+      rotation: "1.5deg",
     },
     {
-      name: 'Irie Knowledge Hut',
-      description: 'Community space for workshops, healing arts, and creative expression. Connect, learn, and grow together.',
-      color: '#F7C600',
-      rotation: '-0.5deg',
+      name: "Irie Knowledge Hut",
+      description:
+        "Community space for workshops, healing arts, and creative expression. Connect, learn, and grow together.",
+      color: "#F7C600",
+      rotation: "-0.5deg",
     },
   ];
 
   const workshops = [
-    { title: 'Henna Art', time: 'Friday 15:00 – 17:00', color: '#E6392F' },
-    { title: 'Yoga Flow', time: 'Saturday 10:00 – 11:30', color: '#138A5A' },
-    { title: 'Meditation', time: 'Sunday 09:00 – 10:00', color: '#F7C600' },
-    { title: 'Fire Dance', time: 'Saturday 22:00 – 23:00', color: '#E6392F' },
+    { title: "Henna Art", time: "Friday 15:00 – 17:00", color: "#E6392F" },
+    { title: "Yoga Flow", time: "Saturday 10:00 – 11:30", color: "#138A5A" },
+    { title: "Meditation", time: "Sunday 09:00 – 10:00", color: "#F7C600" },
+    { title: "Fire Dance", time: "Saturday 22:00 – 23:00", color: "#E6392F" },
   ];
 
   return (
@@ -50,39 +53,39 @@ export default function Home() {
           {/* Festival Title - Stacked Text Blocks with Colored Outlines */}
           <div className="space-y-4 mb-8">
             <div className="inline-block">
-              <h1 
+              <h1
                 className="font-['Luckiest_Guy'] text-5xl md:text-7xl m-0 transform -rotate-2"
                 style={{
-                  color: 'transparent',
-                  WebkitTextStroke: '3px #138A5A',
-                  textStroke: '3px #138A5A',
-                  filter: 'drop-shadow(6px 6px 0px rgba(0,0,0,0.3))'
+                  color: "transparent",
+                  WebkitTextStroke: "3px #138A5A",
+                  textStroke: "3px #138A5A",
+                  filter: "drop-shadow(6px 6px 0px rgba(0,0,0,0.3))",
                 }}
               >
                 Living Dub
               </h1>
             </div>
             <div className="inline-block">
-              <h1 
+              <h1
                 className="font-['Luckiest_Guy'] text-5xl md:text-7xl m-0 transform rotate-1"
                 style={{
-                  color: 'transparent',
-                  WebkitTextStroke: '3px #E6392F',
-                  textStroke: '3px #E6392F',
-                  filter: 'drop-shadow(6px 6px 0px rgba(0,0,0,0.3))'
+                  color: "transparent",
+                  WebkitTextStroke: "3px #E6392F",
+                  textStroke: "3px #E6392F",
+                  filter: "drop-shadow(6px 6px 0px rgba(0,0,0,0.3))",
                 }}
               >
                 Festival
               </h1>
             </div>
             <div className="inline-block">
-              <h1 
+              <h1
                 className="font-['Luckiest_Guy'] text-5xl md:text-7xl m-0 transform -rotate-1"
                 style={{
-                  color: 'transparent',
-                  WebkitTextStroke: '3px #F7C600',
-                  textStroke: '3px #F7C600',
-                  filter: 'drop-shadow(6px 6px 0px rgba(0,0,0,0.3))'
+                  color: "transparent",
+                  WebkitTextStroke: "3px #F7C600",
+                  textStroke: "3px #F7C600",
+                  filter: "drop-shadow(6px 6px 0px rgba(0,0,0,0.3))",
                 }}
               >
                 2026
@@ -105,7 +108,11 @@ export default function Home() {
             <Button to="/lineup" variant="secondary">
               View Line-up
             </Button>
-            <Button href="https://example.com/tickets" external variant="outline">
+            <Button
+              href="https://example.com/tickets"
+              external
+              variant="outline"
+            >
               Buy Tickets
             </Button>
           </div>
@@ -123,10 +130,11 @@ export default function Home() {
             Connection • Respect • Community
           </h2>
           <p className="font-['Poppins'] text-lg leading-relaxed text-gray-700">
-            Living Dub Festival is more than music—it's a celebration of soundsystem culture, roots reggae, 
-            and the power of human connection. For three days, we gather in respect and unity, sharing vibrations 
-            that uplift the spirit and connect the community. Join us for a journey through dub, bass, 
-            consciousness, and joy.
+            Living Dub Festival is more than music—it's a celebration of
+            soundsystem culture, roots reggae, and the power of human
+            connection. For three days, we gather in respect and unity, sharing
+            vibrations that uplift the spirit and connect the community. Join us
+            for a journey through dub, bass, consciousness, and joy.
           </p>
         </div>
       </section>
@@ -180,7 +188,7 @@ export default function Home() {
           </div>
 
           <div className="text-center mt-10">
-            <Button to="/workshops" variant="primary">
+            <Button to="/timetable#festival-workshops" variant="primary">
               View All Workshops
             </Button>
           </div>
@@ -202,8 +210,9 @@ export default function Home() {
               Soundsystem Culture
             </h3>
             <p className="font-['Poppins'] text-base leading-relaxed text-gray-700 mb-6">
-              Experience the authentic power of dub with heavyweight soundsystems from across the community. 
-              Feel the bass in your chest, the riddim in your feet, and the connection in the air.
+              Experience the authentic power of dub with heavyweight
+              soundsystems from across the community. Feel the bass in your
+              chest, the riddim in your feet, and the connection in the air.
             </p>
             <Button to="/soundsystems" variant="secondary">
               Meet the Soundsystems
