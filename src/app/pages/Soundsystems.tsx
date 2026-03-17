@@ -1,65 +1,24 @@
+import { useState } from "react";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "../components/ui/dialog";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import { getSoundsystemImage } from "../utils/imageLookup";
 
-interface SoundsystemCardProps {
+interface SoundsystemItem {
   name: string;
   description: string;
   style: string;
   color: string;
-  imageSrc?: string | null;
-}
-
-function SoundsystemCard({
-  name,
-  description,
-  style,
-  color,
-  imageSrc,
-}: SoundsystemCardProps) {
-  return (
-    <div
-      className="bg-white rounded-3xl border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-6 hover:shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-all"
-      style={{ transform: `rotate(${Math.random() * 3 - 1.5}deg)` }}
-    >
-      {/* Soundsystem Image Placeholder */}
-      <div className="w-full h-36 rounded-2xl border-3 border-black mb-4 overflow-hidden bg-gray-100">
-        {imageSrc ? (
-          <ImageWithFallback
-            src={imageSrc}
-            alt={name}
-            className="w-full h-full object-cover object-center"
-          />
-        ) : (
-          <div
-            className="w-full h-full flex items-center justify-center"
-            style={{ backgroundColor: color }}
-          >
-            <div className="font-['Luckiest_Guy'] text-3xl text-white text-center px-4">
-              🔊
-            </div>
-          </div>
-        )}
-      </div>
-
-      {/* Name */}
-      <h3 className="font-['Fredoka'] text-xl font-bold mb-2" style={{ color }}>
-        {name}
-      </h3>
-
-      {/* Style */}
-      <p className="font-['Poppins'] text-sm font-semibold text-gray-600 mb-3">
-        🎵 {style}
-      </p>
-
-      {/* Description */}
-      <p className="font-['Poppins'] text-sm text-gray-700 leading-relaxed">
-        {description}
-      </p>
-    </div>
-  );
 }
 
 export default function Soundsystems() {
+  const [selectedSoundsystem, setSelectedSoundsystem] =
+    useState<SoundsystemItem | null>(null);
+
   const soundsystems = [
     {
       name: "Ital Brew Soundsystem",
@@ -171,16 +130,81 @@ export default function Soundsystems() {
         {/* Soundsystems Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {soundsystems.map((soundsystem) => (
-            <SoundsystemCard
+            <div
               key={soundsystem.name}
-              name={soundsystem.name}
-              description={soundsystem.description}
-              style={soundsystem.style}
-              color={soundsystem.color}
-              imageSrc={getSoundsystemImage(soundsystem.name)}
-            />
+              onClick={() => setSelectedSoundsystem(soundsystem)}
+              className="bg-white rounded-2xl border-3 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-6 hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-all cursor-pointer"
+              style={{ transform: `rotate(${Math.random() * 2 - 1}deg)` }}
+            >
+              <div className="w-full h-44 rounded-xl border-2 border-black mb-3 overflow-hidden bg-gray-100">
+                {getSoundsystemImage(soundsystem.name) ? (
+                  <ImageWithFallback
+                    src={getSoundsystemImage(soundsystem.name) ?? ""}
+                    alt={soundsystem.name}
+                    className="w-full h-full object-cover object-center"
+                  />
+                ) : (
+                  <div
+                    className="w-full h-full flex items-center justify-center font-['Bangers'] text-2xl text-white"
+                    style={{ backgroundColor: soundsystem.color }}
+                  >
+                    Soundsystem
+                  </div>
+                )}
+              </div>
+
+              <div
+                className="inline-block px-3 py-1 rounded-lg border-2 border-black mb-3 font-['Fredoka'] text-sm font-bold text-white"
+                style={{ backgroundColor: soundsystem.color }}
+              >
+                {soundsystem.style}
+              </div>
+
+              <h3
+                className="font-['Fredoka'] text-xl font-bold mb-2"
+                style={{ color: soundsystem.color }}
+              >
+                {soundsystem.name}
+              </h3>
+
+              <p className="font-['Poppins'] text-sm text-gray-700 leading-relaxed">
+                {soundsystem.description}
+              </p>
+            </div>
           ))}
         </div>
+
+        <Dialog
+          open={selectedSoundsystem !== null}
+          onOpenChange={() => setSelectedSoundsystem(null)}
+        >
+          <DialogContent className="bg-white rounded-3xl border-4 border-black shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] max-w-4xl">
+            <DialogHeader>
+              <DialogTitle className="font-['Bangers'] text-3xl text-[#E6392F]">
+                {selectedSoundsystem?.name}
+              </DialogTitle>
+            </DialogHeader>
+
+            {selectedSoundsystem && (
+              <div className="w-full h-[70vh] rounded-2xl border-3 border-black overflow-hidden bg-gray-100">
+                {getSoundsystemImage(selectedSoundsystem.name) ? (
+                  <ImageWithFallback
+                    src={getSoundsystemImage(selectedSoundsystem.name) ?? ""}
+                    alt={selectedSoundsystem.name}
+                    className="w-full h-full object-contain object-center"
+                  />
+                ) : (
+                  <div
+                    className="w-full h-full flex items-center justify-center font-['Bangers'] text-4xl text-white text-center px-6"
+                    style={{ backgroundColor: selectedSoundsystem.color }}
+                  >
+                    {selectedSoundsystem.name}
+                  </div>
+                )}
+              </div>
+            )}
+          </DialogContent>
+        </Dialog>
 
         {/* Bottom CTA */}
         <section className="mt-16 bg-gradient-to-r from-[#E6392F] via-[#F7C600] to-[#138A5A] rounded-3xl border-4 border-black shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] p-10 text-center transform rotate-0.5">
