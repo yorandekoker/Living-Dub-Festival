@@ -19,6 +19,7 @@ const crewImageMap = buildMap([
   ["Guiding Youth", "guiding youth.jpg"],
   ["Creativ Dubs", "creative dubs.jpg"],
   ["Selah Techniques", "selah techniques.jpg"],
+  ["Guiding Youth & Selah Techniques", "selah techniques.jpg"],
   ["Crucial", "crucial.jpg"],
   ["Deliverance", "deliverance.jpg"],
   ["DJ Dede", "dj dédé.jpg"],
@@ -86,8 +87,18 @@ const workshopImageMap = buildMap([
 ]);
 
 export function getCrewImage(name: string): string | null {
-  const fileName = crewImageMap[normalizeKey(name)];
-  return fileName ? `/images/crews/${fileName}` : null;
+  const normalizedName = normalizeKey(name);
+  const fileName = crewImageMap[normalizedName];
+  if (fileName) {
+    return `/images/crews/${fileName}`;
+  }
+
+  // Safety fallback for merged card labels that still include Selah Techniques.
+  if (normalizedName.includes(normalizeKey("Selah Techniques"))) {
+    return "/images/crews/selah techniques.jpg";
+  }
+
+  return null;
 }
 
 export function getSoundsystemImage(name: string): string | null {

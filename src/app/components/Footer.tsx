@@ -64,7 +64,7 @@ export default function Footer() {
                 <Facebook size={20} />
               </a>
               <a
-                href="https://instagram.com"
+                href="https://instagram.com/livingdub"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white text-[#138A5A] p-3 rounded-full hover:bg-[#F7C600] hover:scale-110 transition-all border-2 border-black"
@@ -80,7 +80,7 @@ export default function Footer() {
                 <Youtube size={20} />
               </a>
               <a
-                href="mailto:info@livingdubfestival.com"
+                href="mailto:livingdub@outlook.com"
                 className="bg-white text-[#138A5A] p-3 rounded-full hover:bg-[#F7C600] hover:scale-110 transition-all border-2 border-black"
               >
                 <Mail size={20} />

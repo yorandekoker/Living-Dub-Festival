@@ -47,24 +47,18 @@ export default function Timetable() {
   > = {
     friday: [
       {
-        artist: "Guiding Youth",
+        artist: "Guiding Youth & Selah Techniques ft. Della",
         stage: "Wooden Roots Floor",
         time: "14:00 – 20:00",
         color: "#E6392F",
         playingAgainst: "Creativ Dubs",
       },
       {
-        artist: "Selah Techniques ft. Della",
-        stage: "Wooden Roots Floor",
-        time: "14:00 – 20:00",
-        color: "#E6392F",
-      },
-      {
         artist: "Creativ Dubs",
         stage: "Wooden Roots Floor",
         time: "14:00 – 20:00",
         color: "#E6392F",
-        playingAgainst: "Guiding Youth",
+        playingAgainst: "Guiding Youth & Selah Techniques ft. Della",
       },
       {
         artist: "Ital Brew",
@@ -277,6 +271,24 @@ export default function Timetable() {
         color: "#F7C600",
       },
       {
+        artist: "Henna Tattoos",
+        stage: "Irie Knowledge Hut",
+        time: "17:30 – 19:30",
+        color: "#F7C600",
+      },
+      {
+        artist: "Living Art",
+        stage: "Irie Knowledge Hut",
+        time: "20:00 – 21:00",
+        color: "#F7C600",
+      },
+      {
+        artist: "Ecstatic Dance",
+        stage: "Irie Knowledge Hut",
+        time: "21:30 – 22:30",
+        color: "#F7C600",
+      },
+      {
         artist: "Fire show",
         stage: "Irie Knowledge Hut",
         time: "23:00 – 00:00",
@@ -373,7 +385,7 @@ export default function Timetable() {
       <div className="max-w-7xl mx-auto px-4">
         {/* Page Header */}
         <div className="text-center mb-12">
-          <h1 className="font-['Luckiest_Guy'] text-6xl md:text-7xl text-[#E6392F] mb-4 transform -rotate-1 inline-block">
+          <h1 className="font-['Luckiest_Guy'] text-5xl sm:text-6xl md:text-7xl text-[#E6392F] mb-4 transform -rotate-1 inline-block">
             Timetable
           </h1>
           <p className="font-['Poppins'] text-lg text-gray-700">
@@ -382,10 +394,10 @@ export default function Timetable() {
         </div>
 
         {/* Day Tabs */}
-        <div className="flex justify-center gap-4 mb-12">
+        <div className="grid grid-cols-3 gap-2 sm:gap-4 mb-12 w-full max-w-xl mx-auto">
           <button
             onClick={() => setActiveDay("friday")}
-            className={`font-['Bangers'] text-xl px-8 py-4 rounded-full border-3 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all transform ${
+            className={`w-full font-['Bangers'] text-base sm:text-xl px-3 sm:px-8 py-3 sm:py-4 rounded-full border-3 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all transform ${
               activeDay === "friday"
                 ? "bg-[#E6392F] text-white scale-105 rotate-2"
                 : "bg-white text-black hover:scale-105 hover:rotate-1"
@@ -395,7 +407,7 @@ export default function Timetable() {
           </button>
           <button
             onClick={() => setActiveDay("saturday")}
-            className={`font-['Bangers'] text-xl px-8 py-4 rounded-full border-3 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all transform ${
+            className={`w-full font-['Bangers'] text-base sm:text-xl px-3 sm:px-8 py-3 sm:py-4 rounded-full border-3 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all transform ${
               activeDay === "saturday"
                 ? "bg-[#F7C600] text-black scale-105 -rotate-2"
                 : "bg-white text-black hover:scale-105 hover:-rotate-1"
@@ -405,7 +417,7 @@ export default function Timetable() {
           </button>
           <button
             onClick={() => setActiveDay("sunday")}
-            className={`font-['Bangers'] text-xl px-8 py-4 rounded-full border-3 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all transform ${
+            className={`w-full font-['Bangers'] text-base sm:text-xl px-3 sm:px-8 py-3 sm:py-4 rounded-full border-3 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all transform ${
               activeDay === "sunday"
                 ? "bg-[#138A5A] text-white scale-105 rotate-1"
                 : "bg-white text-black hover:scale-105 hover:rotate-0.5"
@@ -440,7 +452,7 @@ export default function Timetable() {
               className="bg-white rounded-2xl border-3 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-6 hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-all cursor-pointer"
               style={{ transform: `rotate(${Math.random() * 2 - 1}deg)` }}
             >
-              <div className="w-full h-44 rounded-xl border-2 border-black mb-3 overflow-hidden bg-gray-100">
+              <div className="w-full h-[16.5rem] rounded-xl border-2 border-black mb-3 overflow-hidden bg-gray-100">
                 {getCrewImage(event.artist) ? (
                   <ImageWithFallback
                     src={getCrewImage(event.artist) ?? ""}
@@ -502,7 +514,7 @@ export default function Timetable() {
 
             {selectedArtist && (
               <div className="space-y-4">
-                <div className="w-full h-48 rounded-2xl border-2 border-black overflow-hidden bg-gray-100">
+                <div className="w-full h-72 rounded-2xl border-2 border-black overflow-hidden bg-gray-100">
                   {selectedArtist.imageSrc ? (
                     <ImageWithFallback
                       src={selectedArtist.imageSrc}
@@ -561,7 +573,7 @@ export default function Timetable() {
         {/* Workshops Section */}
         <section id="festival-workshops" className="mt-20">
           <div className="text-center mb-12">
-            <h2 className="font-['Bangers'] text-5xl text-[#2EC4B6] mb-4 transform -rotate-1 inline-block">
+            <h2 className="font-['Bangers'] text-4xl sm:text-5xl text-[#2EC4B6] mb-4 transform -rotate-1 inline-block">
               Festival Workshops
             </h2>
             <p className="font-['Poppins'] text-lg text-gray-700 max-w-3xl mx-auto">
@@ -570,10 +582,10 @@ export default function Timetable() {
             </p>
           </div>
 
-          <div className="flex justify-center gap-4 mb-10">
+          <div className="grid grid-cols-3 gap-2 sm:gap-4 mb-10 w-full max-w-xl mx-auto">
             <button
               onClick={() => setActiveWorkshopDay("friday")}
-              className={`font-['Bangers'] text-xl px-8 py-4 rounded-full border-3 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all transform ${
+              className={`w-full font-['Bangers'] text-base sm:text-xl px-3 sm:px-8 py-3 sm:py-4 rounded-full border-3 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all transform ${
                 activeWorkshopDay === "friday"
                   ? "bg-[#E6392F] text-white scale-105 rotate-2"
                   : "bg-white text-black hover:scale-105 hover:rotate-1"
@@ -583,7 +595,7 @@ export default function Timetable() {
             </button>
             <button
               onClick={() => setActiveWorkshopDay("saturday")}
-              className={`font-['Bangers'] text-xl px-8 py-4 rounded-full border-3 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all transform ${
+              className={`w-full font-['Bangers'] text-base sm:text-xl px-3 sm:px-8 py-3 sm:py-4 rounded-full border-3 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all transform ${
                 activeWorkshopDay === "saturday"
                   ? "bg-[#F7C600] text-black scale-105 -rotate-2"
                   : "bg-white text-black hover:scale-105 hover:-rotate-1"
@@ -593,7 +605,7 @@ export default function Timetable() {
             </button>
             <button
               onClick={() => setActiveWorkshopDay("sunday")}
-              className={`font-['Bangers'] text-xl px-8 py-4 rounded-full border-3 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all transform ${
+              className={`w-full font-['Bangers'] text-base sm:text-xl px-3 sm:px-8 py-3 sm:py-4 rounded-full border-3 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all transform ${
                 activeWorkshopDay === "sunday"
                   ? "bg-[#138A5A] text-white scale-105 rotate-1"
                   : "bg-white text-black hover:scale-105 hover:rotate-0.5"
@@ -620,7 +632,7 @@ export default function Timetable() {
                 className="bg-white rounded-2xl border-3 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-6 hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-all cursor-pointer"
                 style={{ transform: `rotate(${Math.random() * 2 - 1}deg)` }}
               >
-                <div className="w-full h-44 rounded-xl border-2 border-black mb-3 overflow-hidden bg-gray-100">
+                <div className="w-full h-[16.5rem] rounded-xl border-2 border-black mb-3 overflow-hidden bg-gray-100">
                   {getWorkshopImage(event.artist) ? (
                     <ImageWithFallback
                       src={getWorkshopImage(event.artist) ?? ""}
@@ -662,7 +674,7 @@ export default function Timetable() {
 
               {selectedWorkshop && (
                 <div className="space-y-4">
-                  <div className="w-full h-48 rounded-2xl border-2 border-black overflow-hidden bg-gray-100">
+                  <div className="w-full h-72 rounded-2xl border-2 border-black overflow-hidden bg-gray-100">
                     {selectedWorkshop.imageSrc ? (
                       <ImageWithFallback
                         src={selectedWorkshop.imageSrc}

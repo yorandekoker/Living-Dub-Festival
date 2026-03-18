@@ -136,7 +136,7 @@ export default function Soundsystems() {
               className="bg-white rounded-2xl border-3 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-6 hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-all cursor-pointer"
               style={{ transform: `rotate(${Math.random() * 2 - 1}deg)` }}
             >
-              <div className="w-full h-44 rounded-xl border-2 border-black mb-3 overflow-hidden bg-gray-100">
+              <div className="w-full h-88 rounded-xl border-2 border-black mb-3 overflow-hidden bg-gray-100">
                 {getSoundsystemImage(soundsystem.name) ? (
                   <ImageWithFallback
                     src={getSoundsystemImage(soundsystem.name) ?? ""}

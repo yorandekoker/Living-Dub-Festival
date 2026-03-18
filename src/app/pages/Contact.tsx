@@ -47,10 +47,10 @@ export default function Contact() {
               Email
             </h3>
             <a
-              href="mailto:info@livingdubfestival.com"
+              href="mailto:livingdub@outlook.com"
               className="font-['Poppins'] text-sm text-[#E6392F] hover:underline"
             >
-              info@livingdubfestival.com
+              livingdub@outlook.com
             </a>
           </div>
 
@@ -96,7 +96,7 @@ export default function Contact() {
               <Facebook size={32} />
             </a>
             <a
-              href="https://instagram.com"
+              href="https://instagram.com/livingdub"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-white text-[#138A5A] p-4 rounded-full hover:bg-[#F7C600] hover:scale-110 transition-all border-3 border-black"
@@ -151,7 +151,7 @@ export default function Contact() {
                 onChange={handleChange}
                 required
                 className="w-full px-4 py-3 rounded-xl border-3 border-black font-['Poppins'] text-base focus:outline-none focus:ring-2 focus:ring-[#F7C600]"
-                placeholder="your.email@example.com"
+                placeholder="livingdub@outlook.com"
               />
             </div>
 
