@@ -49,13 +49,6 @@ export default function Soundsystems() {
       color: "#2EC4B6",
     },
     {
-      name: "Not Surrender Soundsystem",
-      description:
-        "Steadfast roots energy and heavyweight bass. Conscious selections with a never-give-up spirit.",
-      style: "Roots & Steppers",
-      color: "#F7C600",
-    },
-    {
       name: "Steppin' Ground Soundsystem",
       description:
         "Natural steppers vibes. Grounded in roots, reaching for the sky.",

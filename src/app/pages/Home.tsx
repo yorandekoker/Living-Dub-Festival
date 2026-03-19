@@ -69,7 +69,7 @@ export default function Home() {
           <div className="space-y-4 mb-8">
             <div className="inline-block">
               <h1
-                className="font-['Luckiest_Guy'] text-5xl md:text-7xl m-0 transform -rotate-2"
+                className="home-hero-title text-5xl md:text-7xl m-0 transform -rotate-2"
                 style={{
                   color: "transparent",
                   WebkitTextStroke: "3px #138A5A",
@@ -82,7 +82,7 @@ export default function Home() {
             </div>
             <div className="inline-block">
               <h1
-                className="font-['Luckiest_Guy'] text-5xl md:text-7xl m-0 transform rotate-1"
+                className="home-hero-title text-5xl md:text-7xl m-0 transform rotate-1"
                 style={{
                   color: "transparent",
                   WebkitTextStroke: "3px #E6392F",
@@ -95,7 +95,7 @@ export default function Home() {
             </div>
             <div className="inline-block">
               <h1
-                className="font-['Luckiest_Guy'] text-5xl md:text-7xl m-0 transform -rotate-1"
+                className="home-hero-title text-5xl md:text-7xl m-0 transform -rotate-1"
                 style={{
                   color: "transparent",
                   WebkitTextStroke: "3px #F7C600",
