@@ -44,7 +44,7 @@ export default function WorkshopCard({
         className="inline-block px-4 py-2 rounded-xl border-2 border-black mb-3"
         style={{ backgroundColor: color }}
       >
-        <h4 className="font-['Fredoka'] text-xl font-bold text-white">
+        <h4 className="title-fit font-['Fredoka'] text-xl font-bold text-white">
           {title}
         </h4>
       </div>

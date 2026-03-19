@@ -335,19 +335,19 @@ export default function Timetable() {
     ],
     sunday: [
       {
-        artist: "Bio-landbouw en menselijke zorg (Vzw Gooikenshoeve)",
+        artist: "Organic farming and human care (Vzw Gooikenshoeve)",
         stage: "Irie Knowledge Hut",
         time: "13:00 – 14:00",
         color: "#F7C600",
       },
       {
-        artist: "Naaldvilten (Studio Imela)",
+        artist: "Needle felting (Studio Imela)",
         stage: "Irie Knowledge Hut",
         time: "14:30 – 16:30",
         color: "#F7C600",
       },
       {
-        artist: "Waarzegster: gratis kaartlegging (Jules Tingles)",
+        artist: "Fortune teller: free card reading (Jules Tingles)",
         stage: "Irie Knowledge Hut",
         time: "17:00 – 18:00, 19:00 – 20:00, 21:00 – 22:00",
         color: "#F7C600",
@@ -364,7 +364,7 @@ export default function Timetable() {
       time: `${activeDay.toUpperCase().slice(0, 3)} ${event.time}`,
       color: event.color,
       playingAgainst: event.playingAgainst,
-      description: `Experience ${event.artist} bringing heavyweight dub and roots reggae vibes to ${event.stage}.`,
+      description: `Experience ${event.artist} bringing dub and roots reggae vibes to ${event.stage}.`,
       imageSrc,
     });
   };
@@ -449,10 +449,10 @@ export default function Timetable() {
             <div
               key={index}
               onClick={() => handleArtistClick(event)}
-              className="bg-white rounded-2xl border-3 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-6 hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-all cursor-pointer"
+              className="bg-white rounded-2xl border-3 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-4 sm:p-6 max-h-[78vh] sm:max-h-none overflow-y-auto hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-all cursor-pointer"
               style={{ transform: `rotate(${Math.random() * 2 - 1}deg)` }}
             >
-              <div className="w-full h-[16.5rem] rounded-xl border-2 border-black mb-3 overflow-hidden bg-gray-100">
+              <div className="w-full h-44 sm:h-[16.5rem] rounded-xl border-2 border-black mb-3 overflow-hidden bg-gray-100">
                 {getCrewImage(event.artist) ? (
                   <ImageWithFallback
                     src={getCrewImage(event.artist) ?? ""}
@@ -479,7 +479,7 @@ export default function Timetable() {
 
               {/* Artist Name */}
               <h3
-                className="font-['Fredoka'] text-xl font-bold mb-2"
+                className="font-['Fredoka'] text-lg sm:text-xl font-bold mb-2 break-words"
                 style={{ color: event.color }}
               >
                 {event.artist}
@@ -492,7 +492,7 @@ export default function Timetable() {
 
               {/* Playing Against (Clash) */}
               {event.playingAgainst && (
-                <p className="font-['Poppins'] text-xs text-gray-500 italic">
+                <p className="font-['Poppins'] text-xs text-gray-500 italic break-words">
                   vs. {event.playingAgainst}
                 </p>
               )}
@@ -629,10 +629,10 @@ export default function Timetable() {
               <div
                 key={index}
                 onClick={() => handleWorkshopClick(event)}
-                className="bg-white rounded-2xl border-3 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-6 hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-all cursor-pointer"
+                className="bg-white rounded-2xl border-3 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-4 sm:p-6 max-h-[78vh] sm:max-h-none overflow-y-auto hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-all cursor-pointer"
                 style={{ transform: `rotate(${Math.random() * 2 - 1}deg)` }}
               >
-                <div className="w-full h-[16.5rem] rounded-xl border-2 border-black mb-3 overflow-hidden bg-gray-100">
+                <div className="w-full h-44 sm:h-[16.5rem] rounded-xl border-2 border-black mb-3 overflow-hidden bg-gray-100">
                   {getWorkshopImage(event.artist) ? (
                     <ImageWithFallback
                       src={getWorkshopImage(event.artist) ?? ""}
@@ -650,7 +650,7 @@ export default function Timetable() {
                   {event.time}
                 </div>
 
-                <h3 className="font-['Fredoka'] text-xl font-bold mb-2 text-[#F7C600]">
+                <h3 className="font-['Fredoka'] text-lg sm:text-xl font-bold mb-2 text-[#F7C600] break-words">
                   {event.artist}
                 </h3>
 
@@ -718,7 +718,7 @@ export default function Timetable() {
         </section>
       </div>
 
-      {/* Regular Events Agenda Section */}
+      {/* Upcoming Events Section */}
       <div className="max-w-6xl mx-auto px-4 mt-20">
         <div className="text-center mb-12">
           <h2
@@ -728,188 +728,39 @@ export default function Timetable() {
               textShadow: "4px 4px 0px rgba(0,0,0,0.2)",
             }}
           >
-            Regular Events Agenda
+            Upcoming Events
           </h2>
           <p className="font-['Poppins'] text-lg text-gray-700 max-w-2xl mx-auto">
-            Living Dub organizes regular events throughout the year. Join us for
-            monthly soundsystem sessions, workshops, and community gatherings.
+            Join us at our next Living Dub gathering and celebrate the spring
+            equinox with soundsystem culture and community.
           </p>
         </div>
 
-        {/* Monthly Events Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {/* Monthly Soundsystem Session */}
+        {/* Upcoming Event Card */}
+        <div className="max-w-3xl mx-auto">
           <div
-            className="bg-white p-6 rounded-2xl border-3 border-black transform hover:scale-105 transition-transform"
-            style={{
-              boxShadow: "6px 6px 0px rgba(0,0,0,0.3)",
-              transform: "rotate(-0.5deg)",
-            }}
-          >
-            <div className="bg-[#E6392F] text-white px-4 py-2 rounded-full inline-block mb-3">
-              <span className="font-['Bangers'] text-sm">MONTHLY</span>
-            </div>
-            <h3 className="font-['Fredoka'] text-2xl mb-2">
-              Soundsystem Session
-            </h3>
-            <p className="font-['Poppins'] text-sm text-gray-600 mb-3">
-              First Saturday of every month
-            </p>
-            <p className="font-['Poppins'] text-sm mb-4">
-              Monthly soundsystem showcase featuring local and international
-              selectors. Deep dub, roots reggae, and conscious vibrations.
-            </p>
-            <div className="flex items-center gap-2 text-sm">
-              <div className="w-3 h-3 rounded-full bg-[#E6392F]"></div>
-              <span className="font-['Poppins'] font-medium">
-                21:00 - 04:00
-              </span>
-            </div>
-          </div>
-
-          {/* Yoga & Meditation */}
-          <div
-            className="bg-white p-6 rounded-2xl border-3 border-black transform hover:scale-105 transition-transform"
-            style={{
-              boxShadow: "6px 6px 0px rgba(0,0,0,0.3)",
-              transform: "rotate(0.5deg)",
-            }}
-          >
-            <div className="bg-[#138A5A] text-white px-4 py-2 rounded-full inline-block mb-3">
-              <span className="font-['Bangers'] text-sm">WEEKLY</span>
-            </div>
-            <h3 className="font-['Fredoka'] text-2xl mb-2">
-              Yoga & Meditation
-            </h3>
-            <p className="font-['Poppins'] text-sm text-gray-600 mb-3">
-              Every Sunday morning
-            </p>
-            <p className="font-['Poppins'] text-sm mb-4">
-              Start your week centered. Community yoga and meditation sessions
-              in nature. All levels welcome.
-            </p>
-            <div className="flex items-center gap-2 text-sm">
-              <div className="w-3 h-3 rounded-full bg-[#138A5A]"></div>
-              <span className="font-['Poppins'] font-medium">
-                10:00 - 11:30
-              </span>
-            </div>
-          </div>
-
-          {/* Vinyl Selection Night */}
-          <div
-            className="bg-white p-6 rounded-2xl border-3 border-black transform hover:scale-105 transition-transform"
-            style={{
-              boxShadow: "6px 6px 0px rgba(0,0,0,0.3)",
-              transform: "rotate(-0.3deg)",
-            }}
-          >
-            <div className="bg-[#F7C600] text-black px-4 py-2 rounded-full inline-block mb-3">
-              <span className="font-['Bangers'] text-sm">BI-WEEKLY</span>
-            </div>
-            <h3 className="font-['Fredoka'] text-2xl mb-2">
-              Vinyl Selection Night
-            </h3>
-            <p className="font-['Poppins'] text-sm text-gray-600 mb-3">
-              Every other Friday
-            </p>
-            <p className="font-['Poppins'] text-sm mb-4">
-              Intimate vinyl listening sessions. Bring your records, share the
-              vibes, connect through music culture.
-            </p>
-            <div className="flex items-center gap-2 text-sm">
-              <div className="w-3 h-3 rounded-full bg-[#F7C600]"></div>
-              <span className="font-['Poppins'] font-medium">
-                19:00 - 23:00
-              </span>
-            </div>
-          </div>
-
-          {/* Workshop Series */}
-          <div
-            className="bg-white p-6 rounded-2xl border-3 border-black transform hover:scale-105 transition-transform"
-            style={{
-              boxShadow: "6px 6px 0px rgba(0,0,0,0.3)",
-              transform: "rotate(0.3deg)",
-            }}
-          >
-            <div className="bg-[#E6392F] text-white px-4 py-2 rounded-full inline-block mb-3">
-              <span className="font-['Bangers'] text-sm">MONTHLY</span>
-            </div>
-            <h3 className="font-['Fredoka'] text-2xl mb-2">
-              Creative Workshop Series
-            </h3>
-            <p className="font-['Poppins'] text-sm text-gray-600 mb-3">
-              Third Sunday of every month
-            </p>
-            <p className="font-['Poppins'] text-sm mb-4">
-              Rotating workshops: graffiti, henna, natural dyeing, instrument
-              making, and more creative community activities.
-            </p>
-            <div className="flex items-center gap-2 text-sm">
-              <div className="w-3 h-3 rounded-full bg-[#E6392F]"></div>
-              <span className="font-['Poppins'] font-medium">
-                14:00 - 17:00
-              </span>
-            </div>
-          </div>
-
-          {/* Community Gathering */}
-          <div
-            className="bg-white p-6 rounded-2xl border-3 border-black transform hover:scale-105 transition-transform"
+            className="bg-white p-6 rounded-2xl border-3 border-black transform hover:scale-[1.01] transition-transform"
             style={{
               boxShadow: "6px 6px 0px rgba(0,0,0,0.3)",
               transform: "rotate(-0.4deg)",
             }}
           >
-            <div className="bg-[#138A5A] text-white px-4 py-2 rounded-full inline-block mb-3">
-              <span className="font-['Bangers'] text-sm">MONTHLY</span>
+            <div className="w-full rounded-2xl border-3 border-black overflow-hidden mb-5">
+              <ImageWithFallback
+                src="/images/events/living dub 6.0.jpg"
+                alt="Living Dub 6.0 event"
+                className="w-full h-auto object-contain object-center"
+              />
             </div>
-            <h3 className="font-['Fredoka'] text-2xl mb-2">
-              Community Gathering
-            </h3>
-            <p className="font-['Poppins'] text-sm text-gray-600 mb-3">
-              Last Wednesday of every month
-            </p>
-            <p className="font-['Poppins'] text-sm mb-4">
-              Open community meeting to share ideas, plan events, and build
-              connections. Potluck dinner included.
-            </p>
-            <div className="flex items-center gap-2 text-sm">
-              <div className="w-3 h-3 rounded-full bg-[#138A5A]"></div>
-              <span className="font-['Poppins'] font-medium">
-                18:00 - 21:00
-              </span>
-            </div>
-          </div>
 
-          {/* Seasonal Celebration */}
-          <div
-            className="bg-white p-6 rounded-2xl border-3 border-black transform hover:scale-105 transition-transform"
-            style={{
-              boxShadow: "6px 6px 0px rgba(0,0,0,0.3)",
-              transform: "rotate(0.4deg)",
-            }}
-          >
-            <div className="bg-[#F7C600] text-black px-4 py-2 rounded-full inline-block mb-3">
-              <span className="font-['Bangers'] text-sm">SEASONAL</span>
+            <div className="bg-[#E6392F] text-white px-4 py-2 rounded-full inline-block mb-3">
+              <span className="font-['Bangers'] text-sm">UPCOMING</span>
             </div>
-            <h3 className="font-['Fredoka'] text-2xl mb-2">
-              Seasonal Celebration
+            <h3 className="font-['Fredoka'] text-2xl mb-2 leading-snug">
+              Living Dub 6.0, hosted by Drijfkracht Soundsystem - Spring
+              Equinox Celebration with Crucial Soundsystem (warming up by
+              Untzslag) - 't Pand (21/03/2026)
             </h3>
-            <p className="font-['Poppins'] text-sm text-gray-600 mb-3">
-              Every solstice & equinox
-            </p>
-            <p className="font-['Poppins'] text-sm mb-4">
-              Celebrate the turning of the seasons with music, food, fire, and
-              community. Connect with natural rhythms.
-            </p>
-            <div className="flex items-center gap-2 text-sm">
-              <div className="w-3 h-3 rounded-full bg-[#F7C600]"></div>
-              <span className="font-['Poppins'] font-medium">
-                16:00 - 23:00
-              </span>
-            </div>
           </div>
         </div>
 
@@ -922,8 +773,8 @@ export default function Timetable() {
             }}
           >
             <p className="font-['Poppins'] text-white text-lg mb-4 max-w-2xl">
-              Want to stay updated on all our regular events? Follow us on
-              social media or join our mailing list!
+              Want to stay updated on all our upcoming events? Follow us on
+              social media or join our mailing list.
             </p>
             <Button to="/contact" variant="primary">
               Get in Touch

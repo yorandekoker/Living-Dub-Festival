@@ -3,8 +3,7 @@ import { getCrewImage, getWorkshopImage } from "../utils/imageLookup";
 
 export default function Lineup() {
   const woodenRootsFloor = [
-    "Guiding Youth",
-    "Selah Techniques",
+    "Guiding Youth & Selah Techniques",
     "Creativ Dubs",
     "Ital Brew",
     "Little Man",
@@ -25,6 +24,7 @@ export default function Lineup() {
     "Steppin' Ground",
     "Jahmateur Hi Power",
     "Bloodhound",
+    "Not Surrender",
     "Lowie",
     "Moksha Vibrations",
     "Pathseeker",
@@ -68,7 +68,7 @@ export default function Lineup() {
               Wooden Roots Floor
             </h2>
             <p className="font-['Poppins'] text-center text-white mt-2">
-              Indoor Main Stage • Heavyweight Dub & Roots Reggae
+              Indoor Main Stage • Dub & Roots Reggae
             </p>
           </div>
 

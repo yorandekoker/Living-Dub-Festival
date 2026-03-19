@@ -16,14 +16,14 @@ export default function About() {
             Our Philosophy
           </h2>
           <p className="font-['Poppins'] text-lg leading-relaxed text-gray-700 mb-4">
-            Living Dub Festival was born from a simple truth: music connects us. In a world that often 
-            pulls us apart, we create a space where people come together through the power of reggae, 
-            dub, and soundsystem culture.
+            Living Dub's vision revolves around two words: connection and
+            respect. They are at the core of the organization and are woven into
+            every decision that shapes our concepts.
           </p>
           <p className="font-['Poppins'] text-lg leading-relaxed text-gray-700">
-            We believe in the transformative power of bass, the wisdom of roots reggae, and the 
-            importance of community. This festival is built on two core principles that guide 
-            everything we do.
+            Respect is our fundamental attitude, from which connection is
+            pursued. We see connection as a powerful path that is built on and
+            begins with respect as its foundation.
           </p>
         </section>
 
@@ -35,12 +35,17 @@ export default function About() {
             </h2>
           </div>
           <p className="font-['Poppins'] text-lg leading-relaxed text-white mb-4">
-            Respect for each other, for the music, for the culture, and for the earth. We honor the 
-            traditions of soundsystem culture while creating a safe, welcoming space for everyone.
+            We consider respect an umbrella value that includes all positive
+            values. If you live with respect for yourself, others, materials,
+            and nature, you are, in our view, living a positive way of life. It
+            is therefore a basic attitude that we adopt and aim to carry out at
+            all times.
           </p>
           <p className="font-['Poppins'] text-lg leading-relaxed text-white">
-            Respect means listening as much as we speak, holding space for others, and recognizing 
-            that we're all part of the same rhythm. It's the foundation of everything we build together.
+            It is the foundation of our organization. From that foundation, we
+            deliberately chose to focus primarily on the reggae/dub genre. The
+            lyrics, the messages shared within it, and the overall atmosphere
+            all strive to express this value.
           </p>
         </section>
 
@@ -52,65 +57,30 @@ export default function About() {
             </h2>
           </div>
           <p className="font-['Poppins'] text-lg leading-relaxed text-white mb-4">
-            Human beings are wired for connection. Through music, dance, conversation, and shared 
-            experience, we fulfill a fundamental human need—the need to belong, to be seen, and to 
-            be part of something greater than ourselves.
+            From that attitude of respect, we strive for connection. We strongly
+            believe connection is what people and society need in order to grow
+            in positive ways.
           </p>
           <p className="font-['Poppins'] text-lg leading-relaxed text-white">
-            At Living Dub Festival, connection happens in many ways: the collective energy on the 
-            dancefloor, a conversation at sunrise, a workshop that opens your mind, or simply 
-            sharing space with like-minded souls.
+            This goes beyond belief alone. A wide range of scientific research
+            supports our plea for connectedness as one of the basic human needs.
+            Self-determination theory in psychology identifies it as one of the
+            factors that leads to growth and well-being.
           </p>
-        </section>
-
-        {/* Psychology of Connection */}
-        <section className="bg-white rounded-3xl border-4 border-black shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] p-8 md:p-12 mb-12">
-          <h2 className="font-['Bangers'] text-4xl text-[#F48C06] mb-6">
-            The Psychology of Connection
-          </h2>
-          <p className="font-['Poppins'] text-base leading-relaxed text-gray-700 mb-6">
-            Research in self-determination theory shows that human beings have three fundamental 
-            psychological needs: autonomy, competence, and relatedness. Living Dub Festival speaks 
-            directly to the need for <strong>relatedness</strong>—the need to connect with others 
-            and feel part of a community.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-[#FFF3D6] rounded-2xl border-3 border-black p-6 transform -rotate-1">
-              <div className="text-4xl mb-3">🎵</div>
-              <h4 className="font-['Fredoka'] text-xl font-bold text-[#E6392F] mb-2">
-                Musical Connection
-              </h4>
-              <p className="font-['Poppins'] text-sm text-gray-700">
-                Shared musical experiences create bonds and collective memory
-              </p>
-            </div>
-            <div className="bg-[#FFF3D6] rounded-2xl border-3 border-black p-6 transform rotate-1">
-              <div className="text-4xl mb-3">🤝</div>
-              <h4 className="font-['Fredoka'] text-xl font-bold text-[#138A5A] mb-2">
-                Social Connection
-              </h4>
-              <p className="font-['Poppins'] text-sm text-gray-700">
-                Face-to-face interactions build trust and meaningful relationships
-              </p>
-            </div>
-            <div className="bg-[#FFF3D6] rounded-2xl border-3 border-black p-6 transform -rotate-0.5">
-              <div className="text-4xl mb-3">🧘</div>
-              <h4 className="font-['Fredoka'] text-xl font-bold text-[#2EC4B6] mb-2">
-                Spiritual Connection
-              </h4>
-              <p className="font-['Poppins'] text-sm text-gray-700">
-                Shared values and purpose create deeper meaning
-              </p>
-            </div>
-          </div>
         </section>
 
         {/* Quote Section */}
         <section className="bg-gradient-to-r from-[#F7C600] to-[#F48C06] rounded-3xl border-4 border-black shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] p-12 md:p-16 text-center mb-12 transform -rotate-0.5">
-          <div className="text-6xl mb-6">"</div>
+          <div className="h-1 w-24 bg-black mx-auto rounded-full mb-6"></div>
           <blockquote className="font-['Permanent_Marker'] text-2xl md:text-3xl text-black leading-relaxed mb-6">
-            No man is an island, so Connection and Respect is what the people want and what the people need.
+            No man is an island, so Connection and Respect is what the people
+            want and what the people need.
           </blockquote>
+          <p className="font-['Bangers'] text-xl md:text-2xl text-black mb-6">
+            Ever faithful, Ever Sure
+            <br />
+            Ever Living Dub
+          </p>
           <div className="h-1 w-24 bg-black mx-auto rounded-full"></div>
         </section>
 
@@ -120,19 +90,20 @@ export default function About() {
             The Organization
           </h2>
           <p className="font-['Poppins'] text-lg leading-relaxed text-gray-700 mb-4">
-            Living Dub Festival is organized by a dedicated team of music lovers, soundsystem 
-            operators, and community builders who share a passion for authentic dub culture and 
-            meaningful connection.
+            Living Dub Festival is organized by a dedicated team of music
+            lovers, soundsystem operators, and community builders who share a
+            passion for authentic dub culture and meaningful connection.
           </p>
           <p className="font-['Poppins'] text-lg leading-relaxed text-gray-700 mb-4">
-            We work year-round to curate lineups that honor the roots of reggae and dub while 
-            supporting emerging artists. We collaborate with local communities, environmental 
-            initiatives, and cultural organizations to ensure our festival leaves a positive impact.
+            We work year-round to curate lineups that honor the roots of reggae
+            and dub while supporting emerging artists. We collaborate with local
+            communities, environmental initiatives, and cultural organizations
+            to ensure our festival leaves a positive impact.
           </p>
           <p className="font-['Poppins'] text-lg leading-relaxed text-gray-700">
-            This is not just our festival—it's yours. It belongs to everyone who shows up with 
-            respect, who connects with an open heart, and who believes in the power of music to 
-            bring people together.
+            This is not just our festival—it's yours. It belongs to everyone who
+            shows up with respect, who connects with an open heart, and who
+            believes in the power of music to bring people together.
           </p>
         </section>
       </div>

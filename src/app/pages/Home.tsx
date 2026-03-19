@@ -2,15 +2,17 @@ import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import Button from "../components/Button";
 import StageCard from "../components/StageCard";
 import WorkshopCard from "../components/WorkshopCard";
+import { getWorkshopImage } from "../utils/imageLookup";
 
 export default function Home() {
   const stages = [
     {
       name: "Wooden Roots Floor",
       description:
-        "The main stage featuring heavyweight dub and roots reggae vibes. Where the deepest bass meets conscious lyrics.",
+        "The main stage featuring dub and roots reggae vibes. Where the deepest bass meets conscious lyrics.",
       color: "#E6392F",
       rotation: "-1deg",
+      imageSrc: "/images/stages/wooden roots floor.jpg",
     },
     {
       name: "Steppin' Grass Field",
@@ -18,6 +20,7 @@ export default function Home() {
         "Outdoor soundsystem stage on the grass. Feel the earth beneath your feet as you step to the riddim.",
       color: "#138A5A",
       rotation: "1.5deg",
+      imageSrc: "/images/stages/steppin grass field.avif",
     },
     {
       name: "Irie Knowledge Hut",
@@ -25,13 +28,25 @@ export default function Home() {
         "Community space for workshops, healing arts, and creative expression. Connect, learn, and grow together.",
       color: "#F7C600",
       rotation: "-0.5deg",
+      imageSrc:
+        "https://images.unsplash.com/photo-1472653431158-6364773b2a56?auto=format&fit=crop&w=1200&q=80",
     },
   ];
 
   const workshops = [
-    { title: "Henna Art", time: "Friday 15:00 – 17:00", color: "#E6392F" },
+    {
+      title: "Henna Art",
+      imageKey: "Henna Workshop",
+      time: "Friday 15:00 – 17:00",
+      color: "#E6392F",
+    },
     { title: "Yoga Flow", time: "Saturday 10:00 – 11:30", color: "#138A5A" },
-    { title: "Meditation", time: "Sunday 09:00 – 10:00", color: "#F7C600" },
+    {
+      title: "Meditation",
+      imageKey: "Mindfulness / Meditation",
+      time: "Sunday 09:00 – 10:00",
+      color: "#F7C600",
+    },
     { title: "Fire Dance", time: "Saturday 22:00 – 23:00", color: "#E6392F" },
   ];
 
@@ -105,13 +120,19 @@ export default function Home() {
             <Button to="/timetable" variant="primary">
               View Timetable
             </Button>
-            <Button to="/lineup" variant="secondary">
+            <Button to="/lineup" variant="secondary" className="text-black">
               View Line-up
             </Button>
             <Button
               href="https://example.com/tickets"
               external
               variant="outline"
+              className="hover:bg-[#0F744C]"
+              style={{
+                backgroundColor: "#138A5A",
+                color: "#000000",
+                borderColor: "#000000",
+              }}
             >
               Buy Tickets
             </Button>
@@ -159,6 +180,7 @@ export default function Home() {
               color={stage.color}
               rotation={stage.rotation}
               linkTo="/festival-2026"
+              imageSrc={stage.imageSrc}
             />
           ))}
         </div>
@@ -183,6 +205,7 @@ export default function Home() {
                 title={workshop.title}
                 time={workshop.time}
                 color={workshop.color}
+                imageSrc={getWorkshopImage(workshop.imageKey ?? workshop.title)}
               />
             ))}
           </div>

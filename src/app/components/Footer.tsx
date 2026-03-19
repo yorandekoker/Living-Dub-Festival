@@ -1,5 +1,5 @@
-import { Link } from 'react-router';
-import { Facebook, Instagram, Youtube, Mail } from 'lucide-react';
+import { Link } from "react-router";
+import { Facebook, Instagram, Mail } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -12,39 +12,55 @@ export default function Footer() {
               Living Dub Festival
             </h3>
             <p className="font-['Poppins'] text-sm leading-relaxed">
-              A celebration of soundsystem culture, reggae, dub, community and connection.
+              A celebration of soundsystem culture, reggae, dub, community and
+              connection.
             </p>
-            <p className="font-['Poppins'] text-sm mt-2">
-              3-5 July 2026
-            </p>
+            <p className="font-['Poppins'] text-sm mt-2">3-5 July 2026</p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-['Bangers'] text-xl mb-4 text-[#F7C600]">Quick Links</h4>
+            <h4 className="font-['Bangers'] text-xl mb-4 text-[#F7C600]">
+              Quick Links
+            </h4>
             <ul className="space-y-2">
               <li>
-                <Link to="/about" className="font-['Poppins'] text-sm hover:text-[#F7C600] transition-colors">
+                <Link
+                  to="/about"
+                  className="font-['Poppins'] text-sm hover:text-[#F7C600] transition-colors"
+                >
                   About Living Dub
                 </Link>
               </li>
               <li>
-                <Link to="/festival-2026" className="font-['Poppins'] text-sm hover:text-[#F7C600] transition-colors">
+                <Link
+                  to="/festival-2026"
+                  className="font-['Poppins'] text-sm hover:text-[#F7C600] transition-colors"
+                >
                   Festival 2026
                 </Link>
               </li>
               <li>
-                <Link to="/timetable" className="font-['Poppins'] text-sm hover:text-[#F7C600] transition-colors">
+                <Link
+                  to="/timetable"
+                  className="font-['Poppins'] text-sm hover:text-[#F7C600] transition-colors"
+                >
                   Timetable
                 </Link>
               </li>
               <li>
-                <Link to="/lineup" className="font-['Poppins'] text-sm hover:text-[#F7C600] transition-colors">
+                <Link
+                  to="/lineup"
+                  className="font-['Poppins'] text-sm hover:text-[#F7C600] transition-colors"
+                >
                   Line-up
                 </Link>
               </li>
               <li>
-                <Link to="/info" className="font-['Poppins'] text-sm hover:text-[#F7C600] transition-colors">
+                <Link
+                  to="/info"
+                  className="font-['Poppins'] text-sm hover:text-[#F7C600] transition-colors"
+                >
                   Practical Info
                 </Link>
               </li>
@@ -53,10 +69,12 @@ export default function Footer() {
 
           {/* Social Media */}
           <div>
-            <h4 className="font-['Bangers'] text-xl mb-4 text-[#F7C600]">Connect With Us</h4>
+            <h4 className="font-['Bangers'] text-xl mb-4 text-[#F7C600]">
+              Connect With Us
+            </h4>
             <div className="flex gap-4 mb-4">
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/profile.php?id=61586308133217&sk=directory_basic_info"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white text-[#138A5A] p-3 rounded-full hover:bg-[#F7C600] hover:scale-110 transition-all border-2 border-black"
@@ -70,14 +88,6 @@ export default function Footer() {
                 className="bg-white text-[#138A5A] p-3 rounded-full hover:bg-[#F7C600] hover:scale-110 transition-all border-2 border-black"
               >
                 <Instagram size={20} />
-              </a>
-              <a
-                href="https://youtube.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-white text-[#138A5A] p-3 rounded-full hover:bg-[#F7C600] hover:scale-110 transition-all border-2 border-black"
-              >
-                <Youtube size={20} />
               </a>
               <a
                 href="mailto:livingdub@outlook.com"
@@ -98,7 +108,10 @@ export default function Footer() {
         {/* Copyright */}
         <div className="border-t-2 border-white/20 mt-8 pt-8 text-center">
           <p className="font-['Poppins'] text-sm">
-            © 2026 Living Dub Festival. All rights reserved.
+            © 2026 Living Dub. All rights reserved.
+          </p>
+          <p className="font-['Poppins'] text-xs mt-1 opacity-90">
+            Developed by Yoran Dekoker
           </p>
           <p className="font-['Poppins'] text-xs mt-2 opacity-80">
             Respect • Connection • Community

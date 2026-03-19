@@ -1,4 +1,5 @@
-import Button from './Button';
+import Button from "./Button";
+import { ImageWithFallback } from "./figma/ImageWithFallback";
 
 interface StageCardProps {
   name: string;
@@ -6,26 +7,45 @@ interface StageCardProps {
   color: string;
   rotation?: string;
   linkTo?: string;
+  imageSrc?: string | null;
 }
 
-export default function StageCard({ name, description, color, rotation = '1deg', linkTo }: StageCardProps) {
+export default function StageCard({
+  name,
+  description,
+  color,
+  rotation = "1deg",
+  linkTo,
+  imageSrc,
+}: StageCardProps) {
   return (
     <div
       className="bg-white rounded-3xl border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-6 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-1 hover:translate-y-1 transition-all"
       style={{ transform: `rotate(${rotation})` }}
     >
-      {/* Stage Image Placeholder */}
-      <div 
+      {/* Stage image with fallback to colored title block */}
+      <div
         className="w-full h-48 rounded-2xl border-3 border-black mb-4 flex items-center justify-center overflow-hidden"
-        style={{ backgroundColor: color }}
+        style={{ backgroundColor: imageSrc ? undefined : color }}
       >
-        <div className="font-['Luckiest_Guy'] text-4xl text-white text-center px-4">
-          {name}
-        </div>
+        {imageSrc ? (
+          <ImageWithFallback
+            src={imageSrc}
+            alt={name}
+            className="w-full h-full object-cover object-center"
+          />
+        ) : (
+          <div className="title-fit font-['Luckiest_Guy'] text-4xl text-white text-center px-4">
+            {name}
+          </div>
+        )}
       </div>
 
       {/* Stage Name */}
-      <h3 className="font-['Bangers'] text-2xl mb-3" style={{ color }}>
+      <h3
+        className="title-fit font-['Bangers'] text-2xl mb-3"
+        style={{ color }}
+      >
         {name}
       </h3>
 
@@ -36,7 +56,11 @@ export default function StageCard({ name, description, color, rotation = '1deg',
 
       {/* Learn More Button */}
       {linkTo && (
-        <Button to={linkTo} variant="outline">
+        <Button
+          to={linkTo}
+          variant="outline"
+          style={{ color, borderColor: color }}
+        >
           Learn More
         </Button>
       )}

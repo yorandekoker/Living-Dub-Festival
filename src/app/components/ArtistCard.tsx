@@ -32,7 +32,7 @@ export default function ArtistCard({
           />
         ) : (
           <div
-            className="w-full h-full flex items-center justify-center font-['Bangers'] text-lg text-white"
+            className="title-fit w-full h-full flex items-center justify-center font-['Bangers'] text-lg text-white"
             style={{ backgroundColor: color }}
           >
             {name}
@@ -41,7 +41,7 @@ export default function ArtistCard({
       </div>
 
       {/* Artist Name */}
-      <h4 className="font-['Fredoka'] text-lg font-bold mb-2" style={{ color }}>
+      <h4 className="title-fit font-['Fredoka'] text-lg font-bold mb-2" style={{ color }}>
         {name}
       </h4>
 

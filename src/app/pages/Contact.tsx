@@ -1,22 +1,26 @@
-import { Mail, Facebook, Instagram, Youtube } from 'lucide-react';
-import { useState } from 'react';
+import { Mail, Facebook, Instagram } from "lucide-react";
+import { useState } from "react";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // In a real application, this would send the form data to a server
-    alert('Thanks for reaching out! We\'ll get back to you soon.');
-    setFormData({ name: '', email: '', subject: '', message: '' });
+    alert("Thanks for reaching out! We'll get back to you soon.");
+    setFormData({ name: "", email: "", subject: "", message: "" });
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >,
+  ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -88,7 +92,7 @@ export default function Contact() {
           </h2>
           <div className="flex justify-center gap-6">
             <a
-              href="https://facebook.com"
+              href="https://www.facebook.com/profile.php?id=61586308133217&sk=directory_basic_info"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-white text-[#138A5A] p-4 rounded-full hover:bg-[#F7C600] hover:scale-110 transition-all border-3 border-black"
@@ -103,14 +107,6 @@ export default function Contact() {
             >
               <Instagram size={32} />
             </a>
-            <a
-              href="https://youtube.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-white text-[#138A5A] p-4 rounded-full hover:bg-[#F7C600] hover:scale-110 transition-all border-3 border-black"
-            >
-              <Youtube size={32} />
-            </a>
           </div>
         </section>
 
@@ -123,7 +119,10 @@ export default function Contact() {
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Name */}
             <div>
-              <label htmlFor="name" className="block font-['Fredoka'] font-bold text-gray-800 mb-2">
+              <label
+                htmlFor="name"
+                className="block font-['Fredoka'] font-bold text-gray-800 mb-2"
+              >
                 Name
               </label>
               <input
@@ -140,7 +139,10 @@ export default function Contact() {
 
             {/* Email */}
             <div>
-              <label htmlFor="email" className="block font-['Fredoka'] font-bold text-gray-800 mb-2">
+              <label
+                htmlFor="email"
+                className="block font-['Fredoka'] font-bold text-gray-800 mb-2"
+              >
                 Email
               </label>
               <input
@@ -157,7 +159,10 @@ export default function Contact() {
 
             {/* Subject */}
             <div>
-              <label htmlFor="subject" className="block font-['Fredoka'] font-bold text-gray-800 mb-2">
+              <label
+                htmlFor="subject"
+                className="block font-['Fredoka'] font-bold text-gray-800 mb-2"
+              >
                 Subject
               </label>
               <select
@@ -181,7 +186,10 @@ export default function Contact() {
 
             {/* Message */}
             <div>
-              <label htmlFor="message" className="block font-['Fredoka'] font-bold text-gray-800 mb-2">
+              <label
+                htmlFor="message"
+                className="block font-['Fredoka'] font-bold text-gray-800 mb-2"
+              >
                 Message
               </label>
               <textarea

@@ -10,6 +10,7 @@ export default function Festival2026() {
         "The main indoor stage featuring heavyweight soundsystem clashes and roots reggae sessions. Deep bass, conscious lyrics, and authentic dub culture. This is where the heaviest riddims drop and the deepest vibes flow.",
       color: "#E6392F",
       rotation: "-1.5deg",
+      imageSrc: "/images/stages/wooden roots floor.jpg",
     },
     {
       name: "Steppin' Grass Field",
@@ -17,6 +18,7 @@ export default function Festival2026() {
         "Open-air soundsystem stage on the grass field. Dance under the sky, feel the earth beneath your feet, and step to the natural rhythm. A perfect blend of nature and bass culture.",
       color: "#138A5A",
       rotation: "1deg",
+      imageSrc: "/images/stages/steppin grass field.avif",
     },
     {
       name: "Irie Knowledge Hut",
@@ -24,6 +26,8 @@ export default function Festival2026() {
         "Community learning and healing space. Join workshops in henna art, yoga, meditation, graffiti, fire dance, and more. A sanctuary for creative expression, personal growth, and community connection.",
       color: "#F7C600",
       rotation: "-0.5deg",
+      imageSrc:
+        "https://images.unsplash.com/photo-1472653431158-6364773b2a56?auto=format&fit=crop&w=1200&q=80",
     },
   ];
 
@@ -146,6 +150,7 @@ export default function Festival2026() {
                 color={stage.color}
                 rotation={stage.rotation}
                 linkTo="/timetable"
+                imageSrc={stage.imageSrc}
               />
             ))}
           </div>
@@ -183,7 +188,7 @@ export default function Festival2026() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-white rounded-3xl border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-8 transform -rotate-1">
-              <div className="text-5xl mb-4">🎶</div>
+              <div className="text-5xl mb-4 text-[#E6392F]">𖦹</div>
               <h4 className="font-['Fredoka'] text-2xl font-bold text-[#E6392F] mb-3">
                 Authentic Soundsystem Culture
               </h4>
