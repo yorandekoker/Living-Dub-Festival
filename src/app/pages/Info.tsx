@@ -41,106 +41,142 @@ export default function Info() {
           </p>
         </div>
 
-        {/* Location */}
-        <section className="mb-12">
-          <div className="bg-gradient-to-br from-[#138A5A] to-[#2EC4B6] rounded-3xl border-4 border-black shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] p-8 md:p-10 transform rotate-0.5">
-            <h2 className="font-['Bangers'] text-4xl text-white mb-6">
-              📍 Location
-            </h2>
-            <div className="bg-white rounded-2xl border-3 border-black p-6">
-              <p className="font-['Poppins'] text-lg text-gray-800 mb-4">
-                <strong>Beautiful Natural Grounds</strong>
-              </p>
-              <p className="font-['Poppins'] text-base text-gray-700 mb-4">
-                Living Dub Festival takes place in a stunning natural setting, surrounded by trees and open fields. 
-                The exact location will be shared with all ticket holders closer to the event date.
-              </p>
-              <p className="font-['Poppins'] text-sm text-gray-600 italic">
-                Detailed directions, parking information, and public transport options will be provided to all attendees.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Festival Info Grid */}
-        <section className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-          {/* Opening Hours */}
-          <div className="bg-white rounded-3xl border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-8 transform -rotate-1">
-            <div className="text-5xl mb-4">🕐</div>
-            <h3 className="font-['Fredoka'] text-2xl font-bold text-[#E6392F] mb-4">
-              Opening Hours
-            </h3>
-            <div className="space-y-3 font-['Poppins'] text-base text-gray-700">
-              <p><strong>Friday:</strong> Gates open 12:00 • Music from 14:00</p>
-              <p><strong>Saturday:</strong> All day • Music from 10:00</p>
-              <p><strong>Sunday:</strong> All day • Festival ends 22:00</p>
-            </div>
-          </div>
-
-          {/* Tickets */}
+        <section className="space-y-8 mb-12">
           <div className="bg-white rounded-3xl border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-8 transform rotate-1">
-            <div className="text-5xl mb-4">🎫</div>
-            <h3 className="font-['Fredoka'] text-2xl font-bold text-[#F7C600] mb-4">
-              Tickets
-            </h3>
-            <p className="font-['Poppins'] text-base text-gray-700 mb-4">
-              Weekend passes include access to all stages, workshops, and camping. Limited tickets available.
+            <h3 className="font-['Fredoka'] text-2xl font-bold text-[#F7C600] mb-4">Prices and Tickets</h3>
+            <p className="font-['Poppins'] text-base text-gray-700 mb-3 leading-relaxed">Ticket prices are:</p>
+            <ul className="font-['Poppins'] text-base text-gray-700 space-y-2 list-disc list-inside mb-4">
+              <li>€60 = weekend ticket (3 days)</li>
+              <li>€25 = day ticket</li>
+              <li>€5 = parking</li>
+              <li>€5 = campervan-camping</li>
+              <li>FREE = camping</li>
+              <li>FREE = children under 12 (with valid proof of age)</li>
+              <li>FREE = nearby streets (informed in advance; only on proof of residency)</li>
+            </ul>
+            <p className="font-['Poppins'] text-base text-gray-700 mb-4 leading-relaxed">
+              Buy your tickets via the link below, which takes you directly to the ticket page!
             </p>
-            <Button href="https://example.com/tickets" external variant="primary">
+            <a
+              href="https://example.com/tickets"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block mb-4 font-['Bangers'] text-lg px-6 py-3 bg-[#F7C600] text-black rounded-full border-3 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all transform rotate-1"
+            >
               Buy Tickets
-            </Button>
-          </div>
-
-          {/* Camping */}
-          <div className="bg-white rounded-3xl border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-8 transform rotate-0.5">
-            <div className="text-5xl mb-4">⛺</div>
-            <h3 className="font-['Fredoka'] text-2xl font-bold text-[#138A5A] mb-4">
-              Camping
-            </h3>
-            <p className="font-['Poppins'] text-base text-gray-700 mb-2">
-              <strong>Included with all tickets</strong>
+            </a>
+            <p className="font-['Poppins'] text-base text-gray-700 leading-relaxed">
+              Please also read the general terms and conditions. Failing to follow them can result in denied access to the festival grounds.
             </p>
-            <ul className="font-['Poppins'] text-sm text-gray-700 space-y-2 list-disc list-inside">
-              <li>Bring your own tent and camping gear</li>
-              <li>Shared shower and toilet facilities</li>
-              <li>Designated quiet camping area available</li>
-              <li>No caravans or camper vans</li>
-            </ul>
           </div>
 
-          {/* Food & Drinks */}
+          <div className="bg-white rounded-3xl border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-8 transform -rotate-1">
+            <h3 className="font-['Fredoka'] text-2xl font-bold text-[#E6392F] mb-4">Taxi</h3>
+            <p className="font-['Poppins'] text-base text-gray-700 leading-relaxed">
+              Under the motto 'Safe Home', Living Dub Festival partnered with V-Tax. When buying your ticket, you can also purchase an affordable taxi ticket from Gent-Sint-Pieters to the festival grounds. This way, you do not have to carry all your belongings on public transport. You can also share the ride with others, which is both more affordable and more ecological. Do not hesitate and travel safely with V-Tax!
+            </p>
+          </div>
+
+          <div className="bg-white rounded-3xl border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-8 transform rotate-1">
+            <h3 className="font-['Fredoka'] text-2xl font-bold text-[#F7C600] mb-4">Bicycle</h3>
+            <p className="font-['Poppins'] text-base text-gray-700 leading-relaxed">
+              Living Dub Festival promotes cycling from an ecological point of view. That is why bicycle parking on site is free. The bicycle parking entrance is located at the end of the street. We recommend locking your bike well, as the bicycle parking area is not permanently supervised. The organization cannot be held responsible for damage or theft. The distance from Ghent to the festival grounds is only 10 km. A pleasant bike ride of about 35 minutes is definitely a realistic option to get there.
+            </p>
+          </div>
+
+          <div className="bg-white rounded-3xl border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-8 transform rotate-0.5">
+            <h3 className="font-['Fredoka'] text-2xl font-bold text-[#138A5A] mb-4">Public transport: bus</h3>
+            <p className="font-['Poppins'] text-base text-gray-700 mb-4 leading-relaxed">
+              Bus line 56 takes you from Ghent to Sleidinge village in about 25 minutes. From this bus stop, it is only ... minutes on foot to the entrance of the festival grounds and camping area.
+            </p>
+            <p className="font-['Poppins'] text-base text-gray-700 leading-relaxed">
+              Enter ... in your GPS or navigation app to get the exact route. The entrance is located at the end of ..., so you will need to walk through that street entirely.
+            </p>
+          </div>
+
           <div className="bg-white rounded-3xl border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-8 transform -rotate-0.5">
-            <div className="text-5xl mb-4">🍽️</div>
-            <h3 className="font-['Fredoka'] text-2xl font-bold text-[#2EC4B6] mb-4">
-              Food & Drinks
-            </h3>
-            <ul className="font-['Poppins'] text-base text-gray-700 space-y-2">
-              <li>✅ Multiple food vendors on-site</li>
-              <li>✅ Vegetarian and vegan options</li>
-              <li>✅ Fresh juices and smoothies</li>
-              <li>✅ Bring reusable bottles (free water refills)</li>
-              <li>❌ No outside alcohol</li>
+            <h3 className="font-['Fredoka'] text-2xl font-bold text-[#2EC4B6] mb-4">Public transport: train</h3>
+            <p className="font-['Poppins'] text-base text-gray-700 mb-4 leading-relaxed">
+              You can also take the train from Ghent, or via Ghent as a transfer stop (Gent-Sint-Pieters, Gentbrugge, or Gent-Dampoort), to Sleidinge Station. Please keep in mind that from Sleidinge Station it is still about a 30-minute walk to the festival grounds.
+            </p>
+            <p className="font-['Poppins'] text-base text-gray-700 leading-relaxed">
+              Enter ... in your GPS or navigation app to get the exact route. The entrance is located at the end of ..., so you will need to walk through that street entirely.
+            </p>
+          </div>
+
+          <div className="bg-white rounded-3xl border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-8 transform rotate-1">
+            <h3 className="font-['Fredoka'] text-2xl font-bold text-[#F7C600] mb-4">Accessibility</h3>
+            <p className="font-['Poppins'] text-base text-gray-700 leading-relaxed">
+              Because Living Dub Festival wants to include everyone, we have provided accessible toilets on both the festival grounds and the camping area. Every stage is accessible, and no raised obstacles were added.
+            </p>
+          </div>
+
+          <div className="bg-white rounded-3xl border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-8 transform rotate-0.5">
+            <h3 className="font-['Fredoka'] text-2xl font-bold text-[#138A5A] mb-4">Policy</h3>
+            <p className="font-['Poppins'] text-base text-gray-700 mb-4 leading-relaxed">
+              Living Dub Festival is rooted in its core values: connection and respect. Anyone who does not behave according to these values may be denied access to the grounds. A key part of respect is following our policy. You can find it in the general terms and conditions available during ticket purchase.
+            </p>
+            <p className="font-['Poppins'] text-base text-gray-700 leading-relaxed">
+              You can find our general terms and conditions in the document below. This document is still being finalized.
+            </p>
+          </div>
+
+          <div className="bg-white rounded-3xl border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-8 transform -rotate-0.5">
+            <h3 className="font-['Fredoka'] text-2xl font-bold text-[#2EC4B6] mb-4">Facilities on the festival grounds</h3>
+            <p className="font-['Poppins'] text-base text-gray-700 mb-4 leading-relaxed">
+              In addition to the cultural and two musical stages, the festival grounds offer many other features. There is also a small market, a children's garden (until 22:00 every day), and a bar.
+            </p>
+            <p className="font-['Poppins'] text-base text-gray-700 mb-4 leading-relaxed">
+              There are also three food trucks (Njam Njam Jamaica, De Volxkeuken, and Pastakraam Matheus) and an organic ice cream/dessert stand (Ni Amo).
+            </p>
+            <p className="font-['Poppins'] text-base text-gray-700 leading-relaxed">
+              The festival grounds are also equipped with sufficient gender-inclusive toilets.
+            </p>
+          </div>
+
+          <div className="bg-white rounded-3xl border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-8 transform -rotate-1">
+            <h3 className="font-['Fredoka'] text-2xl font-bold text-[#E6392F] mb-4">Facilities on the camping area</h3>
+            <p className="font-['Poppins'] text-base text-gray-700 leading-relaxed">
+              A camping bar is available on the campsite. Breakfast is also served there on Saturday and Sunday morning from 09:00 to 11:00. The camping area is also equipped with sufficient toilets.
+            </p>
+          </div>
+
+          <div className="bg-white rounded-3xl border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-8 transform rotate-1">
+            <h3 className="font-['Fredoka'] text-2xl font-bold text-[#F7C600] mb-4">Important extra camping rules</h3>
+            <p className="font-['Poppins'] text-base text-gray-700 mb-3 leading-relaxed">
+              We would like to emphasize the following camping rules:
+            </p>
+            <ul className="font-['Poppins'] text-base text-gray-700 space-y-2 list-disc list-inside">
+              <li>No amplified music is allowed after festival hours until 07:00 in the morning.</li>
+              <li>No BBQs or other gas fires are allowed. Plenty of food options are provided by us.</li>
+              <li>No campfires are allowed.</li>
             </ul>
           </div>
-        </section>
 
-        {/* Festival Rules */}
-        <section className="mb-12">
-          <div className="bg-gradient-to-r from-[#E6392F] to-[#F48C06] rounded-3xl border-4 border-black shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] p-8 md:p-10 transform -rotate-0.5">
-            <h2 className="font-['Bangers'] text-4xl text-white mb-6">
-              Festival Rules
-            </h2>
-            <div className="bg-white rounded-2xl border-3 border-black p-6">
-              <ul className="font-['Poppins'] text-base text-gray-700 space-y-3">
-                <li><strong>Respect</strong> – Treat everyone with kindness and consideration</li>
-                <li><strong>No Drugs</strong> – Zero tolerance policy</li>
-                <li><strong>Environment</strong> – Leave no trace, use bins and recycling</li>
-                <li><strong>Safety</strong> – Look out for each other</li>
-                <li><strong>Sound Levels</strong> – Respect quiet camping areas</li>
-                <li><strong>Photography</strong> – Always ask before photographing people</li>
-                <li><strong>ID Required</strong> – Bring valid ID (18+ for alcohol)</li>
-              </ul>
-            </div>
+          <div className="bg-white rounded-3xl border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-8 transform rotate-0.5">
+            <h3 className="font-['Fredoka'] text-2xl font-bold text-[#138A5A] mb-4">Backpacks and the festival grounds</h3>
+            <p className="font-['Poppins'] text-base text-gray-700 leading-relaxed">
+              For safety reasons, backpacks are not allowed at Living Dub Festival. Exceptions apply to the backpacks of our artists and stand holders. An exception is also made for parents of young children (under 6 years old), as we are a family festival and these children may need extra items that are not available on the festival grounds. Security at the entrance will strictly enforce this. Small handbags, crossbody bags, or waist pouches are allowed so visitors can keep their most valuable belongings with them.
+            </p>
+          </div>
+
+          <div className="bg-white rounded-3xl border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-8 transform -rotate-0.5">
+            <h3 className="font-['Fredoka'] text-2xl font-bold text-[#2EC4B6] mb-4">Animals</h3>
+            <p className="font-['Poppins'] text-base text-gray-700 leading-relaxed">
+              Animals are not allowed on the festival grounds or campsite because they may pose a potential risk to the public and to each other. This will be checked at the entrance. Exceptions are made for guide dogs and assistance dogs.
+            </p>
+          </div>
+
+          <div className="bg-white rounded-3xl border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-8 transform -rotate-1">
+            <h3 className="font-['Fredoka'] text-2xl font-bold text-[#E6392F] mb-4">Photography and videography</h3>
+            <h4 className="font-['Fredoka'] text-xl font-bold text-gray-800 mb-3">Photography</h4>
+            <p className="font-['Poppins'] text-base text-gray-700 mb-4 leading-relaxed">
+              Our festival photographer is Noah (Instagram: @bootvannoot). Fascinated by music and visuals from a young age, he found in photography a way to bring those two worlds together and offer a glimpse into the underground music scene that has welcomed him for many years. He studied professional photography at KISP in Ghent, where he developed his own colorful and distinctive portrait style. In recent years, he has gained experience at events (festivals, concerts, free parties, and club nights) in Belgium, but also in the UK, where he found his second home. Through his colorful lens, he captures spontaneity, connection, and unfiltered beauty.
+            </p>
+            <h4 className="font-['Fredoka'] text-xl font-bold text-gray-800 mb-3">Videography</h4>
+            <p className="font-['Poppins'] text-base text-gray-700 leading-relaxed">
+              This fantastic edition of Living Dub will be filmed and edited by Josse (@Josse.vfx). He started editing in Adobe Premiere Pro at age twelve, where he mainly made gaming videos. Later, he discovered reggae and dub culture. Since then, he has focused more on filming and editing reggae and dub events, shaping the warm atmosphere into a beautiful aftermovie. He is currently 17 and recently started studying videography at school to broaden his skills.
+            </p>
           </div>
         </section>
 

@@ -3,8 +3,7 @@
 @import "./theme.css";
 
 html,
-body,
-#root {
+body {
   max-width: 100%;
   overflow-x: hidden;
 }

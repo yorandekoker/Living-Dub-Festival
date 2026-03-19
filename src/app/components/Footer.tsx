@@ -8,9 +8,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Logo & Description */}
           <div>
-            <h3 className="font-['Luckiest_Guy'] text-3xl mb-4 text-[#F7C600] transform -rotate-1">
-              Living Dub Festival
-            </h3>
+            <Link to="/" className="inline-block mb-4">
+              <img
+                src="/images/logo.png"
+                alt="Living Dub Festival"
+                className="h-[6.75rem] md:h-[7.875rem] w-auto"
+              />
+            </Link>
             <p className="font-['Poppins'] text-sm leading-relaxed">
               A celebration of soundsystem culture, reggae, dub, community and
               connection.

@@ -18,7 +18,7 @@ export default function Navigation() {
   ];
 
   return (
-    <nav className="sticky top-0 z-50 bg-white shadow-lg border-b-4 border-black">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow-lg border-b-4 border-black">
       {/* Reggae Color Stripes */}
       <div className="h-2 flex">
         <div className="flex-1 bg-[#E6392F]"></div>
