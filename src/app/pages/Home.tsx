@@ -71,9 +71,7 @@ export default function Home() {
               <h1
                 className="home-hero-title text-5xl md:text-7xl m-0 transform -rotate-2"
                 style={{
-                  color: "transparent",
-                  WebkitTextStroke: "3px #138A5A",
-                  textStroke: "3px #138A5A",
+                  color: "#138A5A",
                   filter: "drop-shadow(6px 6px 0px rgba(0,0,0,0.3))",
                 }}
               >
@@ -84,9 +82,7 @@ export default function Home() {
               <h1
                 className="home-hero-title text-5xl md:text-7xl m-0 transform rotate-1"
                 style={{
-                  color: "transparent",
-                  WebkitTextStroke: "3px #E6392F",
-                  textStroke: "3px #E6392F",
+                  color: "#E6392F",
                   filter: "drop-shadow(6px 6px 0px rgba(0,0,0,0.3))",
                 }}
               >
@@ -97,9 +93,7 @@ export default function Home() {
               <h1
                 className="home-hero-title text-5xl md:text-7xl m-0 transform -rotate-1"
                 style={{
-                  color: "transparent",
-                  WebkitTextStroke: "3px #F7C600",
-                  textStroke: "3px #F7C600",
+                  color: "#F7C600",
                   filter: "drop-shadow(6px 6px 0px rgba(0,0,0,0.3))",
                 }}
               >

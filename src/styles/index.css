@@ -10,6 +10,7 @@
 
 .home-hero-title {
   font-family: "Kablammo", cursive;
+  font-weight: 400;
   --hero-morf: 0;
   font-variation-settings: "MORF" var(--hero-morf);
   animation: home-hero-morph 10s linear infinite;
