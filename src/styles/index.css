@@ -2,20 +2,25 @@
 @import "./tailwind.css";
 @import "./theme.css";
 
+/*
 @property --hero-morf {
   syntax: "<number>";
   inherits: false;
   initial-value: 0;
 }
+*/
 
 .home-hero-title {
-  font-family: "Kablammo", cursive;
+  font-family: var(--font-headline);
   font-weight: 400;
+  /*
   --hero-morf: 0;
   font-variation-settings: "MORF" var(--hero-morf);
   animation: home-hero-morph 10s linear infinite;
+  */
 }
 
+/*
 @keyframes home-hero-morph {
   0% {
     --hero-morf: 0;
@@ -27,6 +32,7 @@
     --hero-morf: 0;
   }
 }
+*/
 
 html,
 body,
