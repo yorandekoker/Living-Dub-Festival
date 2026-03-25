@@ -55,7 +55,7 @@ export default function Navigation() {
 
             {/* Buy Tickets Button */}
             <a
-              href="https://example.com/tickets"
+              href="https://living-dub-festival-2026.eventsquare.store/"
               target="_blank"
               rel="noopener noreferrer"
               className="font-['Bangers'] text-lg px-6 py-3 bg-[#F7C600] text-black rounded-full border-3 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all transform rotate-1"
@@ -95,7 +95,7 @@ export default function Navigation() {
 
             {/* Mobile Buy Tickets Button */}
             <a
-              href="https://example.com/tickets"
+              href="https://living-dub-festival-2026.eventsquare.store/"
               target="_blank"
               rel="noopener noreferrer"
               className="block text-center font-['Bangers'] text-lg px-6 py-3 bg-[#F7C600] text-black rounded-full border-3 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] mt-4"

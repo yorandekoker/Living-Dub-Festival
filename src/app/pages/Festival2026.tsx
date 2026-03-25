@@ -120,7 +120,7 @@ export default function Festival2026() {
               </p>
 
               <Button
-                href="https://example.com/tickets"
+                href="https://living-dub-festival-2026.eventsquare.store/"
                 external
                 variant="primary"
               >

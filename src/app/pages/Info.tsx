@@ -1,6 +1,16 @@
+import { useState } from 'react';
 import Button from '../components/Button';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogClose,
+} from '../components/ui/dialog';
 
 export default function Info() {
+  const [showTerms, setShowTerms] = useState(false);
+
   const faqs = [
     {
       question: 'What should I bring?',
@@ -58,16 +68,22 @@ export default function Info() {
               Buy your tickets via the link below, which takes you directly to the ticket page!
             </p>
             <a
-              href="https://example.com/tickets"
+              href="https://living-dub-festival-2026.eventsquare.store/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block mb-4 font-['Bangers'] text-lg px-6 py-3 bg-[#F7C600] text-black rounded-full border-3 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all transform rotate-1"
             >
               Buy Tickets
             </a>
-            <p className="font-['Poppins'] text-base text-gray-700 leading-relaxed">
+            <p className="font-['Poppins'] text-base text-gray-700 leading-relaxed mb-4">
               Please also read the general terms and conditions. Failing to follow them can result in denied access to the festival grounds.
             </p>
+            <button
+              onClick={() => setShowTerms(true)}
+              className="inline-block font-['Bangers'] text-lg px-6 py-3 bg-[#E6392F] text-white rounded-full border-3 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all transform rotate-1"
+            >
+              View Terms & Conditions
+            </button>
           </div>
 
           <div className="bg-white rounded-3xl border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-8 transform -rotate-1">
@@ -214,6 +230,49 @@ export default function Info() {
             </Button>
           </div>
         </section>
+
+        {/* Terms and Conditions Modal */}
+        <Dialog open={showTerms} onOpenChange={setShowTerms}>
+          <DialogContent className="max-h-[80vh] overflow-y-auto max-w-4xl bg-white">
+            <DialogHeader>
+              <DialogTitle className="text-2xl font-bold">General Terms and Conditions</DialogTitle>
+              <DialogClose />
+            </DialogHeader>
+            <div className="font-['Poppins'] text-sm text-gray-700 space-y-4">
+              <div>
+                <h3 className="font-bold text-lg mb-2">Living Dub Festival Terms and Conditions</h3>
+                <p className="mb-2">2026</p>
+              </div>
+
+              <ol className="space-y-3 list-decimal list-inside">
+                <li>Festival tickets are non-refundable and cannot be exchanged for tickets to another event.</li>
+                <li>Loss or theft of the festival ticket is the responsibility of the purchaser and does not entitle replacement or refund.</li>
+                <li>It is not permitted to bring professional photography, film and recording equipment to the festival grounds. Beverages, glass objects, plastic bottles, cans, drugs, fireworks, weapons, sharp objects or other objects deemed dangerous by the organization are prohibited on the festival grounds. Security personnel will confiscate these items at the entrance. This list is not exhaustive and may be supplemented at any time.</li>
+                <li>It is strictly forbidden to make open fires on the festival grounds or camping areas. This includes the use of BBQs, campfires, gas fires, etc. This list is not limitative.</li>
+                <li>By entering the festival grounds, you agree to all preventive and controlling measures taken by the organization or security team. This includes, among other things, that your pockets and bags can be checked and that you can be frisked by a security officer. Failure to comply with these measures will result in denial of access to the festival grounds.</li>
+                <li>Do not buy festival tickets on the street. These tickets may be counterfeit. Only buy festival tickets through official websites.</li>
+                <li>Neither the artists and the organization of the festival, nor the Belgian Railways, nor bus companies are liable for damage, loss or theft, or for any accident that may occur on the way to the festival.</li>
+                <li>Official sales of T-shirts and souvenirs are only possible within the festival grounds.</li>
+                <li>Festival tickets may not be used for commercial or promotional purposes unless authorized by the organization. It is forbidden to engage in any form of promotional or commercial activity on the festival grounds without prior authorization from the organization.</li>
+                <li>The ticket purchaser must comply with the 'Belgian law concerning the sale of event tickets'. 'The law concerning the sale of access tickets to events (BS 30 July 2013).'</li>
+                <li>Changes in the line-up have no consequences for the festival ticket, whole or in part. The organization is not responsible for changes due to force majeure.</li>
+                <li>Since the event takes place outdoors, the organization wishes to draw your attention to possible risks for which we disclaim all liability.</li>
+                <li>Illegal copying of the festival ticket will be prosecuted by law.</li>
+                <li>The organization cannot be held liable for any damage, loss or theft on the camping grounds.</li>
+                <li>Recordings and photographs are taken during the festival. It is possible that you will be filmed. By entering the festival, you waive your portrait rights.</li>
+                <li>The organization and/or the official distributor of the festival tickets reserves the right to verify the identity of each festival visitor.</li>
+                <li>Living Dub Festival welcomes everyone, regardless of race, origin, gender, sexual orientation or religion. Any form of disrespect towards others will have legal consequences.</li>
+                <li>Alcohol is sold exclusively to persons aged 16 years or older. Spirits are sold exclusively to persons aged 18 years or older. You may be asked to provide proof of identity. If you refuse, the organization may deny the sale.</li>
+                <li>Animals are not allowed on the festival grounds and camping because they pose a potential risk to the public and to each other. This will be monitored at the entrance. Exceptions are made for guide dogs and service dogs.</li>
+                <li>For safety reasons, backpacks are not allowed at Living Dub Festival. An exception to this concerns the backpacks of our artists and stand holders. Furthermore, an exception is made for parents of young children (under 6 years old) because Living Dub Festival positions itself as a family festival and these children sometimes need extra items that are not available on the festival grounds. Security at the entrance will strictly monitor this. What is allowed are small handbags, pouches or waist bags so that the most valuable items can be kept with you.</li>
+                <li>The organization cannot in any way be held liable for matters arising from the behavior of visitors. Visitors bear full responsibility for the consequences of their behavior.</li>
+                <li>Visitors commit to minimizing noise on the camping site. This includes a ban on amplified sound systems after festival closing hours.</li>
+                <li>When purchasing a 'Children under 12 years old' ticket, a check will be performed at the entrance to the festival grounds. Ticket holders must present their birth certificate or other legitimate document with their child's date of birth before access is granted.</li>
+                <li>The organization reserves the right to deny access to the festival grounds and the entire site to anyone who violates these terms and conditions, regardless of ticket purchase.</li>
+              </ol>
+            </div>
+          </DialogContent>
+        </Dialog>
       </div>
     </div>
   );

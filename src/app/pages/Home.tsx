@@ -118,7 +118,7 @@ export default function Home() {
               View Line-up
             </Button>
             <Button
-              href="https://example.com/tickets"
+              href="https://living-dub-festival-2026.eventsquare.store/"
               external
               variant="outline"
               className="hover:bg-[#0F744C]"
@@ -274,7 +274,7 @@ export default function Home() {
           <p className="font-['Poppins'] text-xl text-white mb-8">
             Secure your place at Living Dub Festival 2026
           </p>
-          <Button href="https://example.com/tickets" external variant="primary">
+          <Button href="https://living-dub-festival-2026.eventsquare.store/" external variant="primary">
             Get Your Tickets Now
           </Button>
         </div>
