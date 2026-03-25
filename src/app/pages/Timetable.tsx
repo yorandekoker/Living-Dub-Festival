@@ -58,7 +58,8 @@ export default function Timetable() {
         stage: "Wooden Roots Floor",
         time: "14:00 – 20:00",
         color: "#E6392F",
-        playingAgainst: "Guiding Youth (TO BE ANNOUNCED) & Selah Techniques ft. Della",
+        playingAgainst:
+          "Guiding Youth (TO BE ANNOUNCED) & Selah Techniques ft. Della",
       },
       {
         artist: "Ital Brew",
@@ -73,12 +74,6 @@ export default function Timetable() {
         time: "20:00 – 23:00",
         color: "#E6392F",
         playingAgainst: "Ital Brew",
-      },
-      {
-        artist: "Dreadical Warriors",
-        stage: "Steppin' Grass Field",
-        time: "16:00 – 22:00",
-        color: "#138A5A",
       },
       {
         artist: "Steppin' Ground ft. Ras TimBo",
@@ -757,9 +752,9 @@ export default function Timetable() {
               <span className="font-['Bangers'] text-sm">UPCOMING</span>
             </div>
             <h3 className="font-['Fredoka'] text-2xl mb-2 leading-snug">
-              Living Dub 6.0, hosted by Drijfkracht Soundsystem - Spring
-              Equinox Celebration with Crucial Soundsystem (warming up by
-              Untzslag) - 't Pand (21/03/2026)
+              Living Dub 6.0, hosted by Drijfkracht Soundsystem - Spring Equinox
+              Celebration with Crucial Soundsystem (warming up by Untzslag) - 't
+              Pand (21/03/2026)
             </h3>
           </div>
         </div>

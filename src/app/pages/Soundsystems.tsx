@@ -28,13 +28,6 @@ export default function Soundsystems() {
       color: "#E6392F",
     },
     {
-      name: "Dreadical Warriors Soundsystem",
-      description:
-        "Warriors of the bass. Bringing militant dub and steppers riddims.",
-      style: "Steppers & Dub",
-      color: "#F48C06",
-    },
-    {
       name: "Jahmateur Hi Power Soundsystem",
       description:
         "High power, high energy. Modern dub with serious bass weight.",

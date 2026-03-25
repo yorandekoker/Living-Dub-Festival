@@ -20,7 +20,6 @@ export default function Lineup() {
   ];
 
   const steppinGrassField = [
-    "Dreadical Warriors",
     "Steppin' Ground",
     "Jahmateur Hi Power",
     "Bloodhound",
