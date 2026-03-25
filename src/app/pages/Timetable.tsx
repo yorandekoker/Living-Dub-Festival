@@ -47,7 +47,7 @@ export default function Timetable() {
   > = {
     friday: [
       {
-        artist: "Guiding Youth & Selah Techniques ft. Della",
+        artist: "Guiding Youth (TO BE ANNOUNCED) & Selah Techniques ft. Della",
         stage: "Wooden Roots Floor",
         time: "14:00 – 20:00",
         color: "#E6392F",
@@ -58,7 +58,7 @@ export default function Timetable() {
         stage: "Wooden Roots Floor",
         time: "14:00 – 20:00",
         color: "#E6392F",
-        playingAgainst: "Guiding Youth & Selah Techniques ft. Della",
+        playingAgainst: "Guiding Youth (TO BE ANNOUNCED) & Selah Techniques ft. Della",
       },
       {
         artist: "Ital Brew",

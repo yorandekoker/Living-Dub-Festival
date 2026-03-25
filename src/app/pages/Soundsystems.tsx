@@ -28,13 +28,6 @@ export default function Soundsystems() {
       color: "#E6392F",
     },
     {
-      name: "Guiding Youth Soundsystem",
-      description:
-        "Young energy meets classic soundsystem culture. Fresh perspectives on traditional vibes.",
-      style: "Roots Reggae",
-      color: "#138A5A",
-    },
-    {
       name: "Dreadical Warriors Soundsystem",
       description:
         "Warriors of the bass. Bringing militant dub and steppers riddims.",

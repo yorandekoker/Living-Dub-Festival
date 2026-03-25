@@ -3,7 +3,7 @@ import { getCrewImage, getWorkshopImage } from "../utils/imageLookup";
 
 export default function Lineup() {
   const woodenRootsFloor = [
-    "Guiding Youth & Selah Techniques",
+    "Guiding Youth (TO BE ANNOUNCED) & Selah Techniques",
     "Creativ Dubs",
     "Ital Brew",
     "Little Man",
