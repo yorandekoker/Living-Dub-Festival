@@ -83,6 +83,13 @@ export default function Soundsystems() {
       style: "Dub & Steppers",
       color: "#138A5A",
     },
+    {
+      name: "Not Surrender Soundsystem",
+      description:
+        "Steadfast roots pressure and militant dub vibrations. Built for unity, resistance, and heavyweight sessions.",
+      style: "Roots & Steppers",
+      color: "#F48C06",
+    },
   ];
 
   return (
