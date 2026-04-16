@@ -32,7 +32,8 @@ interface ArtistDetail {
 }
 
 const timetableArtistAliases: Record<string, string> = {
-  "UFO Collective": "UFO Collective (Unlisted Fanatic, MariJah & Moonshine Horns)",
+  "UFO Collective":
+    "UFO Collective (Unlisted Fanatic, MariJah & Moonshine Horns)",
 };
 
 export default function Timetable() {
