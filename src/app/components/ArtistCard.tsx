@@ -17,6 +17,8 @@ export default function ArtistCard({
   onClick,
   imageSrc,
 }: ArtistCardProps) {
+  const shouldContainImage = /sotabosc|sotobosc/i.test(name);
+
   return (
     <div
       onClick={onClick}
@@ -28,7 +30,11 @@ export default function ArtistCard({
           <ImageWithFallback
             src={imageSrc}
             alt={name}
-            className="w-full h-full object-cover object-center"
+            className={`w-full h-full ${
+              shouldContainImage
+                ? "object-contain bg-white p-1"
+                : "object-cover object-center"
+            }`}
           />
         ) : (
           <div

@@ -10,8 +10,6 @@ import { getSoundsystemImage } from "../utils/imageLookup";
 
 interface SoundsystemItem {
   name: string;
-  description: string;
-  style: string;
   color: string;
 }
 
@@ -22,73 +20,51 @@ export default function Soundsystems() {
   const soundsystems = [
     {
       name: "Ital Brew Soundsystem",
-      description:
-        "Heavyweight roots and dub from the heart. Known for deep bass and conscious selection.",
-      style: "Roots & Dub",
       color: "#E6392F",
     },
     {
       name: "Jahmateur Hi Power Soundsystem",
-      description:
-        "High power, high energy. Modern dub with serious bass weight.",
-      style: "Hi-Power Dub",
       color: "#2EC4B6",
     },
     {
       name: "Steppin' Ground Soundsystem",
-      description:
-        "Natural steppers vibes. Grounded in roots, reaching for the sky.",
-      style: "Steppers",
       color: "#F7C600",
     },
     {
       name: "Tune Soundsystem",
-      description:
-        "Pure vibes and selection. Tuned to perfection, playing the finest cuts.",
-      style: "Selection Culture",
       color: "#E6392F",
     },
     {
       name: "Drijfkracht Soundsystem",
-      description:
-        "Driving force in the scene. Pushing the culture forward with heavyweight sound.",
-      style: "Dub & Roots",
       color: "#138A5A",
     },
     {
       name: "Saga Sound Station",
-      description:
-        "Every set tells a story. Journey through reggae, dub, and beyond.",
-      style: "Reggae & Dub",
       color: "#F48C06",
     },
     {
       name: "Untzslag Soundsystem",
-      description:
-        "Conscious lyrics and deep bass. Sound clash ready with heavyweight selection.",
-      style: "Soundclash Specialists",
       color: "#2EC4B6",
     },
     {
       name: "Unification Soundsystem",
-      description:
-        "Bringing people together through music. Unity is strength, music is the weapon.",
-      style: "Roots & Culture",
       color: "#E6392F",
     },
     {
       name: "Crucial Soundsystem",
-      description:
-        "Essential vibes only. Crucial cuts and heavyweight dubplates.",
-      style: "Dub & Steppers",
       color: "#138A5A",
     },
     {
       name: "Not Surrender Soundsystem",
-      description:
-        "Steadfast roots pressure and militant dub vibrations. Built for unity, resistance, and heavyweight sessions.",
-      style: "Roots & Steppers",
       color: "#F48C06",
+    },
+    {
+      name: "Moksha Vibrations Soundsystem",
+      color: "#2EC4B6",
+    },
+    {
+      name: "Break Bread Soundsystem",
+      color: "#138A5A",
     },
   ];
 
@@ -146,23 +122,12 @@ export default function Soundsystems() {
                 )}
               </div>
 
-              <div
-                className="inline-block px-3 py-1 rounded-lg border-2 border-black mb-3 font-['Fredoka'] text-sm font-bold text-white"
-                style={{ backgroundColor: soundsystem.color }}
-              >
-                {soundsystem.style}
-              </div>
-
               <h3
                 className="font-['Fredoka'] text-xl font-bold mb-2"
                 style={{ color: soundsystem.color }}
               >
                 {soundsystem.name}
               </h3>
-
-              <p className="font-['Poppins'] text-sm text-gray-700 leading-relaxed">
-                {soundsystem.description}
-              </p>
             </div>
           ))}
         </div>

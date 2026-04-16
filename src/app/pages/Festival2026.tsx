@@ -7,7 +7,7 @@ export default function Festival2026() {
     {
       name: "Wooden Roots Floor",
       description:
-        "The main indoor stage featuring heavyweight soundsystem clashes and roots reggae sessions. Deep bass, conscious lyrics, and authentic dub culture. This is where the heaviest riddims drop and the deepest vibes flow.",
+        "The main indoor stage featuring soundsystem clashes and roots reggae sessions. On Sunday we dedicate this stage to local artists from Evergem.",
       color: "#E6392F",
       rotation: "-1.5deg",
       imageSrc: "/images/stages/wooden roots floor.jpg",
@@ -15,7 +15,7 @@ export default function Festival2026() {
     {
       name: "Steppin' Grass Field",
       description:
-        "Open-air soundsystem stage on the grass field. Dance under the sky, feel the earth beneath your feet, and step to the natural rhythm. A perfect blend of nature and bass culture.",
+        "Outdoor soundsystem main stage on the grass field. Dance under the sky, feel the earth beneath your feet, and step to the natural rhythm.",
       color: "#138A5A",
       rotation: "1deg",
       imageSrc: "/images/stages/steppin grass field.avif",
@@ -23,7 +23,7 @@ export default function Festival2026() {
     {
       name: "Irie Knowledge Hut",
       description:
-        "Community learning and healing space. Join workshops in henna art, yoga, meditation, graffiti, fire dance, and more. A sanctuary for creative expression, personal growth, and community connection.",
+        "Community learning space. Join workshops in henna art, yoga, meditation, graffiti and more. Or watch a fire dance or artistic performances. A place for creative expression and community connection.",
       color: "#F7C600",
       rotation: "-0.5deg",
       imageSrc:
@@ -80,7 +80,7 @@ export default function Festival2026() {
                       Location
                     </h4>
                     <p className="font-['Poppins'] text-lg text-gray-700">
-                      Beautiful Natural Grounds
+                      Schroonhoek Sleidinge
                     </p>
                     <p className="font-['Poppins'] text-sm text-gray-600">
                       Full details shared with ticket holders
@@ -95,7 +95,7 @@ export default function Festival2026() {
                       Music
                     </h4>
                     <p className="font-['Poppins'] text-lg text-gray-700">
-                      Reggae, Dub & Soundsystem Culture
+                      Local artists in rap, jazz, pop & local DJ's
                     </p>
                   </div>
                 </div>
@@ -107,7 +107,7 @@ export default function Festival2026() {
                       Camping
                     </h4>
                     <p className="font-['Poppins'] text-lg text-gray-700">
-                      On-site camping available
+                      On-site free camping available
                     </p>
                   </div>
                 </div>
@@ -115,8 +115,8 @@ export default function Festival2026() {
 
               <p className="font-['Poppins'] text-base leading-relaxed text-gray-700 mb-6">
                 Three days of heavyweight dub, roots reggae, soundsystem
-                culture, workshops, healing arts, and community connection in a
-                beautiful natural setting.
+                culture, workshops and community connection in a beautiful
+                natural setting.
               </p>
 
               <Button
@@ -193,7 +193,7 @@ export default function Festival2026() {
                 Authentic Soundsystem Culture
               </h4>
               <p className="font-['Poppins'] text-base leading-relaxed text-gray-700">
-                Experience the true power of dub with heavyweight soundsystems,
+                Experience the true power of dub with soundsystems,
                 soundclashes, and sessions from the best selectors and operators
                 in the scene.
               </p>
@@ -218,8 +218,8 @@ export default function Festival2026() {
               </h4>
               <p className="font-['Poppins'] text-base leading-relaxed text-gray-700">
                 Beyond the music, expand your horizons with yoga, meditation,
-                art workshops, henna, fire dance, and more at the Irie Knowledge
-                Hut.
+                art workshops, henna and more or watch performances like fire
+                dance, or art at the Irie Knowledge Hut.
               </p>
             </div>
 

@@ -54,6 +54,14 @@ export default function Footer() {
               </li>
               <li>
                 <Link
+                  to="/events"
+                  className="font-['Poppins'] text-sm hover:text-[#F7C600] transition-colors"
+                >
+                  Events
+                </Link>
+              </li>
+              <li>
+                <Link
                   to="/lineup"
                   className="font-['Poppins'] text-sm hover:text-[#F7C600] transition-colors"
                 >
@@ -106,13 +114,30 @@ export default function Footer() {
             >
               Contact Us
             </Link>
+            <div className="mt-4">
+              <p className="font-['Poppins'] text-xs opacity-90">
+                Living Dub VZW
+              </p>
+              <p className="font-['Poppins'] text-xs opacity-90">
+                Emeric De Bruynelaan 36
+              </p>
+              <p className="font-['Poppins'] text-xs opacity-90">
+                9940 Sleidinge
+              </p>
+              <p className="font-['Poppins'] text-xs mt-2 opacity-80">
+                Tel: gsm-nummer
+              </p>
+              <p className="font-['Poppins'] text-xs opacity-80">
+                BE1035417689
+              </p>
+            </div>
           </div>
         </div>
 
         {/* Copyright */}
         <div className="border-t-2 border-white/20 mt-8 pt-8 text-center">
           <p className="font-['Poppins'] text-sm">
-            © 2026 Living Dub. All rights reserved.
+            © 2026 Living Dub VZW. All rights reserved.
           </p>
           <p className="font-['Poppins'] text-xs mt-1 opacity-90">
             Developed by Yoran Dekoker

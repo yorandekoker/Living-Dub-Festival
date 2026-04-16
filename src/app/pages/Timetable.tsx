@@ -8,6 +8,10 @@ import {
 import Button from "../components/Button";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import { getCrewImage, getWorkshopImage } from "../utils/imageLookup";
+import {
+  artistDescriptions,
+  workshopDescriptions,
+} from "../utils/festivalDescriptions";
 
 interface TimetableEvent {
   artist: string;
@@ -47,7 +51,7 @@ export default function Timetable() {
   > = {
     friday: [
       {
-        artist: "Selah Techniques ft. Della",
+        artist: "Break Bread",
         stage: "Wooden Roots Floor",
         time: "14:00 – 20:00",
         color: "#E6392F",
@@ -58,21 +62,13 @@ export default function Timetable() {
         stage: "Wooden Roots Floor",
         time: "14:00 – 20:00",
         color: "#E6392F",
-        playingAgainst: "Selah Techniques ft. Della",
+        playingAgainst: "Break Bread",
       },
       {
         artist: "Ital Brew",
         stage: "Wooden Roots Floor",
         time: "20:00 – 23:00",
         color: "#E6392F",
-        playingAgainst: "Little Man",
-      },
-      {
-        artist: "Little Man",
-        stage: "Wooden Roots Floor",
-        time: "20:00 – 23:00",
-        color: "#E6392F",
-        playingAgainst: "Ital Brew",
       },
       {
         artist: "Steppin' Ground ft. Ras TimBo",
@@ -201,9 +197,15 @@ export default function Timetable() {
         color: "#E6392F",
       },
       {
-        artist: "MITCH & Paleo",
+        artist: "Paleo",
         stage: "Wooden Roots Floor",
-        time: "16:15 – 17:15",
+        time: "16:15 – 16:45",
+        color: "#E6392F",
+      },
+      {
+        artist: "Mitch",
+        stage: "Wooden Roots Floor",
+        time: "16:45 – 17:15",
         color: "#E6392F",
       },
       {
@@ -351,6 +353,9 @@ export default function Timetable() {
 
   const handleArtistClick = (event: TimetableEvent) => {
     const imageSrc = getCrewImage(event.artist);
+    const description =
+      artistDescriptions[event.artist] ??
+      `Experience ${event.artist} bringing dub and roots reggae vibes to ${event.stage}.`;
 
     setSelectedArtist({
       name: event.artist,
@@ -358,18 +363,22 @@ export default function Timetable() {
       time: `${activeDay.toUpperCase().slice(0, 3)} ${event.time}`,
       color: event.color,
       playingAgainst: event.playingAgainst,
-      description: `Experience ${event.artist} bringing dub and roots reggae vibes to ${event.stage}.`,
+      description,
       imageSrc,
     });
   };
 
   const handleWorkshopClick = (event: TimetableEvent) => {
+    const description =
+      workshopDescriptions[event.artist] ??
+      `Join ${event.artist} at ${event.stage} for a creative festival workshop experience.`;
+
     setSelectedWorkshop({
       name: event.artist,
       stage: event.stage,
       time: `${activeWorkshopDay.toUpperCase().slice(0, 3)} ${event.time}`,
       color: event.color,
-      description: `Join ${event.artist} at ${event.stage} for a creative and mindful festival workshop experience.`,
+      description,
       imageSrc: getWorkshopImage(event.artist),
     });
   };
@@ -439,59 +448,67 @@ export default function Timetable() {
 
         {/* Timetable Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {timetableData[activeDay].map((event, index) => (
-            <div
-              key={index}
-              onClick={() => handleArtistClick(event)}
-              className="bg-white rounded-2xl border-3 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-4 sm:p-6 max-h-[78vh] sm:max-h-none overflow-y-auto hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-all cursor-pointer"
-              style={{ transform: `rotate(${Math.random() * 2 - 1}deg)` }}
-            >
-              <div className="w-full h-44 sm:h-[16.5rem] rounded-xl border-2 border-black mb-3 overflow-hidden bg-gray-100">
-                {getCrewImage(event.artist) ? (
-                  <ImageWithFallback
-                    src={getCrewImage(event.artist) ?? ""}
-                    alt={event.artist}
-                    className="w-full h-full object-cover object-center"
-                  />
-                ) : (
-                  <div
-                    className="w-full h-full flex items-center justify-center font-['Bangers'] text-xl text-white"
-                    style={{ backgroundColor: event.color }}
-                  >
-                    {event.artist}
-                  </div>
+          {timetableData[activeDay].map((event, index) => {
+            const shouldContainImage = /sotabosc|sotobosc/i.test(event.artist);
+
+            return (
+              <div
+                key={index}
+                onClick={() => handleArtistClick(event)}
+                className="bg-white rounded-2xl border-3 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-4 sm:p-6 max-h-[78vh] sm:max-h-none overflow-y-auto hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-all cursor-pointer"
+                style={{ transform: `rotate(${Math.random() * 2 - 1}deg)` }}
+              >
+                <div className="w-full h-44 sm:h-[16.5rem] rounded-xl border-2 border-black mb-3 overflow-hidden bg-gray-100">
+                  {getCrewImage(event.artist) ? (
+                    <ImageWithFallback
+                      src={getCrewImage(event.artist) ?? ""}
+                      alt={event.artist}
+                      className={`w-full h-full ${
+                        shouldContainImage
+                          ? "object-contain bg-white p-1"
+                          : "object-cover object-center"
+                      }`}
+                    />
+                  ) : (
+                    <div
+                      className="w-full h-full flex items-center justify-center font-['Bangers'] text-xl text-white"
+                      style={{ backgroundColor: event.color }}
+                    >
+                      {event.artist}
+                    </div>
+                  )}
+                </div>
+
+                {/* Time */}
+                <div
+                  className="inline-block px-3 py-1 rounded-lg border-2 border-black mb-3 font-['Fredoka'] text-sm font-bold text-white"
+                  style={{ backgroundColor: event.color }}
+                >
+                  {event.time}
+                </div>
+
+                {/* Artist Name */}
+                <h3
+                  className="font-['Fredoka'] text-lg sm:text-xl font-bold mb-2 break-words"
+                  style={{ color: event.color }}
+                >
+                  {event.artist}
+                </h3>
+
+                {/* Stage */}
+                <p className="font-['Poppins'] text-sm text-gray-600 mb-2">
+                  📍 {event.stage}
+                </p>
+
+                {/* Playing Against (Clash) */}
+                {event.playingAgainst && (
+                  <p className="font-['Poppins'] text-xs text-gray-500 italic break-words">
+                    vs. {event.playingAgainst}
+                  </p>
                 )}
               </div>
-
-              {/* Time */}
-              <div
-                className="inline-block px-3 py-1 rounded-lg border-2 border-black mb-3 font-['Fredoka'] text-sm font-bold text-white"
-                style={{ backgroundColor: event.color }}
-              >
-                {event.time}
-              </div>
-
-              {/* Artist Name */}
-              <h3
-                className="font-['Fredoka'] text-lg sm:text-xl font-bold mb-2 break-words"
-                style={{ color: event.color }}
-              >
-                {event.artist}
-              </h3>
-
-              {/* Stage */}
-              <p className="font-['Poppins'] text-sm text-gray-600 mb-2">
-                📍 {event.stage}
-              </p>
-
-              {/* Playing Against (Clash) */}
-              {event.playingAgainst && (
-                <p className="font-['Poppins'] text-xs text-gray-500 italic break-words">
-                  vs. {event.playingAgainst}
-                </p>
-              )}
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Artist Detail Modal */}
@@ -499,7 +516,7 @@ export default function Timetable() {
           open={selectedArtist !== null}
           onOpenChange={() => setSelectedArtist(null)}
         >
-          <DialogContent className="bg-white rounded-3xl border-4 border-black shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] max-w-md">
+          <DialogContent className="bg-white rounded-3xl border-4 border-black shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] max-w-md max-h-[85vh] overflow-hidden">
             <DialogHeader>
               <DialogTitle className="font-['Bangers'] text-3xl text-[#E6392F]">
                 {selectedArtist?.name}
@@ -507,13 +524,17 @@ export default function Timetable() {
             </DialogHeader>
 
             {selectedArtist && (
-              <div className="space-y-4">
+              <div className="space-y-4 max-h-[70vh] overflow-y-auto pr-1">
                 <div className="w-full h-72 rounded-2xl border-2 border-black overflow-hidden bg-gray-100">
                   {selectedArtist.imageSrc ? (
                     <ImageWithFallback
                       src={selectedArtist.imageSrc}
                       alt={selectedArtist.name}
-                      className="w-full h-full object-cover object-center"
+                      className={`w-full h-full ${
+                        /sotabosc|sotobosc/i.test(selectedArtist.name)
+                          ? "object-contain bg-white p-1"
+                          : "object-cover object-center"
+                      }`}
                     />
                   ) : (
                     <div
@@ -556,7 +577,7 @@ export default function Timetable() {
                   )}
                 </div>
 
-                <p className="font-['Poppins'] text-sm text-gray-700 leading-relaxed">
+                <p className="font-['Poppins'] text-sm text-gray-700 leading-relaxed whitespace-pre-line">
                   {selectedArtist.description}
                 </p>
               </div>
@@ -659,7 +680,7 @@ export default function Timetable() {
             open={selectedWorkshop !== null}
             onOpenChange={() => setSelectedWorkshop(null)}
           >
-            <DialogContent className="bg-white rounded-3xl border-4 border-black shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] max-w-md">
+            <DialogContent className="bg-white rounded-3xl border-4 border-black shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] max-w-md max-h-[85vh] overflow-hidden">
               <DialogHeader>
                 <DialogTitle className="font-['Bangers'] text-3xl text-[#F7C600]">
                   {selectedWorkshop?.name}
@@ -667,7 +688,7 @@ export default function Timetable() {
               </DialogHeader>
 
               {selectedWorkshop && (
-                <div className="space-y-4">
+                <div className="space-y-4 max-h-[70vh] overflow-y-auto pr-1">
                   <div className="w-full h-72 rounded-2xl border-2 border-black overflow-hidden bg-gray-100">
                     {selectedWorkshop.imageSrc ? (
                       <ImageWithFallback
@@ -702,7 +723,7 @@ export default function Timetable() {
                     </div>
                   </div>
 
-                  <p className="font-['Poppins'] text-sm text-gray-700 leading-relaxed">
+                  <p className="font-['Poppins'] text-sm text-gray-700 leading-relaxed whitespace-pre-line">
                     {selectedWorkshop.description}
                   </p>
                 </div>
@@ -710,71 +731,6 @@ export default function Timetable() {
             </DialogContent>
           </Dialog>
         </section>
-      </div>
-
-      {/* Upcoming Events Section */}
-      <div className="max-w-6xl mx-auto px-4 mt-20">
-        <div className="text-center mb-12">
-          <h2
-            className="font-['Bangers'] text-5xl mb-4 transform -rotate-1 inline-block"
-            style={{
-              color: "#138A5A",
-              textShadow: "4px 4px 0px rgba(0,0,0,0.2)",
-            }}
-          >
-            Upcoming Events
-          </h2>
-          <p className="font-['Poppins'] text-lg text-gray-700 max-w-2xl mx-auto">
-            Join us at our next Living Dub gathering and celebrate the spring
-            equinox with soundsystem culture and community.
-          </p>
-        </div>
-
-        {/* Upcoming Event Card */}
-        <div className="max-w-3xl mx-auto">
-          <div
-            className="bg-white p-6 rounded-2xl border-3 border-black transform hover:scale-[1.01] transition-transform"
-            style={{
-              boxShadow: "6px 6px 0px rgba(0,0,0,0.3)",
-              transform: "rotate(-0.4deg)",
-            }}
-          >
-            <div className="w-full rounded-2xl border-3 border-black overflow-hidden mb-5">
-              <ImageWithFallback
-                src="/images/events/living dub 6.0.jpg"
-                alt="Living Dub 6.0 event"
-                className="w-full h-auto object-contain object-center"
-              />
-            </div>
-
-            <div className="bg-[#E6392F] text-white px-4 py-2 rounded-full inline-block mb-3">
-              <span className="font-['Bangers'] text-sm">UPCOMING</span>
-            </div>
-            <h3 className="font-['Fredoka'] text-2xl mb-2 leading-snug">
-              Living Dub 6.0, hosted by Drijfkracht Soundsystem - Spring Equinox
-              Celebration with Crucial Soundsystem (warming up by Untzslag) - 't
-              Pand (21/03/2026)
-            </h3>
-          </div>
-        </div>
-
-        {/* Contact CTA */}
-        <div className="mt-12 text-center">
-          <div
-            className="bg-gradient-to-r from-[#E6392F] via-[#F7C600] to-[#138A5A] p-8 rounded-3xl border-3 border-black inline-block transform -rotate-1"
-            style={{
-              boxShadow: "8px 8px 0px rgba(0,0,0,0.3)",
-            }}
-          >
-            <p className="font-['Poppins'] text-white text-lg mb-4 max-w-2xl">
-              Want to stay updated on all our upcoming events? Follow us on
-              social media or join our mailing list.
-            </p>
-            <Button to="/contact" variant="primary">
-              Get in Touch
-            </Button>
-          </div>
-        </div>
       </div>
     </div>
   );

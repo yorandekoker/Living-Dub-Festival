@@ -9,7 +9,7 @@ export default function Home() {
     {
       name: "Wooden Roots Floor",
       description:
-        "The main stage featuring dub and roots reggae vibes. Where the deepest bass meets conscious lyrics.",
+        "The main stage featuring dub and roots reggae vibes. Where the deepest bass meets conscious lyrics. On Sunday we dedicate this stage to local artists from Evergem.",
       color: "#E6392F",
       rotation: "-1deg",
       imageSrc: "/images/stages/wooden roots floor.jpg",
@@ -17,7 +17,7 @@ export default function Home() {
     {
       name: "Steppin' Grass Field",
       description:
-        "Outdoor soundsystem stage on the grass. Feel the earth beneath your feet as you step to the riddim.",
+        "Outdoor soundsystem main stage on the grass field. Dance under the sky, feel the earth beneath your feet, and step to the natural rhythm.",
       color: "#138A5A",
       rotation: "1.5deg",
       imageSrc: "/images/stages/steppin grass field.avif",
@@ -25,7 +25,7 @@ export default function Home() {
     {
       name: "Irie Knowledge Hut",
       description:
-        "Community space for workshops, healing arts, and creative expression. Connect, learn, and grow together.",
+        "Community learning space. Join workshops in henna art, yoga, meditation, graffiti and more. Or watch a fire dance or artistic performances. A place for creative expression and community connection.",
       color: "#F7C600",
       rotation: "-0.5deg",
       imageSrc:
@@ -40,7 +40,7 @@ export default function Home() {
       time: "Friday 15:00 – 17:00",
       color: "#E6392F",
     },
-    { title: "Yoga Flow", time: "Saturday 10:00 – 11:30", color: "#138A5A" },
+    { title: "Yoga Flow", time: "Saturday 13:15 – 14:15", color: "#138A5A" },
     {
       title: "Meditation",
       imageKey: "Mindfulness / Meditation",
@@ -173,7 +173,7 @@ export default function Home() {
               description={stage.description}
               color={stage.color}
               rotation={stage.rotation}
-              linkTo="/festival-2026"
+              linkTo="/timetable"
               imageSrc={stage.imageSrc}
             />
           ))}

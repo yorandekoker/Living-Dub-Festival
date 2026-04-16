@@ -70,6 +70,7 @@ export default function Info() {
               <li>€25 = day ticket</li>
               <li>€5 = parking</li>
               <li>€5 = campervan-camping</li>
+              <li>€5 = bus Sleidinge Station - Festival</li>
               <li>FREE = camping</li>
               <li>FREE = children under 12 (with valid proof of age)</li>
               <li>
@@ -101,21 +102,6 @@ export default function Info() {
             </button>
           </div>
 
-          <div className="bg-white rounded-3xl border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-8 transform -rotate-1">
-            <h3 className="font-['Fredoka'] text-2xl font-bold text-[#E6392F] mb-4">
-              Taxi
-            </h3>
-            <p className="font-['Poppins'] text-base text-gray-700 leading-relaxed">
-              Under the motto 'Safe Home', Living Dub Festival partnered with
-              V-Tax. When buying your ticket, you can also purchase an
-              affordable taxi ticket from Gent-Sint-Pieters to the festival
-              grounds. This way, you do not have to carry all your belongings on
-              public transport. You can also share the ride with others, which
-              is both more affordable and more ecological. Do not hesitate and
-              travel safely with V-Tax!
-            </p>
-          </div>
-
           <div className="bg-white rounded-3xl border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-8 transform rotate-1">
             <h3 className="font-['Fredoka'] text-2xl font-bold text-[#F7C600] mb-4">
               Bicycle
@@ -132,42 +118,57 @@ export default function Info() {
             </p>
           </div>
 
+          {/* Temporarily hidden: keep this card in code, but do not show on the website. */}
+          {/*
           <div className="bg-white rounded-3xl border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-8 transform rotate-0.5">
             <h3 className="font-['Fredoka'] text-2xl font-bold text-[#138A5A] mb-4">
-              Public transport: bus
+              How to get there by public transport & The Living Dub Bus
             </h3>
             <p className="font-['Poppins'] text-base text-gray-700 mb-4 leading-relaxed">
-              Bus line 56 takes you from Ghent to Sleidinge village in about 25
-              minutes. From this bus stop, it is only ... minutes on foot to the
-              entrance of the festival grounds and camping area.
+              Met een combinatie van het openbaar vervoer en de bus die Living
+              Dub zal inleggen, bereik je makkelijk het festivalterrein. Kies of
+              je met De Lijn of met de trein naar Sleidinge station komt en neem
+              van hieraf vervolgens onze bus richting het festivalterrein en de
+              camping. Een heen- en terug kaartje kost slechts €5 en kan je
+              aankopen in onze ticketshop.
             </p>
-            <p className="font-['Poppins'] text-base text-gray-700 leading-relaxed">
-              Enter ... in your GPS or navigation app to get the exact route.
-              The entrance is located at the end of ..., so you will need to
-              walk through that street entirely.
+            <p className="font-['Poppins'] text-base text-gray-700 mb-4 leading-relaxed font-bold">
+              Belangrijk: de Living Dub Bus rijdt slechts op beperkte uren.
             </p>
-          </div>
+            <ul className="font-['Poppins'] text-base text-gray-700 space-y-1 list-disc list-inside mb-6">
+              <li>Vrijdag 03/07: tbc</li>
+              <li>Zaterdag 04/07: tbc</li>
+              <li>Zondag 05/07: tbc</li>
+              <li>Maandag 06/07: tbc</li>
+            </ul>
 
-          <div className="bg-white rounded-3xl border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-8 transform -rotate-0.5">
-            <h3 className="font-['Fredoka'] text-2xl font-bold text-[#2EC4B6] mb-4">
-              Public transport: train
-            </h3>
+            <h4 className="font-['Fredoka'] text-xl font-bold text-gray-800 mb-3">
+              Trein – NMBS
+            </h4>
             <p className="font-['Poppins'] text-base text-gray-700 mb-4 leading-relaxed">
-              You can also take the train from Ghent, or via Ghent as a transfer
-              stop (Gent-Sint-Pieters, Gentbrugge, or Gent-Dampoort), to
-              Sleidinge Station. Please keep in mind that from Sleidinge Station
-              it is still about a 30-minute walk to the festival grounds.
+              Vanaf zowel Gent-Sint-Pieters, Gentbrugge als Gent-Dampoort kan je
+              de trein richting Eeklo nemen en afstappen in Sleidinge. De
+              treinreis duurt ongeveer 25 minuten als je vertrekt vanuit
+              Gent-Sint-Pieters. De Living Dub Bus vertrekt aan het station van
+              Sleidinge.
             </p>
+
+            <h4 className="font-['Fredoka'] text-xl font-bold text-gray-800 mb-3">
+              Bus – De Lijn
+            </h4>
             <p className="font-['Poppins'] text-base text-gray-700 leading-relaxed">
-              Enter ... in your GPS or navigation app to get the exact route.
-              The entrance is located at the end of ..., so you will need to
-              walk through that street entirely.
+              Sleidinge is bereikbaar met Lijn 56. Deze vertrekt vanaf de halte
+              Gent Zuid en je dient af te stappen aan de halte Sleidinge
+              Wurmstraat. De rit duurt ongeveer 25 minuten. Van hieruit is het
+              nog 13 minuten stappen tot Sleidinge station, van waaruit de
+              Living Dub bus vertrekt.
             </p>
           </div>
+          */}
 
           <div className="bg-white rounded-3xl border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-8 transform rotate-1">
             <h3 className="font-['Fredoka'] text-2xl font-bold text-[#F7C600] mb-4">
-              Accessibility
+              Accessibility for persons with reduced mobility
             </h3>
             <p className="font-['Poppins'] text-base text-gray-700 leading-relaxed">
               Because Living Dub Festival wants to include everyone, we have
@@ -188,10 +189,30 @@ export default function Info() {
               following our policy. You can find it in the general terms and
               conditions available during ticket purchase.
             </p>
+            <p className="font-['Poppins'] text-base text-gray-700 mb-4 leading-relaxed">
+              Important camping rules:
+            </p>
+            <ul className="font-['Poppins'] text-base text-gray-700 space-y-2 list-disc list-inside mb-4">
+              <li>
+                No amplified music is allowed after festival hours until 07:00
+                in the morning.
+              </li>
+              <li>
+                No BBQs or other gas fires are allowed. Plenty of food options
+                are provided by us.
+              </li>
+              <li>No campfires are allowed.</li>
+            </ul>
             <p className="font-['Poppins'] text-base text-gray-700 leading-relaxed">
               You can find our general terms and conditions in the document
-              below. This document is still being finalized.
+              below.
             </p>
+            <button
+              onClick={() => setShowTerms(true)}
+              className="inline-block mt-4 font-['Bangers'] text-lg px-6 py-3 bg-[#138A5A] text-white rounded-full border-3 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all transform -rotate-1"
+            >
+              View Terms & Conditions
+            </button>
           </div>
 
           <div className="bg-white rounded-3xl border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-8 transform -rotate-0.5">
@@ -204,14 +225,17 @@ export default function Info() {
               children's garden (until 22:00 every day), and a bar.
             </p>
             <p className="font-['Poppins'] text-base text-gray-700 mb-4 leading-relaxed">
-              There are also three food trucks (Njam Njam Jamaica, De
-              Volxkeuken, and Pastakraam Matheus) and an organic ice
-              cream/dessert stand (Ni Amo).
+              There are also three food trucks (Njam Njam Jamaica, De Volxkeuken
+              and Strazoli) and an organic ice cream/dessert stand (Ni Amo).
             </p>
             <p className="font-['Poppins'] text-base text-gray-700 leading-relaxed">
               The festival grounds are also equipped with sufficient
-              gender-inclusive toilets.
-            </p>
+              gender-inclusive toilets and portable sinks.
+            </p>{" "}
+            <p className="font-['Poppins'] text-base text-gray-700 leading-relaxed">
+              A handwashing sink is also available on the festival grounds where
+              you can freshen up.
+            </p>{" "}
           </div>
 
           <div className="bg-white rounded-3xl border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-8 transform -rotate-1">
@@ -219,9 +243,14 @@ export default function Info() {
               Facilities on the camping area
             </h3>
             <p className="font-['Poppins'] text-base text-gray-700 leading-relaxed">
-              A camping bar is available on the campsite. Breakfast is also
+              An info point is available on the campsite. Breakfast is also
               served there on Saturday and Sunday morning from 09:00 to 11:00.
-              The camping area is also equipped with sufficient toilets.
+              The camping area is also equipped with sufficient toilets and
+              portable sinks.
+            </p>
+            <p className="font-['Poppins'] text-base text-gray-700 mt-4 leading-relaxed">
+              A handwashing sink is also available at the campsite where you can
+              freshen up.
             </p>
           </div>
 
@@ -277,6 +306,10 @@ export default function Info() {
             <h3 className="font-['Fredoka'] text-2xl font-bold text-[#E6392F] mb-4">
               Photography and videography
             </h3>
+            <p className="font-['Poppins'] text-sm text-gray-700 mb-4 leading-relaxed">
+              When buying a ticket you waive your portrait rights. This means
+              smile, you're on camera.
+            </p>
             <h4 className="font-['Fredoka'] text-xl font-bold text-gray-800 mb-3">
               Photography
             </h4>
@@ -293,6 +326,13 @@ export default function Info() {
               colorful lens, he captures spontaneity, connection, and unfiltered
               beauty.
             </p>
+            <div className="mb-6">
+              <img
+                src="/images/crews/fotograaf.jpg"
+                alt="Festival photographer Noah"
+                className="w-full max-w-[18rem] h-auto rounded-2xl border-3 border-black"
+              />
+            </div>
             <h4 className="font-['Fredoka'] text-xl font-bold text-gray-800 mb-3">
               Videography
             </h4>
@@ -306,6 +346,13 @@ export default function Info() {
               recently started studying videography at school to broaden his
               skills.
             </p>
+            <div className="mt-4">
+              <img
+                src="/images/crews/videograaf.jpg"
+                alt="Festival videographer Josse"
+                className="w-full max-w-xl h-auto rounded-2xl border-3 border-black"
+              />
+            </div>
           </div>
         </section>
 
@@ -500,6 +547,27 @@ export default function Info() {
                   these terms and conditions, regardless of ticket purchase.
                 </li>
               </ol>
+
+              <div className="pt-2">
+                <h4 className="font-bold text-base mb-2">
+                  Explicit Emphasis on Additional Camping Rules
+                </h4>
+                <p className="mb-2">
+                  We would like to emphasize the following camping rules once
+                  again:
+                </p>
+                <ul className="list-disc list-inside space-y-1">
+                  <li>
+                    No amplified music is allowed after festival hours until
+                    07:00 in the morning.
+                  </li>
+                  <li>
+                    No BBQs or other gas fires are allowed. We provide
+                    sufficient food options.
+                  </li>
+                  <li>No campfires are allowed.</li>
+                </ul>
+              </div>
             </div>
           </DialogContent>
         </Dialog>

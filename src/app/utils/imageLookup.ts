@@ -15,13 +15,22 @@ const buildMap = (pairs: Array<[string, string]>) =>
     pairs.map(([name, fileName]) => [normalizeKey(name), fileName]),
   );
 
+const mcsImageMap = buildMap([
+  ["MC Kingten", "kingten.jpg"],
+  ["MC Tubbie", "MC tubbie.jpg"],
+  ["Crownless I", "crownless.jpg"],
+]);
+
 const crewImageMap = buildMap([
   ["Guiding Youth", "guiding youth.jpg"],
+  ["Break Bread", "break bread.jpeg"],
+  ["Break Bread Soundsystem", "break bread.jpeg"],
   ["Creativ Dubs", "creative dubs.jpg"],
   ["Selah Techniques", "selah techniques.jpg"],
   ["Guiding Youth & Selah Techniques", "selah techniques.jpg"],
   ["Crucial", "crucial.jpg"],
   ["Deliverance", "deliverance.jpg"],
+  ["Della", "della.jpeg"],
   ["DJ Dede", "dj dédé.jpg"],
   ["DJ Seductive", "dj seductive.jpg"],
   ["DJ Ceductive", "dj seductive.jpg"],
@@ -33,6 +42,8 @@ const crewImageMap = buildMap([
   ["Little Man", "little man.jpg"],
   ["Lowie", "lowie.jpg"],
   ["MITCH and Paleo", "mitch&paleo.jpg"],
+  ["Mitch", "mitch.jpg"],
+  ["Paleo", "paleo.jpg"],
   ["MUDA @ Living Dub", "muda livingdub.png"],
   ["MUDA", "muda livingdub.png"],
   ["Moksha Vibrations", "moshka vibrations.jpg"],
@@ -54,16 +65,19 @@ const crewImageMap = buildMap([
 ]);
 
 const soundsystemImageMap = buildMap([
+  ["Break Bread Soundsystem", "Break bread soundsystem.jpg"],
   ["Crucial Soundsystem", "crucial soundsystem.jpg"],
   ["Dreadical Warriors Soundsystem", "dreadical warriors soundsystem.jpg"],
   ["Drijfkracht Soundsystem", "drijfkracht soundsystem.png"],
   ["Guiding Youth Soundsystem", "guiding youth soundsystem.jpg"],
   ["Ital Brew Soundsystem", "ital brew soundsystem.jpg"],
   ["Jahmateur Hi Power Soundsystem", "jahmateur hipower soundsystem.jpg"],
+  ["Moksha Vibrations Soundsystem", "moshka vibrations soundsystem.png"],
+  ["Moshka Vibrations Soundsystem", "moshka vibrations soundsystem.png"],
   ["Not Surrender Soundsystem", "not surrender soundsystem.jpg"],
   ["Saga Sound Station", "saga sound soundsystem.jpg"],
   ["Steppin Ground Soundsystem", "steppin ground soundsystem.png"],
-  ["Tune Soundsystem", "tune soundsystem.jpg"],
+  ["Tune Soundsystem", "tune soundsystem.jpeg"],
   ["Unification Soundsystem", "unification soundsystem.jpg"],
   ["Untzslag Soundsystem", "untzslag soundsystem.jpg"],
 ]);
@@ -75,7 +89,7 @@ const workshopImageMap = buildMap([
   ["Graffiti Workshop", "grafitti.png"],
   ["Roots and Colors: Graffiti Workshop", "grafitti.png"],
   ["Henna Workshop", "henna.png"],
-  ["Henna Tattoos", "henna.png"],
+  ["Henna Tattoos", "henna zetten.png"],
   ["Living Art", "living art.jpg"],
   ["Mindfulness / Meditation", "mindfulness.jpg"],
   ["Mindfulness & Meditatie", "mindfulness.jpg"],
@@ -94,6 +108,12 @@ const workshopImageMap = buildMap([
 
 export function getCrewImage(name: string): string | null {
   const normalizedName = normalizeKey(name);
+
+  const mcFileName = mcsImageMap[normalizedName];
+  if (mcFileName) {
+    return `/images/mcs/${mcFileName}`;
+  }
+
   const fileName = crewImageMap[normalizedName];
   if (fileName) {
     return `/images/crews/${fileName}`;
