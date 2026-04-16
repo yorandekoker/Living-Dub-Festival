@@ -50,7 +50,7 @@ export default function Festival2026() {
               <ImageWithFallback
                 src="/images/events/affiche festival.jpg"
                 alt="Living Dub Festival 2026"
-                className="w-full h-[500px] object-cover object-center rounded-3xl border-4 border-black shadow-[12px_12px_0px_0px_rgba(0,0,0,1)]"
+                className="block mx-auto h-[500px] w-auto max-w-full object-contain object-center border-4 border-black shadow-[12px_12px_0px_0px_rgba(0,0,0,1)]"
               />
             </div>
 
