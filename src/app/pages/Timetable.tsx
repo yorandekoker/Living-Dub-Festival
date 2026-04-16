@@ -31,6 +31,10 @@ interface ArtistDetail {
   imageSrc?: string | null;
 }
 
+const timetableArtistAliases: Record<string, string> = {
+  "UFO Collective": "UFO Collective (Unlisted Fanatic, MariJah & Moonshine Horns)",
+};
+
 export default function Timetable() {
   const [activeDay, setActiveDay] = useState<"friday" | "saturday" | "sunday">(
     "friday",
@@ -119,7 +123,7 @@ export default function Timetable() {
         playingAgainst: "Fishermen ft. Wiseman Jarne, Unification, Poa Annua",
       },
       {
-        artist: "UFO Collective (Unlisted Fanatic, MariJah & Moonshine Horns)",
+        artist: "UFO Collective",
         stage: "Wooden Roots Floor",
         time: "20:15 – 21:45",
         color: "#E6392F",
@@ -353,8 +357,9 @@ export default function Timetable() {
 
   const handleArtistClick = (event: TimetableEvent) => {
     const imageSrc = getCrewImage(event.artist);
+    const descriptionKey = timetableArtistAliases[event.artist] ?? event.artist;
     const description =
-      artistDescriptions[event.artist] ??
+      artistDescriptions[descriptionKey] ??
       `Experience ${event.artist} bringing dub and roots reggae vibes to ${event.stage}.`;
 
     setSelectedArtist({
@@ -503,7 +508,7 @@ export default function Timetable() {
                 {/* Playing Against (Clash) */}
                 {event.playingAgainst && (
                   <p className="font-['Poppins'] text-xs text-gray-500 italic break-words">
-                    vs. {event.playingAgainst}
+                    Playing against: {event.playingAgainst}
                   </p>
                 )}
               </div>

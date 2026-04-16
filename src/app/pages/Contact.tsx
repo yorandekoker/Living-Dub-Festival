@@ -214,34 +214,6 @@ export default function Contact() {
           </form>
         </section>
 
-        {/* Break Bread Section */}
-        <section className="mt-16 bg-white rounded-3xl border-4 border-black shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] p-8 md:p-10 transform rotate-1">
-          <h2 className="font-['Bangers'] text-4xl text-[#138A5A] mb-8 text-center">
-            Break Bread Soundsystem
-          </h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            {/* Crew Photo */}
-            <div className="bg-gray-200 rounded-2xl border-3 border-black aspect-square flex items-center justify-center">
-              <p className="font-['Poppins'] text-gray-600 text-center">
-                [Crew photo to be added: /images/crews/break-bread.jpg]
-              </p>
-            </div>
-
-            {/* Bio */}
-            <div>
-              <p className="font-['Poppins'] text-base text-gray-700 mb-4 leading-relaxed">
-                Break Bread Soundsystem is an Antwerp based sound founded by Jamie and Oscar, later joined by Luka and Dimi. Rooted in a strong sense of brotherhood, the name reflects the bond that connects us. Based on our common feelings around sharing, caring, and coming together through music and culture.
-              </p>
-              <p className="font-['Poppins'] text-base text-gray-700 mb-4 leading-relaxed">
-                Driven by a deep passion for roots, reggae, dub, and soundsystem culture. We have a combined collection that spans from soulful roots to heavy steppers, and so we are able to create a selection for almost any occasion.
-              </p>
-              <p className="font-['Poppins'] text-base text-gray-700 leading-relaxed">
-                For us, it's more than just playing music, it's about creating a connection, building a place where people can freely express and enjoy themselves while sharing something meaningful with the people in front of the speakers.
-              </p>
-            </div>
-          </div>
-        </section>
       </div>
     </div>
   );

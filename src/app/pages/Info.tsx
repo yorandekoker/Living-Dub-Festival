@@ -118,8 +118,6 @@ export default function Info() {
             </p>
           </div>
 
-          {/* Temporarily hidden: keep this card in code, but do not show on the website. */}
-          {/*
           <div className="bg-white rounded-3xl border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-8 transform rotate-0.5">
             <h3 className="font-['Fredoka'] text-2xl font-bold text-[#138A5A] mb-4">
               How to get there by public transport & The Living Dub Bus
@@ -164,7 +162,6 @@ export default function Info() {
               Living Dub bus vertrekt.
             </p>
           </div>
-          */}
 
           <div className="bg-white rounded-3xl border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-8 transform rotate-1">
             <h3 className="font-['Fredoka'] text-2xl font-bold text-[#F7C600] mb-4">

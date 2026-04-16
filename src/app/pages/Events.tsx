@@ -6,7 +6,7 @@ export default function Events() {
   const [activeTab, setActiveTab] = useState<"past" | "upcoming">("upcoming");
 
   return (
-    <div className="bg-[#FFF9E6] py-16">
+    <div className="bg-[#FFF9E6] pt-32 md:pt-36 pb-16">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
           <h1
@@ -24,10 +24,10 @@ export default function Events() {
         </div>
 
         {/* Tab Buttons */}
-        <div className="flex justify-center gap-4 mb-12">
+        <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-12">
           <button
             onClick={() => setActiveTab("past")}
-            className={`font-['Bangers'] text-lg px-8 py-3 rounded-full border-3 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all transform ${
+            className={`font-['Bangers'] text-base sm:text-lg px-5 sm:px-8 py-2.5 sm:py-3 rounded-full border-3 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all transform ${
               activeTab === "past"
                 ? "bg-[#E6392F] text-white scale-105 rotate-1"
                 : "bg-white text-black hover:scale-105 hover:rotate-1"
@@ -37,7 +37,7 @@ export default function Events() {
           </button>
           <button
             onClick={() => setActiveTab("upcoming")}
-            className={`font-['Bangers'] text-lg px-8 py-3 rounded-full border-3 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all transform ${
+            className={`font-['Bangers'] text-base sm:text-lg px-5 sm:px-8 py-2.5 sm:py-3 rounded-full border-3 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all transform ${
               activeTab === "upcoming"
                 ? "bg-[#138A5A] text-white scale-105 rotate-1"
                 : "bg-white text-black hover:scale-105 hover:rotate-1"
@@ -52,7 +52,7 @@ export default function Events() {
           {activeTab === "upcoming" && (
             <div>
               <div
-                className="bg-white p-6 rounded-2xl border-3 border-black transform hover:scale-[1.01] transition-transform"
+                className="bg-white p-6 rounded-2xl border-3 border-black overflow-hidden transform hover:scale-[1.01] transition-transform"
                 style={{
                   boxShadow: "6px 6px 0px rgba(0,0,0,0.3)",
                   transform: "rotate(-0.4deg)",
@@ -69,9 +69,9 @@ export default function Events() {
                 <div className="bg-[#E6392F] text-white px-4 py-2 rounded-full inline-block mb-3">
                   <span className="font-['Bangers'] text-sm">UPCOMING</span>
                 </div>
-                <h2 className="font-['Fredoka'] text-2xl mb-2 leading-snug">
+                <h2 className="font-['Fredoka'] text-xl sm:text-2xl mb-2 leading-snug break-words">
                   Living Dub - From Dub to Goa with Tune Soundsystem & Fake
-                  Hippies - @De Zlle, Ghent (17/04/2026)
+                  Hippies - @De Zulle, Ghent (17/04/2026)
                 </h2>
               </div>
             </div>
@@ -81,7 +81,7 @@ export default function Events() {
           {activeTab === "past" && (
             <div className="space-y-6">
               <div
-                className="bg-white p-6 rounded-2xl border-3 border-black transform hover:scale-[1.01] transition-transform"
+                className="bg-white p-6 rounded-2xl border-3 border-black overflow-hidden transform hover:scale-[1.01] transition-transform"
                 style={{
                   boxShadow: "6px 6px 0px rgba(0,0,0,0.3)",
                   transform: "rotate(-0.5deg)",
@@ -98,7 +98,7 @@ export default function Events() {
                 <div className="bg-[#138A5A] text-white px-4 py-2 rounded-full inline-block mb-3">
                   <span className="font-['Bangers'] text-sm">PAST EVENT</span>
                 </div>
-                <h2 className="font-['Fredoka'] text-2xl mb-2 leading-snug">
+                <h2 className="font-['Fredoka'] text-xl sm:text-2xl mb-2 leading-snug break-words">
                   Sunny Outdoor Dubsession, hosted by Guiding Youth + Tune
                   Soundsystem - with Soko Sound - Cafe Matheur, Sleidinge-dorp
                   (23/08)
@@ -106,7 +106,7 @@ export default function Events() {
               </div>
 
               <div
-                className="bg-white p-6 rounded-2xl border-3 border-black transform hover:scale-[1.01] transition-transform"
+                className="bg-white p-6 rounded-2xl border-3 border-black overflow-hidden transform hover:scale-[1.01] transition-transform"
                 style={{
                   boxShadow: "6px 6px 0px rgba(0,0,0,0.3)",
                   transform: "rotate(0.4deg)",
@@ -123,7 +123,7 @@ export default function Events() {
                 <div className="bg-[#138A5A] text-white px-4 py-2 rounded-full inline-block mb-3">
                   <span className="font-['Bangers'] text-sm">PAST EVENT</span>
                 </div>
-                <h2 className="font-['Fredoka'] text-2xl mb-2 leading-snug">
+                <h2 className="font-['Fredoka'] text-xl sm:text-2xl mb-2 leading-snug break-words">
                   Living Dub 6.0, hosted by Drijfkracht Soundsystem - Spring
                   Equinox Celebration with Crucial Soundsystem (warming up by
                   Untzslag) - 't Pand (21/03/2026)
@@ -131,7 +131,7 @@ export default function Events() {
               </div>
 
               <div
-                className="bg-white p-6 rounded-2xl border-3 border-black transform hover:scale-[1.01] transition-transform"
+                className="bg-white p-6 rounded-2xl border-3 border-black overflow-hidden transform hover:scale-[1.01] transition-transform"
                 style={{
                   boxShadow: "6px 6px 0px rgba(0,0,0,0.3)",
                   transform: "rotate(-0.4deg)",
@@ -148,13 +148,13 @@ export default function Events() {
                 <div className="bg-[#138A5A] text-white px-4 py-2 rounded-full inline-block mb-3">
                   <span className="font-['Bangers'] text-sm">PAST EVENT</span>
                 </div>
-                <h2 className="font-['Fredoka'] text-2xl mb-2 leading-snug">
+                <h2 className="font-['Fredoka'] text-xl sm:text-2xl mb-2 leading-snug break-words">
                   Living Dub 3.0 - De Dubisland Edition (01/04)
                 </h2>
               </div>
 
               <div
-                className="bg-white p-6 rounded-2xl border-3 border-black transform hover:scale-[1.01] transition-transform"
+                className="bg-white p-6 rounded-2xl border-3 border-black overflow-hidden transform hover:scale-[1.01] transition-transform"
                 style={{
                   boxShadow: "6px 6px 0px rgba(0,0,0,0.3)",
                   transform: "rotate(0.5deg)",
@@ -171,14 +171,14 @@ export default function Events() {
                 <div className="bg-[#138A5A] text-white px-4 py-2 rounded-full inline-block mb-3">
                   <span className="font-['Bangers'] text-sm">PAST EVENT</span>
                 </div>
-                <h2 className="font-['Fredoka'] text-2xl mb-2 leading-snug">
+                <h2 className="font-['Fredoka'] text-xl sm:text-2xl mb-2 leading-snug break-words">
                   Living Dub invites Drijfkracht - For Thomas' B-Day Bash -
                   @Molotov, Voetweg 48, Ghent (28/01/2026)
                 </h2>
               </div>
 
               <div
-                className="bg-white p-6 rounded-2xl border-3 border-black transform hover:scale-[1.01] transition-transform"
+                className="bg-white p-6 rounded-2xl border-3 border-black overflow-hidden transform hover:scale-[1.01] transition-transform"
                 style={{
                   boxShadow: "6px 6px 0px rgba(0,0,0,0.3)",
                   transform: "rotate(-0.3deg)",
@@ -195,7 +195,7 @@ export default function Events() {
                 <div className="bg-[#138A5A] text-white px-4 py-2 rounded-full inline-block mb-3">
                   <span className="font-['Bangers'] text-sm">PAST EVENT</span>
                 </div>
-                <h2 className="font-['Fredoka'] text-2xl mb-2 leading-snug">
+                <h2 className="font-['Fredoka'] text-xl sm:text-2xl mb-2 leading-snug break-words">
                   Living Dub invites Bloodhound and Unification - De 4de van de
                   4de at De 4de Zaal (04/04) - 20:00 - 05:00
                 </h2>
