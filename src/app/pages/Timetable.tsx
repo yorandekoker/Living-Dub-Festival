@@ -509,7 +509,7 @@ export default function Timetable() {
                 {/* Playing Against (Clash) */}
                 {event.playingAgainst && (
                   <p className="font-['Poppins'] text-xs text-gray-500 italic break-words">
-                    Playing against: {event.playingAgainst}
+                    Playing alongside: {event.playingAgainst}
                   </p>
                 )}
               </div>
@@ -574,7 +574,7 @@ export default function Timetable() {
                   {selectedArtist.playingAgainst && (
                     <div>
                       <h4 className="font-['Fredoka'] font-bold text-sm text-gray-600 mb-1">
-                        Playing Against
+                        Playing alongside
                       </h4>
                       <p className="font-['Poppins'] text-base text-[#E6392F] font-semibold">
                         {selectedArtist.playingAgainst}

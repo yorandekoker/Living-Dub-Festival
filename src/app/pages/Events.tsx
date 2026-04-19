@@ -94,9 +94,9 @@ export default function Events() {
                   <span className="font-['Bangers'] text-sm">UPCOMING</span>
                 </div>
                 <h2 className="font-['Fredoka'] text-xl sm:text-2xl mb-2 leading-snug break-words">
-                  Living Dub VZW presents: From Lunch Till Breakfast - Roots till
-                  Steppa with Break Bread, Zion Town, Saga Soundstation & Lowie
-                  - @Minus One, Ghent (20/05)
+                  Living Dub VZW presents: From Lunch Till Breakfast - Roots
+                  till Steppa with Break Bread, Zion Town, Saga Soundstation &
+                  Lowie - @Minus One, Ghent (20/05)
                 </h2>
               </div>
             </div>
