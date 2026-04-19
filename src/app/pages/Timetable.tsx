@@ -172,7 +172,7 @@ export default function Timetable() {
         color: "#138A5A",
       },
       {
-        artist: "Kriya Soundsystem",
+        artist: "Pathseeker",
         stage: "Steppin' Grass Field",
         time: "17:00 – 19:00",
         color: "#138A5A",
