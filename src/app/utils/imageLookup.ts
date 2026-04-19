@@ -47,6 +47,7 @@ const crewImageMap = buildMap([
   ["MUDA @ Living Dub", "muda livingdub.png"],
   ["MUDA", "muda livingdub.png"],
   ["Moksha Vibrations", "moshka vibrations.jpg"],
+  ["Moshka Vibrations", "moshka vibrations.jpg"],
   ["Pathseeker", "pathseeker.jpg"],
   ["Poa Annua", "poa anua.jpg"],
   ["Saga Sound Station", "saga sound.jpg"],
