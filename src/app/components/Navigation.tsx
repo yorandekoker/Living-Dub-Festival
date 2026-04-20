@@ -9,6 +9,7 @@ export default function Navigation() {
 
   const mainNavLinks = [
     { path: "/", label: "Home" },
+    { path: "/about", label: "About" },
     { path: "/events", label: "Events" },
     { path: "/contact", label: "Contact" },
   ];
@@ -57,7 +58,7 @@ export default function Navigation() {
             {/* Desktop Navigation - Centered */}
             <div className="hidden lg:flex items-center gap-12">
               {/* Main Nav Links */}
-              {mainNavLinks.slice(0, 1).map((link) => (
+              {mainNavLinks.slice(0, 2).map((link) => (
                 <Link
                   key={link.path}
                   to={link.path}
@@ -83,7 +84,7 @@ export default function Navigation() {
                 Festival 2026
               </Link>
 
-              {mainNavLinks.slice(1).map((link) => (
+              {mainNavLinks.slice(2).map((link) => (
                 <Link
                   key={link.path}
                   to={link.path}
@@ -123,7 +124,7 @@ export default function Navigation() {
           <div className="lg:hidden bg-white border-t-2 border-black">
             <div className="px-4 pt-2 pb-4 space-y-2">
               {/* Main Nav Links */}
-              {mainNavLinks.slice(0, 1).map((link) => (
+              {mainNavLinks.slice(0, 2).map((link) => (
                 <Link
                   key={link.path}
                   to={link.path}
@@ -181,7 +182,7 @@ export default function Navigation() {
                 )}
               </div>
 
-              {mainNavLinks.slice(1).map((link) => (
+              {mainNavLinks.slice(2).map((link) => (
                 <Link
                   key={link.path}
                   to={link.path}

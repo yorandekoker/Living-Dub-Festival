@@ -143,7 +143,7 @@ export default function Footer() {
             Developed by Yoran Dekoker
           </p>
           <p className="font-['Poppins'] text-xs mt-2 opacity-80">
-            Respect • Connection • Community
+            Respect • Connection
           </p>
         </div>
       </div>

@@ -142,7 +142,7 @@ export default function Home() {
       <section className="max-w-4xl mx-auto px-4 py-16 md:py-20 text-center">
         <div className="bg-white rounded-3xl border-4 border-black shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] p-8 md:p-12 transform -rotate-1">
           <h2 className="font-['Bangers'] text-4xl md:text-5xl text-[#138A5A] mb-6">
-            Connection • Respect • Community
+            Connection • Respect
           </h2>
           <p className="font-['Poppins'] text-lg leading-relaxed text-gray-700">
             Living Dub Festival is more than music—it's a celebration of

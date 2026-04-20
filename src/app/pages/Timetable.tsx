@@ -60,14 +60,14 @@ export default function Timetable() {
         stage: "Wooden Roots Floor",
         time: "14:00 – 02:00",
         color: "#E6392F",
-        playingAgainst: "Creativ Dubs",
+        playingAgainst: "Creativ Dubs, Ital Brew",
       },
       {
         artist: "Creativ Dubs",
         stage: "Wooden Roots Floor",
         time: "14:00 – 02:00",
         color: "#E6392F",
-        playingAgainst: "Break Bread",
+        playingAgainst: "Break Bread, Ital Brew",
       },
       {
         artist: "Ital Brew",
@@ -81,6 +81,7 @@ export default function Timetable() {
         stage: "Steppin' Grass Field",
         time: "14:00 – 20:00",
         color: "#138A5A",
+        playingAgainst: "Moshka Vibrations",
       },
       {
         artist: "Moshka Vibrations",
