@@ -91,8 +91,8 @@ export default function About() {
           </h2>
           <p className="font-['Poppins'] text-lg leading-relaxed text-gray-700 mb-4">
             Living Dub Festival is organized by a dedicated team of music
-            lovers, soundsystem operators, and community builders who share a
-            passion for authentic dub culture and meaningful connection.
+            lovers, and community builders who share a passion for authentic dub
+            culture and meaningful connection.
           </p>
           <p className="font-['Poppins'] text-lg leading-relaxed text-gray-700 mb-4">
             We work year-round to curate lineups that honor the roots of reggae

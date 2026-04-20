@@ -46,13 +46,13 @@ export default function CharitySponsors() {
           : "flex items-center justify-center min-h-20";
 
         return (
-        <div key={src} className={wrapperClass}>
-          <img
-            src={src}
-            alt="Sponsor"
-            className={`${sponsorSizeClass} w-auto object-contain`}
-          />
-        </div>
+          <div key={src} className={wrapperClass}>
+            <img
+              src={src}
+              alt="Sponsor"
+              className={`${sponsorSizeClass} w-auto object-contain`}
+            />
+          </div>
         );
       })}
     </div>

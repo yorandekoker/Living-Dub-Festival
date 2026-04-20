@@ -123,7 +123,7 @@ export default function Lineup() {
     { name: "Della", playingAlongside: "" },
     {
       name: "MC Wiseman Jarne",
-      playingAlongside: "Fishermen, Unification, Poa Annua, Deliverance",
+      playingAlongside: "Fishermen",
     },
     { name: "Danman", playingAlongside: "Indica Dubs" },
     { name: "Ras Timbo", playingAlongside: "Steppin' Ground" },
@@ -143,11 +143,12 @@ export default function Lineup() {
     { name: "Mindfulness / Meditation", credit: "Patricia Van Weegen" },
     { name: "Integrale Yoga", credit: "Patricia Van Weegen" },
     {
-      name: "Airbrush Tattoos",
+      name: "Airbrush Tattoos en Kindergrime",
       credit: "Elluminé",
       lookupName: "Airbrush & Kids Facepainting",
     },
     { name: "Graffiti Workshop", credit: "Elmo & Joté" },
+    { name: "Natural Shapes", credit: "Burak" },
     {
       name: "Organic Farming",
       credit: "Vzw Gooikenshoeve",
