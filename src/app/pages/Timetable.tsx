@@ -107,7 +107,7 @@ export default function Timetable() {
         playingAgainst: "Break Bread, Creativ Dubs",
       },
       {
-        artist: "Steppin' Ground ft. Ras TimBo",
+        artist: "Steppin' Ground",
         stage: "Steppin' Grass Field",
         time: "14:00 – 20:00",
         color: "#138A5A",
@@ -118,17 +118,17 @@ export default function Timetable() {
         stage: "Steppin' Grass Field",
         time: "14:00 – 20:00",
         color: "#138A5A",
-        playingAgainst: "Steppin' Ground ft. Ras TimBo",
+        playingAgainst: "Steppin' Ground",
       },
       {
         artist: "Jahmateur Hi Power",
         stage: "Steppin' Grass Field",
         time: "20:00 – 02:00",
         color: "#138A5A",
-        playingAgainst: "Bloodhound ft. MC Kingten",
+        playingAgainst: "Bloodhound",
       },
       {
-        artist: "Bloodhound ft. MC Kingten",
+        artist: "Bloodhound",
         stage: "Steppin' Grass Field",
         time: "20:00 – 02:00",
         color: "#138A5A",
@@ -137,14 +137,14 @@ export default function Timetable() {
     ],
     saturday: [
       {
-        artist: "Unification ft. Crownless I",
+        artist: "Unification",
         stage: "Wooden Roots Floor",
         time: "12:00 – 20:00",
         color: "#E6392F",
-        playingAgainst: "Fishermen ft. Wiseman Jarne, Deliverance, Poa Annua",
+        playingAgainst: "Fishermen, Deliverance, Poa Annua",
       },
       {
-        artist: "Fishermen ft. Wiseman Jarne",
+        artist: "Fishermen",
         stage: "Wooden Roots Floor",
         time: "12:00 – 20:00",
         color: "#E6392F",
@@ -155,14 +155,14 @@ export default function Timetable() {
         stage: "Wooden Roots Floor",
         time: "12:00 – 20:00",
         color: "#E6392F",
-        playingAgainst: "Fishermen ft. Wiseman Jarne, Deliverance, Unification",
+        playingAgainst: "Fishermen, Deliverance, Unification",
       },
       {
         artist: "Deliverance",
         stage: "Wooden Roots Floor",
         time: "12:00 – 20:00",
         color: "#E6392F",
-        playingAgainst: "Fishermen ft. Wiseman Jarne, Unification, Poa Annua",
+        playingAgainst: "Fishermen, Unification, Poa Annua",
       },
       {
         artist: "UFO Collective",
@@ -171,18 +171,18 @@ export default function Timetable() {
         color: "#E6392F",
       },
       {
-        artist: "Crucial ft. MC Tubbie",
+        artist: "Crucial",
         stage: "Wooden Roots Floor",
         time: "21:45 – 3:00",
         color: "#E6392F",
-        playingAgainst: "suncharmdub ft. Crownless I",
+        playingAgainst: "suncharmdub",
       },
       {
-        artist: "suncharmdub ft. Crownless I",
+        artist: "suncharmdub",
         stage: "Wooden Roots Floor",
         time: "21:45 – 03:00",
         color: "#E6392F",
-        playingAgainst: "Crucial ft. MC Tubbie",
+        playingAgainst: "Crucial",
       },
       {
         artist: "Lowie",
@@ -293,7 +293,7 @@ export default function Timetable() {
         playingAgainst: "Drijfkracht",
       },
       {
-        artist: "Indica Dubs ft. Danman",
+        artist: "Indica Dubs",
         stage: "Steppin' Grass Field",
         time: "18:00 – 22:00",
         color: "#138A5A",
@@ -309,7 +309,7 @@ export default function Timetable() {
       {
         artist: "Henna Workshop",
         stage: "Irie Knowledge Hut",
-        time: "15:00 – 17:30",
+        time: "15:00 – 16:00 & 16:15 – 17:15",
         color: "#F7C600",
       },
       {
