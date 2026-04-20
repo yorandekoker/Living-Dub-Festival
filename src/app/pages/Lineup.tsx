@@ -119,8 +119,8 @@ export default function Lineup() {
   const mcs: McLineupItem[] = [
     { name: "MC Kingten", playingAlongside: "Bloodhound" },
     { name: "MC Tubbie", playingAlongside: "Crucial" },
-    { name: "Crownless I", playingAlongside: "Suncharm" },
-    { name: "Della", playingAlongside: "Selah Techniques" },
+    { name: "Crownless I", playingAlongside: "Suncharm, Unification" },
+    { name: "Della", playingAlongside: "" },
     {
       name: "MC Wiseman Jarne",
       playingAlongside: "Fishermen, Unification, Poa Annua, Deliverance",
@@ -133,11 +133,20 @@ export default function Lineup() {
     { name: "Henna Workshop", credit: "Elluminé" },
     { name: "Henna Tattoos", credit: "Elluminé" },
     { name: "Living Art", credit: "Loes & Léa" },
+    { name: "Performance Rodkint", credit: "Elise Deryckere" },
     { name: "Ecstatic Dance", credit: "Yasmine" },
-    { name: "Fire Performance", credit: "Levi & Lisa", lookupName: "Fire Dance" },
+    {
+      name: "Fire Performance",
+      credit: "Levi & Lisa",
+      lookupName: "Fire Dance",
+    },
     { name: "Mindfulness / Meditation", credit: "Patricia Van Weegen" },
     { name: "Integrale Yoga", credit: "Patricia Van Weegen" },
-    { name: "Airbrush Tattoos", credit: "Elluminé", lookupName: "Airbrush & Kids Facepainting" },
+    {
+      name: "Airbrush Tattoos",
+      credit: "Elluminé",
+      lookupName: "Airbrush & Kids Facepainting",
+    },
     { name: "Graffiti Workshop", credit: "Elmo & Joté" },
     {
       name: "Organic Farming",
@@ -259,7 +268,9 @@ export default function Lineup() {
                 subtitle={activity.credit}
                 stage="Irie Knowledge Hut"
                 color="#2EC4B6"
-                imageSrc={getWorkshopImage(activity.lookupName ?? activity.name)}
+                imageSrc={getWorkshopImage(
+                  activity.lookupName ?? activity.name,
+                )}
                 onClick={() =>
                   openWorkshop(
                     activity.name,
@@ -288,12 +299,15 @@ export default function Lineup() {
               <ArtistCard
                 key={mc.name}
                 name={mc.name}
-                subtitle={mc.playingAlongside ? `Playing alongside: ${mc.playingAlongside}` : undefined}
-                stage="Various Stages"
+                subtitle={
+                  mc.playingAlongside
+                    ? `Playing alongside: ${mc.playingAlongside}`
+                    : undefined
+                }
                 color="#E6392F"
                 imageSrc={getCrewImage(mc.name)}
                 onClick={() =>
-                  openArtist(mc.name, "Various Stages", mc.playingAlongside)
+                  openArtist(mc.name, "", mc.playingAlongside)
                 }
               />
             ))}
@@ -335,14 +349,16 @@ export default function Lineup() {
                 </div>
 
                 <div className="bg-[#FFF3D6] rounded-2xl border-2 border-black p-4">
-                  <div className="mb-3">
-                    <h4 className="font-['Fredoka'] font-bold text-sm text-gray-600 mb-1">
-                      Stage
-                    </h4>
-                    <p className="font-['Poppins'] text-base">
-                      {selectedItem.stage}
-                    </p>
-                  </div>
+                  {selectedItem.stage && (
+                    <div className="mb-3">
+                      <h4 className="font-['Fredoka'] font-bold text-sm text-gray-600 mb-1">
+                        Stage
+                      </h4>
+                      <p className="font-['Poppins'] text-base">
+                        {selectedItem.stage}
+                      </p>
+                    </div>
+                  )}
 
                   {selectedItem.playingAlongside && (
                     <div className="mb-3">

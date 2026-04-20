@@ -123,7 +123,7 @@ export default function Soundsystems() {
               </div>
 
               <h3
-                className="font-['Fredoka'] text-xl font-bold mb-2"
+                className="font-['Fredoka'] text-lg sm:text-xl font-bold mb-2 leading-tight break-words"
                 style={{ color: soundsystem.color }}
               >
                 {soundsystem.name}
@@ -138,7 +138,7 @@ export default function Soundsystems() {
         >
           <DialogContent className="bg-white rounded-3xl border-4 border-black shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] max-w-4xl">
             <DialogHeader>
-              <DialogTitle className="font-['Bangers'] text-3xl text-[#E6392F]">
+              <DialogTitle className="font-['Bangers'] text-2xl sm:text-3xl text-[#E6392F] pr-10 leading-tight break-words">
                 {selectedSoundsystem?.name}
               </DialogTitle>
             </DialogHeader>

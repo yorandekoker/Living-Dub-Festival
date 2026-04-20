@@ -42,15 +42,28 @@ const workshopCredits: Record<string, string> = {
   "Living Art": "Loes & Lea",
   "Ecstatic Dance": "Yasmine",
   "Fire show": "Levi & Lisa",
-  "Mindfulness & Meditatie (Patricia van Wegen)": "Patricia Van Weegen",
-  "Integrale Yoga (Patricia van Wegen)": "Patricia Van Weegen",
-  "Airbrush & Kindergrime (Ellumine)": "Ellumine",
-  "Roots and Colors: Graffiti Workshop (Jote & Elmo)": "Elmo & Jote",
-  "Natural Shapes (Burak)": "Burak",
-  "Performance by Rodkint (Elise Deryckere)": "Elise Deryckere",
-  "Organic farming and human care (Vzw Gooikenshoeve)": "Vzw Gooikenshoeve",
+  "Mindfulness & Meditatie": "Patricia Van Weegen",
+  "Integrale Yoga": "Patricia Van Weegen",
+  "Airbrush & Kindergrime": "Ellumine",
+  "Roots and Colors: Graffiti Workshop": "Elmo & Jote",
+  "Natural Shapes": "Burak",
+  "Performance by Rodkint": "Elise Deryckere",
+  "Organic farming and human care": "Vzw Gooikenshoeve",
   "Needle felting (Studio Imela)": "Yasmine",
-  "Fortune teller: free card reading (Jules Tingles)": "Jules Tingles",
+  "Fortune teller: free card reading": "Jules Tingles",
+};
+
+const timetableWorkshopAliases: Record<string, string> = {
+  "Mindfulness & Meditatie": "Mindfulness & Meditatie (Patricia van Wegen)",
+  "Integrale Yoga": "Integrale Yoga (Patricia van Wegen)",
+  "Airbrush & Kindergrime": "Airbrush & Kindergrime (Elluminé)",
+  "Roots and Colors: Graffiti Workshop":
+    "Roots and Colors: Graffiti Workshop (Jote & Elmo)",
+  "Performance by Rodkint": "Performance by Rodkint (Elise Deryckere)",
+  "Organic farming and human care":
+    "Organic farming and human care (Vzw Gooikenshoeve)",
+  "Fortune teller: free card reading":
+    "Fortune teller: free card reading (Jules Tingles)",
 };
 
 export default function Timetable() {
@@ -326,37 +339,37 @@ export default function Timetable() {
     ],
     saturday: [
       {
-        artist: "Mindfulness & Meditatie (Patricia van Wegen)",
+        artist: "Mindfulness & Meditatie",
         stage: "Irie Knowledge Hut",
         time: "12:00 – 13:00",
         color: "#F7C600",
       },
       {
-        artist: "Integrale Yoga (Patricia van Wegen)",
+        artist: "Integrale Yoga",
         stage: "Irie Knowledge Hut",
         time: "13:15 – 14:15",
         color: "#F7C600",
       },
       {
-        artist: "Airbrush & Kindergrime (Ellumine)",
+        artist: "Airbrush & Kindergrime",
         stage: "Irie Knowledge Hut",
         time: "14:30 – 18:30",
         color: "#F7C600",
       },
       {
-        artist: "Roots and Colors: Graffiti Workshop (Jote & Elmo)",
+        artist: "Roots and Colors: Graffiti Workshop",
         stage: "Irie Knowledge Hut",
         time: "19:00 – 20:00",
         color: "#F7C600",
       },
       {
-        artist: "Natural Shapes (Burak)",
+        artist: "Natural Shapes",
         stage: "Irie Knowledge Hut",
         time: "21:00 – 22:00",
         color: "#F7C600",
       },
       {
-        artist: "Performance by Rodkint (Elise Deryckere)",
+        artist: "Performance by Rodkint",
         stage: "Irie Knowledge Hut",
         time: "23:00 – 00:00",
         color: "#F7C600",
@@ -364,7 +377,7 @@ export default function Timetable() {
     ],
     sunday: [
       {
-        artist: "Organic farming and human care (Vzw Gooikenshoeve)",
+        artist: "Organic farming and human care",
         stage: "Irie Knowledge Hut",
         time: "13:00 – 14:00",
         color: "#F7C600",
@@ -376,7 +389,7 @@ export default function Timetable() {
         color: "#F7C600",
       },
       {
-        artist: "Fortune teller: free card reading (Jules Tingles)",
+        artist: "Fortune teller: free card reading",
         stage: "Irie Knowledge Hut",
         time: "17:00 – 18:00, 19:00 – 20:00, 21:00 – 22:00",
         color: "#F7C600",
@@ -403,11 +416,11 @@ export default function Timetable() {
   };
 
   const handleWorkshopClick = (event: TimetableEvent) => {
+    const workshopKey =
+      timetableWorkshopAliases[event.artist.trim()] ?? event.artist.trim();
     const fullDescription =
-      workshopDescriptions[event.artist] ??
+      workshopDescriptions[workshopKey] ??
       `Join ${event.artist} at ${event.stage} for a creative festival workshop experience.`;
-
-    // Timetable workshop modal shows only the main workshop text (before artist bio).
     const description = fullDescription.split("\n\n")[0].trim();
 
     setSelectedWorkshop({
@@ -553,7 +566,7 @@ export default function Timetable() {
           open={selectedArtist !== null}
           onOpenChange={() => setSelectedArtist(null)}
         >
-          <DialogContent className="bg-white rounded-3xl border-4 border-black shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] max-w-md max-h-[85vh] overflow-hidden">
+          <DialogContent className="bg-white rounded-3xl border-4 border-black shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] max-w-md h-[92vh] max-h-[92vh] flex flex-col overflow-hidden">
             <DialogHeader>
               <DialogTitle className="font-['Bangers'] text-3xl text-[#E6392F]">
                 {selectedArtist?.name}
@@ -561,8 +574,8 @@ export default function Timetable() {
             </DialogHeader>
 
             {selectedArtist && (
-              <div className="space-y-4 max-h-[70vh] overflow-y-auto pr-1">
-                <div className="w-full h-72 rounded-2xl border-2 border-black overflow-hidden bg-gray-100">
+              <div className="flex-1 min-h-0 overflow-y-auto overscroll-contain pr-1 pb-4 space-y-4">
+                <div className="w-full h-56 sm:h-72 rounded-2xl border-2 border-black overflow-hidden bg-gray-100">
                   {selectedArtist.imageSrc ? (
                     <ImageWithFallback
                       src={selectedArtist.imageSrc}
@@ -723,7 +736,7 @@ export default function Timetable() {
             open={selectedWorkshop !== null}
             onOpenChange={() => setSelectedWorkshop(null)}
           >
-            <DialogContent className="bg-white rounded-3xl border-4 border-black shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] max-w-md max-h-[85vh] overflow-hidden">
+            <DialogContent className="bg-white rounded-3xl border-4 border-black shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] max-w-md h-[92vh] max-h-[92vh] flex flex-col overflow-hidden">
               <DialogHeader>
                 <DialogTitle className="font-['Bangers'] text-3xl text-[#F7C600]">
                   {selectedWorkshop?.name}
@@ -731,8 +744,8 @@ export default function Timetable() {
               </DialogHeader>
 
               {selectedWorkshop && (
-                <div className="space-y-4 max-h-[70vh] overflow-y-auto pr-1">
-                  <div className="w-full h-72 rounded-2xl border-2 border-black overflow-hidden bg-gray-100">
+                <div className="flex-1 min-h-0 overflow-y-auto overscroll-contain pr-1 pb-4 space-y-4">
+                  <div className="w-full h-56 sm:h-72 rounded-2xl border-2 border-black overflow-hidden bg-gray-100">
                     {selectedWorkshop.imageSrc ? (
                       <ImageWithFallback
                         src={selectedWorkshop.imageSrc}

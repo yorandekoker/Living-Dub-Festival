@@ -24,7 +24,7 @@ export default function ArtistCard({
   return (
     <div
       onClick={onClick}
-      className={`bg-white rounded-2xl border-3 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] p-4 hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-all ${onClick ? "cursor-pointer" : ""}`}
+      className={`bg-white rounded-2xl border-3 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] p-4 max-h-[78vh] overflow-y-auto sm:max-h-none sm:overflow-visible hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-all ${onClick ? "cursor-pointer" : ""}`}
       style={{ transform: `rotate(${Math.random() * 2 - 1}deg)` }}
     >
       <div className="w-full h-36 rounded-xl border-2 border-black mb-3 overflow-hidden bg-gray-100">

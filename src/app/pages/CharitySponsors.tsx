@@ -30,15 +30,31 @@ export default function CharitySponsors() {
 
   const renderSponsorRow = (images: string[], imageSizeClass: string) => (
     <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 items-center">
-      {images.map((src) => (
-        <div key={src} className="flex items-center justify-center min-h-20">
+      {images.map((src) => {
+        const isExtraLargeSponsor =
+          src.includes("tent%20events") || src.includes("tout%20bien");
+        const isSlightlySmallerSponsor =
+          src.includes("gold%20mustache%20ipa") ||
+          src.includes("thijs%20lybeart");
+        const sponsorSizeClass = isExtraLargeSponsor
+          ? "h-[16rem] md:h-[18rem]"
+          : isSlightlySmallerSponsor
+            ? "h-[8rem] md:h-[10rem]"
+            : imageSizeClass;
+        const wrapperClass = isExtraLargeSponsor
+          ? "flex items-center justify-center min-h-20 lg:col-span-2"
+          : "flex items-center justify-center min-h-20";
+
+        return (
+        <div key={src} className={wrapperClass}>
           <img
             src={src}
             alt="Sponsor"
-            className={`${imageSizeClass} w-auto object-contain`}
+            className={`${sponsorSizeClass} w-auto object-contain`}
           />
         </div>
-      ))}
+        );
+      })}
     </div>
   );
 

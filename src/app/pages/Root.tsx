@@ -31,6 +31,27 @@ export default function Root() {
     <div className="min-h-screen flex flex-col overflow-x-hidden">
       <Navigation />
 
+      {/* Mobile Festival Sub-Navigation - Shows under the fixed header */}
+      {isFestivalActive && (
+        <div className="lg:hidden mt-[106px] bg-transparent px-3">
+          <div className="flex gap-2 overflow-x-auto pb-2 whitespace-nowrap no-scrollbar">
+            {festivalSubLinks.map((link) => (
+              <Link
+                key={link.path}
+                to={link.path}
+                className={`font-['Bangers'] text-sm px-4 py-2 rounded-full border-3 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] transition-all inline-block text-center flex-shrink-0 ${
+                  location.pathname === link.path
+                    ? "bg-[#E6392F] text-white transform -rotate-1"
+                    : "bg-[#F7C600] text-black transform rotate-1"
+                }`}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
+
       {/* Desktop Festival Sub-Navigation - Only shows on Festival pages */}
       {isFestivalActive && (
         <div className="hidden lg:block bg-transparent mt-[130px] mb-4">
