@@ -175,10 +175,10 @@ export default function Timetable() {
         stage: "Wooden Roots Floor",
         time: "21:45 – 3:00",
         color: "#E6392F",
-        playingAgainst: "Suncharm ft. Crownless I",
+        playingAgainst: "suncharmdub ft. Crownless I",
       },
       {
-        artist: "Suncharm ft. Crownless I",
+        artist: "suncharmdub ft. Crownless I",
         stage: "Wooden Roots Floor",
         time: "21:45 – 03:00",
         color: "#E6392F",

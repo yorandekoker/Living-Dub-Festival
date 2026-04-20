@@ -58,6 +58,7 @@ const crewImageMap = buildMap([
   ["Sotobosc", "sotobosc.jpg"],
   ["Steppin Ground", "steppin ground.png"],
   ["Suncharm", "suncharm.jpg"],
+  ["suncharmdub", "suncharm.jpg"],
   ["Tune", "tune.jpg"],
   ["UFO Collective", "ufo collective.jpg"],
   ["Unification", "unification.jpg"],

@@ -36,13 +36,13 @@ const artistAliases: Record<string, string> = {
   Fishermen: "Fishermen ft. Wiseman Jarne",
   Bloodhound: "Bloodhound ft. MC Kingten",
   Crucial: "Crucial ft. MC Tubbie",
-  Suncharm: "Suncharm ft. Crownless I",
+  suncharmdub: "suncharmdub ft. Crownless I",
   MUDA: "MUDA @ Living Dub",
   "UFO Collective ft. Unlisted Fanatic, Marijah and Moonshine Horns":
     "UFO Collective (Unlisted Fanatic, MariJah & Moonshine Horns)",
   "MC Kingten": "Bloodhound ft. MC Kingten",
   "MC Tubbie": "Crucial ft. MC Tubbie",
-  "Crownless I": "Suncharm ft. Crownless I",
+  "Crownless I": "suncharmdub ft. Crownless I",
 };
 
 const workshopAliases: Record<string, string> = {
@@ -90,7 +90,7 @@ export default function Lineup() {
     "Deliverance",
     "UFO Collective ft. Unlisted Fanatic, Marijah and Moonshine Horns",
     "Crucial",
-    "Suncharm",
+    "suncharmdub",
     "MUDA",
     "Ventus",
     "Paleo",
@@ -119,7 +119,7 @@ export default function Lineup() {
   const mcs: McLineupItem[] = [
     { name: "MC Kingten", playingAlongside: "Bloodhound" },
     { name: "MC Tubbie", playingAlongside: "Crucial" },
-    { name: "Crownless I", playingAlongside: "Suncharm, Unification" },
+    { name: "Crownless I", playingAlongside: "suncharmdub, Unification" },
     { name: "Della", playingAlongside: "" },
     {
       name: "MC Wiseman Jarne",
