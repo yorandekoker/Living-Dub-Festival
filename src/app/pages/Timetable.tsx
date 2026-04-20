@@ -49,7 +49,7 @@ const workshopCredits: Record<string, string> = {
   "Natural Shapes": "Burak",
   "Performance by Rodkint": "Elise Deryckere",
   "Organic farming and human care": "Vzw Gooikenshoeve",
-  "Needle felting (Studio Imela)": "Yasmine",
+  "Needle felting": "Studio Imela - Yasmine",
   "Fortune teller: free card reading": "Jules Tingles",
 };
 
@@ -383,7 +383,7 @@ export default function Timetable() {
         color: "#F7C600",
       },
       {
-        artist: "Needle felting (Studio Imela)",
+        artist: "Needle felting",
         stage: "Irie Knowledge Hut",
         time: "14:30 – 16:30",
         color: "#F7C600",

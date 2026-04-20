@@ -210,7 +210,7 @@ export default function Lineup() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
             {woodenRootsFloor.map((artist) => (
               <ArtistCard
                 key={artist}
@@ -235,7 +235,7 @@ export default function Lineup() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
             {steppinGrassField.map((artist) => (
               <ArtistCard
                 key={artist}
@@ -260,7 +260,7 @@ export default function Lineup() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
             {irieKnowledgeHut.map((activity) => (
               <ArtistCard
                 key={activity.name}
@@ -287,14 +287,14 @@ export default function Lineup() {
         <section className="mb-16">
           <div className="bg-gradient-to-r from-[#E6392F] to-[#F48C06] rounded-3xl border-4 border-black shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] p-8 mb-8 transform rotate-0.5">
             <h2 className="font-['Luckiest_Guy'] text-4xl md:text-5xl text-white text-center">
-              MCs
+              MC's
             </h2>
             <p className="font-['Poppins'] text-center text-white mt-2">
-              Master of Ceremonies • Sound Operators
+              The lyrical guidance at the dance
             </p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
             {mcs.map((mc) => (
               <ArtistCard
                 key={mc.name}
@@ -306,9 +306,7 @@ export default function Lineup() {
                 }
                 color="#E6392F"
                 imageSrc={getCrewImage(mc.name)}
-                onClick={() =>
-                  openArtist(mc.name, "", mc.playingAlongside)
-                }
+                onClick={() => openArtist(mc.name, "", mc.playingAlongside)}
               />
             ))}
           </div>
@@ -318,16 +316,16 @@ export default function Lineup() {
           open={selectedItem !== null}
           onOpenChange={() => setSelectedItem(null)}
         >
-          <DialogContent className="bg-white rounded-3xl border-4 border-black shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] max-w-md max-h-[85vh] overflow-hidden">
+          <DialogContent className="bg-white rounded-3xl border-4 border-black shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] max-w-md h-[92vh] max-h-[92vh] flex flex-col overflow-hidden">
             <DialogHeader>
-              <DialogTitle className="font-['Bangers'] text-3xl text-[#138A5A]">
+              <DialogTitle className="font-['Bangers'] text-3xl text-[#138A5A] pr-10 leading-tight break-words">
                 {selectedItem?.name}
               </DialogTitle>
             </DialogHeader>
 
             {selectedItem && (
-              <div className="space-y-4 max-h-[70vh] overflow-y-auto pr-1">
-                <div className="w-full h-72 rounded-2xl border-2 border-black overflow-hidden bg-gray-100">
+              <div className="flex-1 min-h-0 overflow-y-auto overscroll-contain pr-1 pb-4 space-y-4">
+                <div className="w-full h-56 sm:h-72 rounded-2xl border-2 border-black overflow-hidden bg-gray-100">
                   {selectedItem.imageSrc ? (
                     <img
                       src={selectedItem.imageSrc}

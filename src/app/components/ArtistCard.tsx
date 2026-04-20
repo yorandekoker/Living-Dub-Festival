@@ -24,7 +24,7 @@ export default function ArtistCard({
   return (
     <div
       onClick={onClick}
-      className={`bg-white rounded-2xl border-3 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] p-4 max-h-[78vh] overflow-y-auto sm:max-h-none sm:overflow-visible hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-all ${onClick ? "cursor-pointer" : ""}`}
+      className={`bg-white rounded-2xl border-3 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] p-4 max-h-[78vh] overflow-y-auto overscroll-contain sm:max-h-none sm:overflow-visible hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-all ${onClick ? "cursor-pointer" : ""}`}
       style={{ transform: `rotate(${Math.random() * 2 - 1}deg)` }}
     >
       <div className="w-full h-36 rounded-xl border-2 border-black mb-3 overflow-hidden bg-gray-100">
@@ -49,26 +49,29 @@ export default function ArtistCard({
       </div>
 
       {/* Artist Name */}
-      <h4 className="font-['Fredoka'] text-lg font-bold mb-2" style={{ color }}>
+      <h4
+        className="font-['Fredoka'] text-lg font-bold mb-2 leading-tight break-words"
+        style={{ color }}
+      >
         {name}
       </h4>
 
       {subtitle && (
-        <p className="font-['Poppins'] text-xs italic text-gray-600 mb-1">
+        <p className="font-['Poppins'] text-xs italic text-gray-600 mb-1 break-words">
           {subtitle}
         </p>
       )}
 
       {/* Stage Info */}
       {stage && (
-        <p className="font-['Poppins'] text-xs text-gray-600 mb-1">
+        <p className="font-['Poppins'] text-xs text-gray-600 mb-1 break-words">
           📍 {stage}
         </p>
       )}
 
       {/* Time Info */}
       {time && (
-        <p className="font-['Poppins'] text-xs font-semibold text-gray-800">
+        <p className="font-['Poppins'] text-xs font-semibold text-gray-800 break-words">
           🕐 {time}
         </p>
       )}
