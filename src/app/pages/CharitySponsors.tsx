@@ -3,13 +3,12 @@ import Button from "../components/Button";
 export default function CharitySponsors() {
   const goldSponsors = [
     "/images/charity_sponsors/gouden%20sponsors/gold%20mustache%20ipa.png",
-    "/images/charity_sponsors/gouden%20sponsors/tent%20events.png",
+    "/images/charity_sponsors/gouden%20sponsors/tent%20events.jpeg",
     "/images/charity_sponsors/gouden%20sponsors/thijs%20lybeart.png",
     "/images/charity_sponsors/gouden%20sponsors/tout%20bien.png",
   ];
 
   const silverSponsors = [
-    "/images/charity_sponsors/zilveren%20sponsors/lybaert.png",
     "/images/charity_sponsors/zilveren%20sponsors/prik%20en%20tik.jpg",
     "/images/charity_sponsors/zilveren%20sponsors/statamat.svg",
     "/images/charity_sponsors/zilveren%20sponsors/van%20wymeersch.png",

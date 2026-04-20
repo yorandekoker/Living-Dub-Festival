@@ -64,7 +64,6 @@ export default function Lineup() {
   const [selectedItem, setSelectedItem] = useState<LineupDetail | null>(null);
 
   const woodenRootsFloor = [
-    "Selah Techniques ft. Della",
     "Break Bread",
     "Creativ Dubs",
     "Ital Brew",
@@ -81,11 +80,12 @@ export default function Lineup() {
     "Mitch",
     "DJ Dédé",
     "DJ Ceductive",
-    "Della",
   ];
 
   const steppinGrassField = [
     "Steppin' Ground",
+    "Selah Techniques",
+    "Della",
     "Jahmateur Hi Power",
     "Bloodhound",
     "Not Surrender",
