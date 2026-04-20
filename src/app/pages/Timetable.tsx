@@ -36,6 +36,23 @@ const timetableArtistAliases: Record<string, string> = {
     "UFO Collective (Unlisted Fanatic, MariJah & Moonshine Horns)",
 };
 
+const workshopCredits: Record<string, string> = {
+  "Henna Workshop": "Ellumine",
+  "Henna Tattoos": "Ellumine",
+  "Living Art": "Loes & Lea",
+  "Ecstatic Dance": "Yasmine",
+  "Fire show": "Levi & Lisa",
+  "Mindfulness & Meditatie (Patricia van Wegen)": "Patricia Van Weegen",
+  "Integrale Yoga (Patricia van Wegen)": "Patricia Van Weegen",
+  "Airbrush & Kindergrime (Ellumine)": "Ellumine",
+  "Roots and Colors: Graffiti Workshop (Jote & Elmo)": "Elmo & Jote",
+  "Natural Shapes (Burak)": "Burak",
+  "Performance by Rodkint (Elise Deryckere)": "Elise Deryckere",
+  "Organic farming and human care (Vzw Gooikenshoeve)": "Vzw Gooikenshoeve",
+  "Needle felting (Studio Imela)": "Yasmine",
+  "Fortune teller: free card reading (Jules Tingles)": "Jules Tingles",
+};
+
 export default function Timetable() {
   const [activeDay, setActiveDay] = useState<"friday" | "saturday" | "sunday">(
     "friday",
@@ -107,30 +124,30 @@ export default function Timetable() {
     ],
     saturday: [
       {
-        artist: "Unification",
+        artist: "Unification ft. Crownless I",
         stage: "Wooden Roots Floor",
-        time: "12:00 – 14:45",
+        time: "12:00 – 20:00",
         color: "#E6392F",
         playingAgainst: "Fishermen ft. Wiseman Jarne, Deliverance, Poa Annua",
       },
       {
         artist: "Fishermen ft. Wiseman Jarne",
         stage: "Wooden Roots Floor",
-        time: "14:45 – 16:30",
+        time: "12:00 – 20:00",
         color: "#E6392F",
         playingAgainst: "Unification, Deliverance, Poa Annua",
       },
       {
         artist: "Poa Annua",
         stage: "Wooden Roots Floor",
-        time: "16:30 – 18:15",
+        time: "12:00 – 20:00",
         color: "#E6392F",
         playingAgainst: "Fishermen ft. Wiseman Jarne, Deliverance, Unification",
       },
       {
         artist: "Deliverance",
         stage: "Wooden Roots Floor",
-        time: "18:15 – 20:00",
+        time: "12:00 – 20:00",
         color: "#E6392F",
         playingAgainst: "Fishermen ft. Wiseman Jarne, Unification, Poa Annua",
       },
@@ -143,14 +160,14 @@ export default function Timetable() {
       {
         artist: "Crucial ft. MC Tubbie",
         stage: "Wooden Roots Floor",
-        time: "21:45 – 00:45",
+        time: "21:45 – 3:00",
         color: "#E6392F",
         playingAgainst: "Suncharm ft. Crownless I",
       },
       {
         artist: "Suncharm ft. Crownless I",
         stage: "Wooden Roots Floor",
-        time: "00:45 – 03:00",
+        time: "21:45 – 03:00",
         color: "#E6392F",
         playingAgainst: "Crucial ft. MC Tubbie",
       },
@@ -251,7 +268,7 @@ export default function Timetable() {
       {
         artist: "Drijfkracht",
         stage: "Steppin' Grass Field",
-        time: "16:00 – 17:00",
+        time: "16:00 – 18:00",
         color: "#138A5A",
         playingAgainst: "Tune",
       },
@@ -386,9 +403,12 @@ export default function Timetable() {
   };
 
   const handleWorkshopClick = (event: TimetableEvent) => {
-    const description =
+    const fullDescription =
       workshopDescriptions[event.artist] ??
       `Join ${event.artist} at ${event.stage} for a creative festival workshop experience.`;
+
+    // Timetable workshop modal shows only the main workshop text (before artist bio).
+    const description = fullDescription.split("\n\n")[0].trim();
 
     setSelectedWorkshop({
       name: event.artist,
@@ -685,6 +705,12 @@ export default function Timetable() {
                 <h3 className="font-['Fredoka'] text-lg sm:text-xl font-bold mb-2 text-[#F7C600] break-words">
                   {event.artist}
                 </h3>
+
+                {workshopCredits[event.artist] && (
+                  <p className="font-['Poppins'] text-xs italic text-gray-600 mb-2 break-words">
+                    {workshopCredits[event.artist]}
+                  </p>
+                )}
 
                 <p className="font-['Poppins'] text-sm text-gray-600 mb-2">
                   📍 {event.stage}

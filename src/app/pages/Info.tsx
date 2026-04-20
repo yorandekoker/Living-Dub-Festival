@@ -70,7 +70,7 @@ export default function Info() {
               <li>€25 = day ticket</li>
               <li>€5 = parking</li>
               <li>€5 = campervan-camping</li>
-              <li>€5 = bus Sleidinge Station - Festival</li>
+              <li>€5 = bus Sleidinge Station - Festival there and back</li>
               <li>FREE = camping</li>
               <li>FREE = children under 12 (with valid proof of age)</li>
               <li>

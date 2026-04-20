@@ -17,6 +17,18 @@ interface LineupDetail {
   stage: string;
   description: string;
   imageSrc?: string | null;
+  playingAlongside?: string;
+}
+
+interface WorkshopLineupItem {
+  name: string;
+  credit: string;
+  lookupName?: string;
+}
+
+interface McLineupItem {
+  name: string;
+  playingAlongside?: string;
 }
 
 const artistAliases: Record<string, string> = {
@@ -35,10 +47,15 @@ const artistAliases: Record<string, string> = {
 
 const workshopAliases: Record<string, string> = {
   "Fire Dance": "Fire show",
+  "Fire Performance": "Fire show",
   "Mindfulness / Meditation": "Mindfulness & Meditatie (Patricia van Wegen)",
   "Integrale Yoga": "Integrale Yoga (Patricia van Wegen)",
   "Airbrush & Kids Facepainting": "Airbrush & Kindergrime (Elluminé)",
+  "Airbrush Tattoos": "Airbrush & Kindergrime (Elluminé)",
   "Graffiti Workshop": "Roots and Colors: Graffiti Workshop (Jote & Elmo)",
+  "Organic Farming": "Organic farming and human care (Vzw Gooikenshoeve)",
+  "Needle Felting": "Needle felting (Studio Imela)",
+  "Fortune Teller": "Fortune teller: free card reading (Jules Tingles)",
   "Performance Rodkint": "Performance by Rodkint (Elise Deryckere)",
 };
 
@@ -85,7 +102,6 @@ export default function Lineup() {
   const steppinGrassField = [
     "Steppin' Ground",
     "Selah Techniques",
-    "Della",
     "Jahmateur Hi Power",
     "Bloodhound",
     "Not Surrender",
@@ -100,37 +116,64 @@ export default function Lineup() {
     "Indica Dubs ft. Danman",
   ];
 
-  const mcs = ["MC Kingten", "MC Tubbie", "Crownless I"];
-
-  const irieKnowledgeHut = [
-    "Henna Workshop",
-    "Henna Tattoos",
-    "Living Art",
-    "Ecstatic Dance",
-    "Fire Dance",
-    "Mindfulness / Meditation",
-    "Integrale Yoga",
-    "Airbrush & Kids Facepainting",
-    "Graffiti Workshop",
-    "Natural Shapes",
-    "Performance Rodkint",
+  const mcs: McLineupItem[] = [
+    { name: "MC Kingten", playingAlongside: "Bloodhound" },
+    { name: "MC Tubbie", playingAlongside: "Crucial" },
+    { name: "Crownless I", playingAlongside: "Suncharm" },
+    { name: "Della", playingAlongside: "Selah Techniques" },
+    {
+      name: "MC Wiseman Jarne",
+      playingAlongside: "Fishermen, Unification, Poa Annua, Deliverance",
+    },
+    { name: "Danman", playingAlongside: "Indica Dubs" },
+    { name: "Ras Timbo", playingAlongside: "Steppin' Ground" },
   ];
 
-  const openArtist = (name: string, stage: string) => {
+  const irieKnowledgeHut: WorkshopLineupItem[] = [
+    { name: "Henna Workshop", credit: "Elluminé" },
+    { name: "Henna Tattoos", credit: "Elluminé" },
+    { name: "Living Art", credit: "Loes & Léa" },
+    { name: "Ecstatic Dance", credit: "Yasmine" },
+    { name: "Fire Performance", credit: "Levi & Lisa", lookupName: "Fire Dance" },
+    { name: "Mindfulness / Meditation", credit: "Patricia Van Weegen" },
+    { name: "Integrale Yoga", credit: "Patricia Van Weegen" },
+    { name: "Airbrush Tattoos", credit: "Elluminé", lookupName: "Airbrush & Kids Facepainting" },
+    { name: "Graffiti Workshop", credit: "Elmo & Joté" },
+    {
+      name: "Organic Farming",
+      credit: "Vzw Gooikenshoeve",
+      lookupName: "Organic farming and human care (Vzw Gooikenshoeve)",
+    },
+    { name: "Needle Felting", credit: "Yasmine" },
+    {
+      name: "Fortune Teller",
+      credit: "Jules Tingles",
+      lookupName: "Fortune teller: free card reading (Jules Tingles)",
+    },
+  ];
+
+  const openArtist = (
+    name: string,
+    stage: string,
+    playingAlongside?: string,
+  ) => {
     setSelectedItem({
       name,
       stage,
       description: resolveArtistDescription(name),
       imageSrc: getCrewImage(name),
+      playingAlongside,
     });
   };
 
-  const openWorkshop = (name: string, stage: string) => {
+  const openWorkshop = (name: string, stage: string, lookupName?: string) => {
+    const workshopKey = lookupName ?? name;
+
     setSelectedItem({
       name,
       stage,
-      description: resolveWorkshopDescription(name),
-      imageSrc: getWorkshopImage(name),
+      description: resolveWorkshopDescription(workshopKey),
+      imageSrc: getWorkshopImage(workshopKey),
     });
   };
 
@@ -211,12 +254,19 @@ export default function Lineup() {
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
             {irieKnowledgeHut.map((activity) => (
               <ArtistCard
-                key={activity}
-                name={activity}
+                key={activity.name}
+                name={activity.name}
+                subtitle={activity.credit}
                 stage="Irie Knowledge Hut"
                 color="#2EC4B6"
-                imageSrc={getWorkshopImage(activity)}
-                onClick={() => openWorkshop(activity, "Irie Knowledge Hut")}
+                imageSrc={getWorkshopImage(activity.lookupName ?? activity.name)}
+                onClick={() =>
+                  openWorkshop(
+                    activity.name,
+                    "Irie Knowledge Hut",
+                    activity.lookupName,
+                  )
+                }
               />
             ))}
           </div>
@@ -236,12 +286,15 @@ export default function Lineup() {
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
             {mcs.map((mc) => (
               <ArtistCard
-                key={mc}
-                name={mc}
+                key={mc.name}
+                name={mc.name}
+                subtitle={mc.playingAlongside ? `Playing alongside: ${mc.playingAlongside}` : undefined}
                 stage="Various Stages"
                 color="#E6392F"
-                imageSrc={getCrewImage(mc)}
-                onClick={() => openArtist(mc, "Various Stages")}
+                imageSrc={getCrewImage(mc.name)}
+                onClick={() =>
+                  openArtist(mc.name, "Various Stages", mc.playingAlongside)
+                }
               />
             ))}
           </div>
@@ -290,6 +343,17 @@ export default function Lineup() {
                       {selectedItem.stage}
                     </p>
                   </div>
+
+                  {selectedItem.playingAlongside && (
+                    <div className="mb-3">
+                      <h4 className="font-['Fredoka'] font-bold text-sm text-gray-600 mb-1">
+                        Playing alongside
+                      </h4>
+                      <p className="font-['Poppins'] text-base text-[#E6392F] font-semibold">
+                        {selectedItem.playingAlongside}
+                      </p>
+                    </div>
+                  )}
                 </div>
 
                 <p className="font-['Poppins'] text-sm text-gray-700 leading-relaxed whitespace-pre-line">

@@ -198,7 +198,7 @@ export default function Events() {
                 </div>
                 <h2 className="font-['Fredoka'] text-xl sm:text-2xl mb-2 leading-snug break-words">
                   Sunny Outdoor Dubsession, hosted by Guiding Youth + Tune
-                  Soundsystem - with Soko Sound - Cafe Matheur, Sleidinge-dorp
+                  Soundsystem - with Soko Sound - Cafe Matheus, Sleidinge-dorp
                   (23/08/2025)
                 </h2>
               </div>

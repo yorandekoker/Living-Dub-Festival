@@ -19,6 +19,9 @@ const mcsImageMap = buildMap([
   ["MC Kingten", "kingten.jpg"],
   ["MC Tubbie", "MC tubbie.jpg"],
   ["Crownless I", "crownless.jpg"],
+  ["MC Wiseman Jarne", "wiseman jarne.jpeg"],
+  ["Danman", "danman.jpeg"],
+  ["Ras Timbo", "Ras Timbo.jpeg"],
 ]);
 
 const crewImageMap = buildMap([

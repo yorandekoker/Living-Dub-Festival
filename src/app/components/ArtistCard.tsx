@@ -2,6 +2,7 @@ import { ImageWithFallback } from "./figma/ImageWithFallback";
 
 interface ArtistCardProps {
   name: string;
+  subtitle?: string;
   stage?: string;
   time?: string;
   color?: string;
@@ -11,6 +12,7 @@ interface ArtistCardProps {
 
 export default function ArtistCard({
   name,
+  subtitle,
   stage,
   time,
   color = "#F7C600",
@@ -50,6 +52,12 @@ export default function ArtistCard({
       <h4 className="font-['Fredoka'] text-lg font-bold mb-2" style={{ color }}>
         {name}
       </h4>
+
+      {subtitle && (
+        <p className="font-['Poppins'] text-xs italic text-gray-600 mb-1">
+          {subtitle}
+        </p>
+      )}
 
       {/* Stage Info */}
       {stage && (
