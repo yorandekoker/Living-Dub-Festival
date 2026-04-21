@@ -36,13 +36,13 @@ const artistAliases: Record<string, string> = {
   Fishermen: "Fishermen ft. Wiseman Jarne",
   Bloodhound: "Bloodhound ft. MC Kingten",
   Crucial: "Crucial ft. MC Tubbie",
-  suncharmdub: "suncharmdub ft. Crownless I",
+  suncharmdub: "suncharmdub",
   MUDA: "MUDA @ Living Dub",
   "UFO Collective ft. Unlisted Fanatic, Marijah and Moonshine Horns":
     "UFO Collective (Unlisted Fanatic, MariJah & Moonshine Horns)",
   "MC Kingten": "Bloodhound ft. MC Kingten",
   "MC Tubbie": "Crucial ft. MC Tubbie",
-  "Crownless I": "suncharmdub ft. Crownless I",
+  "Crownless I": "suncharmdub",
 };
 
 const workshopAliases: Record<string, string> = {
@@ -106,7 +106,7 @@ export default function Lineup() {
     "Bloodhound",
     "Not Surrender",
     "Lowie",
-    "Moksha Vibrations",
+    "Mokshka Vibrations",
     "Pathseeker",
     "Untzslag",
     "Saga Sound Station",

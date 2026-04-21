@@ -2,10 +2,10 @@ import Button from "../components/Button";
 
 export default function CharitySponsors() {
   const goldSponsors = [
-    "/images/charity_sponsors/gouden%20sponsors/gold%20mustache%20ipa.png",
+    "/images/charity_sponsors/gouden%20sponsors/tout%20bien.png",
     "/images/charity_sponsors/gouden%20sponsors/tent%20events.jpeg",
     "/images/charity_sponsors/gouden%20sponsors/thijs%20lybeart.png",
-    "/images/charity_sponsors/gouden%20sponsors/tout%20bien.png",
+    "/images/charity_sponsors/gouden%20sponsors/gold%20mustache%20ipa.png",
   ];
 
   const silverSponsors = [

@@ -422,7 +422,7 @@ Steppin’ Ground
 Jahmateur Hi Power
 Bloodhound
 Lowie
-Moksha Vibrations
+Mokshka Vibrations
 Pathseeker
 Untzslag
 Saga Sound Station

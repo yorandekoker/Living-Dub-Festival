@@ -45,7 +45,7 @@ const workshopCredits: Record<string, string> = {
   "Mindfulness & Meditatie": "Patricia Van Weegen",
   "Integrale Yoga": "Patricia Van Weegen",
   "Airbrush & Kindergrime": "Ellumine",
-  "Roots and Colors: Graffiti Workshop": "Elmo & Jote",
+  "Roots and Colors: Graffiti Workshop": "Elmo & Joté",
   "Natural Shapes": "Burak",
   "Performance by Rodkint": "Elise Deryckere",
   "Organic farming and human care": "Vzw Gooikenshoeve",
@@ -58,7 +58,7 @@ const timetableWorkshopAliases: Record<string, string> = {
   "Integrale Yoga": "Integrale Yoga (Patricia van Wegen)",
   "Airbrush & Kindergrime": "Airbrush & Kindergrime (Elluminé)",
   "Roots and Colors: Graffiti Workshop":
-    "Roots and Colors: Graffiti Workshop (Jote & Elmo)",
+    "Roots and Colors: Graffiti Workshop (Joté & Elmo)",
   "Performance by Rodkint": "Performance by Rodkint (Elise Deryckere)",
   "Organic farming and human care":
     "Organic farming and human care (Vzw Gooikenshoeve)",
@@ -111,10 +111,10 @@ export default function Timetable() {
         stage: "Steppin' Grass Field",
         time: "14:00 – 20:00",
         color: "#138A5A",
-        playingAgainst: "Moshka Vibrations",
+        playingAgainst: "Mokshka Vibrations",
       },
       {
-        artist: "Moshka Vibrations",
+        artist: "Mokshka Vibrations",
         stage: "Steppin' Grass Field",
         time: "14:00 – 20:00",
         color: "#138A5A",
