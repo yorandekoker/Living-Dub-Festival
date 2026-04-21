@@ -10,7 +10,7 @@ export default function Festival2026() {
         "The main indoor stage featuring soundsystem clashes and roots reggae sessions. On Sunday we dedicate this stage to local artists from Evergem.",
       color: "#E6392F",
       rotation: "-1.5deg",
-      imageSrc: "/images/stages/wooden roots floor.jpg",
+      imageSrc: "/images/stages/wooden roots floor.jpeg",
     },
     {
       name: "Steppin' Grass Field",

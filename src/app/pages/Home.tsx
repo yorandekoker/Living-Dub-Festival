@@ -12,7 +12,7 @@ export default function Home() {
         "The main stage featuring dub and roots reggae vibes. Where the deepest bass meets conscious lyrics. On Sunday we dedicate this stage to local artists from Evergem.",
       color: "#E6392F",
       rotation: "-1deg",
-      imageSrc: "/images/stages/wooden roots floor.jpg",
+      imageSrc: "/images/stages/wooden roots floor.jpeg",
     },
     {
       name: "Steppin' Grass Field",
