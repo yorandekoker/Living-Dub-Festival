@@ -90,21 +90,28 @@ export default function Timetable() {
         stage: "Wooden Roots Floor",
         time: "14:00 – 02:00",
         color: "#E6392F",
-        playingAgainst: "Creativ Dubs, Ital Brew",
+        playingAgainst: "Creativ Dubs, Ital Brew, Poa Annua",
       },
       {
         artist: "Creativ Dubs",
         stage: "Wooden Roots Floor",
         time: "14:00 – 02:00",
         color: "#E6392F",
-        playingAgainst: "Break Bread, Ital Brew",
+        playingAgainst: "Break Bread, Ital Brew, Poa Annua",
       },
       {
         artist: "Ital Brew",
         stage: "Wooden Roots Floor",
         time: "14:00 – 02:00",
         color: "#E6392F",
-        playingAgainst: "Break Bread, Creativ Dubs",
+        playingAgainst: "Break Bread, Creativ Dubs, Poa Annua",
+      },
+      {
+        artist: "Poa Annua",
+        stage: "Wooden Roots Floor",
+        time: "20:00 – 02:00",
+        color: "#E6392F",
+        playingAgainst: "Break Bread, Creativ Dubs, Ital Brew",
       },
       {
         artist: "Steppin' Ground",
@@ -141,28 +148,21 @@ export default function Timetable() {
         stage: "Wooden Roots Floor",
         time: "12:00 – 20:00",
         color: "#E6392F",
-        playingAgainst: "Fishermen, Deliverance, Poa Annua",
+        playingAgainst: "Fishermen, Deliverance",
       },
       {
         artist: "Fishermen",
         stage: "Wooden Roots Floor",
         time: "12:00 – 20:00",
         color: "#E6392F",
-        playingAgainst: "Unification, Deliverance, Poa Annua",
-      },
-      {
-        artist: "Poa Annua",
-        stage: "Wooden Roots Floor",
-        time: "12:00 – 20:00",
-        color: "#E6392F",
-        playingAgainst: "Fishermen, Deliverance, Unification",
+        playingAgainst: "Unification, Deliverance",
       },
       {
         artist: "Deliverance",
         stage: "Wooden Roots Floor",
         time: "12:00 – 20:00",
         color: "#E6392F",
-        playingAgainst: "Fishermen, Unification, Poa Annua",
+        playingAgainst: "Fishermen, Unification",
       },
       {
         artist: "UFO Collective",
@@ -525,28 +525,28 @@ export default function Timetable() {
                       style={{ backgroundColor: event.color }}
                     >
                       {event.artist}
-                    </div>
+                      playingAgainst: "Fishermen, Deliverance",
                   )}
                 </div>
 
                 {/* Time */}
                 <div
                   className="inline-block px-3 py-1 rounded-lg border-2 border-black mb-3 font-['Fredoka'] text-sm font-bold text-white"
-                  style={{ backgroundColor: event.color }}
+                      playingAgainst: "Unification, Deliverance",
                 >
                   {event.time}
                 </div>
 
-                {/* Artist Name */}
-                <h3
-                  className="font-['Fredoka'] text-lg sm:text-xl font-bold mb-2 break-words"
+                      time: "",
+                      color: "#E6392F",
+                      playingAgainst: "",
                   style={{ color: event.color }}
                 >
                   {event.artist}
                 </h3>
 
                 {/* Stage */}
-                <p className="font-['Poppins'] text-sm text-gray-600 mb-2">
+                      playingAgainst: "Fishermen, Unification",
                   📍 {event.stage}
                 </p>
 
