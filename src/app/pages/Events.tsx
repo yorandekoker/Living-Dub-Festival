@@ -55,6 +55,32 @@ export default function Events() {
                 className="bg-white p-6 rounded-2xl border-3 border-black overflow-hidden transform hover:scale-[1.01] transition-transform"
                 style={{
                   boxShadow: "6px 6px 0px rgba(0,0,0,0.3)",
+                  transform: "rotate(-0.4deg)",
+                }}
+              >
+                <div className="w-full rounded-2xl border-3 border-black overflow-hidden mb-5">
+                  <ImageWithFallback
+                    src="/images/events/last pre.jpeg"
+                    alt="Living Dub last pre-party event"
+                    className="w-full h-auto object-contain object-center"
+                  />
+                </div>
+
+                <div className="bg-[#F48C06] text-white px-4 py-2 rounded-full inline-block mb-3">
+                  <span className="font-['Bangers'] text-sm">UPCOMING</span>
+                </div>
+                <h2 className="font-['Fredoka'] text-xl sm:text-2xl mb-2 leading-snug break-words">
+                  Living Dub VZW presents: Last Pre-Party Before The Festival -
+                  Little Man, Deliverance &amp; Suncharmdub all playing on the
+                  improved Little Man Soundsystem - @Tuin Van Heden, Ghent
+                  (13/06) - FREE!
+                </h2>
+              </div>
+
+              <div
+                className="bg-white p-6 rounded-2xl border-3 border-black overflow-hidden transform hover:scale-[1.01] transition-transform"
+                style={{
+                  boxShadow: "6px 6px 0px rgba(0,0,0,0.3)",
                   transform: "rotate(0.4deg)",
                 }}
               >
@@ -109,6 +135,30 @@ export default function Events() {
                 className="bg-white p-6 rounded-2xl border-3 border-black overflow-hidden transform hover:scale-[1.01] transition-transform"
                 style={{
                   boxShadow: "6px 6px 0px rgba(0,0,0,0.3)",
+                  transform: "rotate(-0.3deg)",
+                }}
+              >
+                <div className="w-full rounded-2xl border-3 border-black overflow-hidden mb-5">
+                  <ImageWithFallback
+                    src="/images/events/living dub invites bloodhound.jpg"
+                    alt="Living Dub invites Bloodhound and Unification"
+                    className="w-full h-auto object-contain object-center"
+                  />
+                </div>
+
+                <div className="bg-[#138A5A] text-white px-4 py-2 rounded-full inline-block mb-3">
+                  <span className="font-['Bangers'] text-sm">PAST EVENT</span>
+                </div>
+                <h2 className="font-['Fredoka'] text-xl sm:text-2xl mb-2 leading-snug break-words">
+                  Living Dub invites Bloodhound and Unification - De 4de van de
+                  4de at De 4de Zaal (04/04/2026) - 20:00 - 05:00
+                </h2>
+              </div>
+
+              <div
+                className="bg-white p-6 rounded-2xl border-3 border-black overflow-hidden transform hover:scale-[1.01] transition-transform"
+                style={{
+                  boxShadow: "6px 6px 0px rgba(0,0,0,0.3)",
                   transform: "rotate(0.4deg)",
                 }}
               >
@@ -151,30 +201,6 @@ export default function Events() {
                 <h2 className="font-['Fredoka'] text-xl sm:text-2xl mb-2 leading-snug break-words">
                   Living Dub invites Drijfkracht - For Thomas' B-Day Bash -
                   @Molotov, Voetweg 48, Ghent (28/01/2026)
-                </h2>
-              </div>
-
-              <div
-                className="bg-white p-6 rounded-2xl border-3 border-black overflow-hidden transform hover:scale-[1.01] transition-transform"
-                style={{
-                  boxShadow: "6px 6px 0px rgba(0,0,0,0.3)",
-                  transform: "rotate(-0.3deg)",
-                }}
-              >
-                <div className="w-full rounded-2xl border-3 border-black overflow-hidden mb-5">
-                  <ImageWithFallback
-                    src="/images/events/living dub invites bloodhound.jpg"
-                    alt="Living Dub invites Bloodhound and Unification"
-                    className="w-full h-auto object-contain object-center"
-                  />
-                </div>
-
-                <div className="bg-[#138A5A] text-white px-4 py-2 rounded-full inline-block mb-3">
-                  <span className="font-['Bangers'] text-sm">PAST EVENT</span>
-                </div>
-                <h2 className="font-['Fredoka'] text-xl sm:text-2xl mb-2 leading-snug break-words">
-                  Living Dub invites Bloodhound and Unification - De 4de van de
-                  4de at De 4de Zaal (04/04/2026) - 20:00 - 05:00
                 </h2>
               </div>
 
@@ -245,7 +271,7 @@ export default function Events() {
                   <span className="font-['Bangers'] text-sm">PAST EVENT</span>
                 </div>
                 <h2 className="font-['Fredoka'] text-xl sm:text-2xl mb-2 leading-snug break-words">
-                  Living Dub 1.0 - In a living room (08/04/2016)
+                  Living Dub 1.0 - De Living (08/04/2016)
                 </h2>
               </div>
 
@@ -268,7 +294,7 @@ export default function Events() {
                   <span className="font-['Bangers'] text-sm">PAST EVENT</span>
                 </div>
                 <h2 className="font-['Fredoka'] text-xl sm:text-2xl mb-2 leading-snug break-words">
-                  Living Dub 2.0 - In a living room (27/08/2016)
+                  Living Dub 2.0 - De Living (27/08/2016)
                 </h2>
               </div>
             </div>

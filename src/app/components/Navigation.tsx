@@ -99,15 +99,25 @@ export default function Navigation() {
               ))}
             </div>
 
-            {/* Buy Tickets Button - Right Side */}
-            <a
-              href="https://living-dub-festival-2026.eventsquare.store/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden lg:block font-['Bangers'] text-lg px-6 py-3 bg-[#F7C600] text-black rounded-full border-3 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all transform rotate-1 absolute right-4 sm:right-6 lg:right-8"
-            >
-              Buy Tickets
-            </a>
+            {/* Buy Tickets and Volunteer Buttons - Right Side */}
+            <div className="hidden lg:flex items-center gap-3 absolute right-4 sm:right-6 lg:right-8">
+              <a
+                href="https://forms.gle/SL2cXLbUcF45VEXx5"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-['Bangers'] text-lg px-5 py-3 bg-white text-black rounded-full border-3 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all transform -rotate-1 whitespace-nowrap"
+              >
+                Become a Volunteer
+              </a>
+              <a
+                href="https://living-dub-festival-2026.eventsquare.store/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-['Bangers'] text-lg px-6 py-3 bg-[#F7C600] text-black rounded-full border-3 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all transform rotate-1 whitespace-nowrap"
+              >
+                Buy Tickets
+              </a>
+            </div>
 
             {/* Mobile Menu Button */}
             <button
@@ -198,6 +208,15 @@ export default function Navigation() {
               ))}
 
               {/* Mobile Buy Tickets Button */}
+              <a
+                href="https://forms.gle/SL2cXLbUcF45VEXx5"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block text-center font-['Bangers'] text-lg px-6 py-3 bg-white text-black rounded-full border-3 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] mt-4"
+              >
+                Become a Volunteer
+              </a>
+
               <a
                 href="https://living-dub-festival-2026.eventsquare.store/"
                 target="_blank"
