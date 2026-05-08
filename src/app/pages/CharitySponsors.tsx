@@ -13,7 +13,6 @@ export default function CharitySponsors() {
     "/images/charity_sponsors/zilveren%20sponsors/statamat.svg",
     "/images/charity_sponsors/zilveren%20sponsors/van%20wymeersch.png",
     "/images/charity_sponsors/zilveren%20sponsors/vzw%20gooikenshoeve.jpg",
-    "/images/charity_sponsors/zilveren%20sponsors/lybaert.png",
     "/images/charity_sponsors/zilveren%20sponsors/gigantes.jpeg",
     "/images/charity_sponsors/zilveren%20sponsors/vandelanotte.jpeg",
   ];

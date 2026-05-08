@@ -525,28 +525,27 @@ export default function Timetable() {
                       style={{ backgroundColor: event.color }}
                     >
                       {event.artist}
-                      playingAgainst: "Fishermen, Deliverance",
+                    </div>
                   )}
                 </div>
 
                 {/* Time */}
                 <div
                   className="inline-block px-3 py-1 rounded-lg border-2 border-black mb-3 font-['Fredoka'] text-sm font-bold text-white"
-                      playingAgainst: "Unification, Deliverance",
+                  style={{ backgroundColor: event.color }}
                 >
                   {event.time}
                 </div>
 
-                      time: "",
-                      color: "#E6392F",
-                      playingAgainst: "",
+                <h3
+                  className="font-['Fredoka'] text-lg sm:text-xl font-bold mb-2 break-words"
                   style={{ color: event.color }}
                 >
                   {event.artist}
                 </h3>
 
                 {/* Stage */}
-                      playingAgainst: "Fishermen, Unification",
+                <p className="font-['Poppins'] text-sm text-gray-600 mb-2">
                   📍 {event.stage}
                 </p>
 
