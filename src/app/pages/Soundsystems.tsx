@@ -59,7 +59,7 @@ export default function Soundsystems() {
       color: "#F48C06",
     },
     {
-      name: "Mokshka Vibrations Soundsystem",
+      name: "Moksha Vibrations Soundsystem",
       color: "#2EC4B6",
     },
     {

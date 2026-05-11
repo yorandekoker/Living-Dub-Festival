@@ -134,10 +134,10 @@ export default function Info() {
               Belangrijk: de Living Dub Bus rijdt slechts op beperkte uren.
             </p>
             <ul className="font-['Poppins'] text-base text-gray-700 space-y-1 list-disc list-inside mb-6">
-              <li>Vrijdag 03/07: tbc</li>
-              <li>Zaterdag 04/07: tbc</li>
-              <li>Zondag 05/07: tbc</li>
-              <li>Maandag 06/07: tbc</li>
+              <li>Vrijdag 03/07: 11:00 - 22:00</li>
+              <li>Zaterdag 04/07: 11:00 - 22:00</li>
+              <li>Zondag 05/07: 11:00 - 22:00</li>
+              <li>Maandag 06/07: 11:00 - 22:00</li>
             </ul>
 
             <h4 className="font-['Fredoka'] text-xl font-bold text-gray-800 mb-3">
@@ -199,6 +199,8 @@ export default function Info() {
                 are provided by us.
               </li>
               <li>No campfires are allowed.</li>
+              <li>On Friday, camping opens at 11:00.</li>
+              <li>On Monday, you have to leave before 12:00.</li>
             </ul>
             <p className="font-['Poppins'] text-base text-gray-700 leading-relaxed">
               You can find our general terms and conditions in the document

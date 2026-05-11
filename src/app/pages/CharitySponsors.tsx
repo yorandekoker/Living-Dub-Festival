@@ -15,6 +15,8 @@ export default function CharitySponsors() {
     "/images/charity_sponsors/zilveren%20sponsors/vzw%20gooikenshoeve.jpg",
     "/images/charity_sponsors/zilveren%20sponsors/gigantes.jpeg",
     "/images/charity_sponsors/zilveren%20sponsors/vandelanotte.jpeg",
+    "/images/charity_sponsors/zilveren%20sponsors/bostoen.jpeg",
+    "/images/charity_sponsors/zilveren%20sponsors/bfbconstructant.jpeg",
   ];
 
   const bronzeSponsors = [
@@ -30,8 +32,6 @@ export default function CharitySponsors() {
     "/images/charity_sponsors/bronzen%20sponsers/yoga.png",
     "/images/charity_sponsors/bronzen%20sponsers/WOW.jpeg",
     "/images/charity_sponsors/bronzen%20sponsers/provincie%20oost%20vlaanderen.jpeg",
-    "/images/charity_sponsors/bronzen%20sponsers/bostoen.jpeg",
-    "/images/charity_sponsors/bronzen%20sponsers/bfbconstructant.jpeg",
     "/images/charity_sponsors/bronzen%20sponsers/aubbordufluyon.jpeg",
   ];
 
