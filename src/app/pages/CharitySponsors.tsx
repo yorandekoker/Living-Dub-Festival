@@ -26,6 +26,7 @@ export default function CharitySponsors() {
     "/images/charity_sponsors/bronzen%20sponsers/cafe%20matheus.png",
     "/images/charity_sponsors/bronzen%20sponsers/Christelijke%20mutaliteit.png",
     "/images/charity_sponsors/bronzen%20sponsers/cuddens.png",
+    "/images/charity_sponsors/bronzen%20sponsers/kriski.jpeg",
     "/images/charity_sponsors/bronzen%20sponsers/go%20muda.png",
     "/images/charity_sponsors/bronzen%20sponsers/studio%20imela.jpg",
     "/images/charity_sponsors/bronzen%20sponsers/tms.png",

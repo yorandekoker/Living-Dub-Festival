@@ -55,31 +55,6 @@ export default function Events() {
                 className="bg-white p-6 rounded-2xl border-3 border-black overflow-hidden transform hover:scale-[1.01] transition-transform"
                 style={{
                   boxShadow: "6px 6px 0px rgba(0,0,0,0.3)",
-                  transform: "rotate(0.4deg)",
-                }}
-              >
-                <div className="w-full rounded-2xl border-3 border-black overflow-hidden mb-5">
-                  <ImageWithFallback
-                    src="/images/events/lunch til breakfast.jpeg"
-                    alt="From Lunch Till Breakfast event"
-                    className="w-full h-auto object-contain object-center"
-                  />
-                </div>
-
-                <div className="bg-[#E6392F] text-white px-4 py-2 rounded-full inline-block mb-3">
-                  <span className="font-['Bangers'] text-sm">UPCOMING</span>
-                </div>
-                <h2 className="font-['Fredoka'] text-xl sm:text-2xl mb-2 leading-snug break-words">
-                  Living Dub VZW presents: From Lunch Till Breakfast - Roots
-                  till Steppa with Break Bread, Zion Town, Saga Soundstation &
-                  Lowie - @Minus One, Ghent (20/05)
-                </h2>
-              </div>
-
-              <div
-                className="bg-white p-6 rounded-2xl border-3 border-black overflow-hidden transform hover:scale-[1.01] transition-transform"
-                style={{
-                  boxShadow: "6px 6px 0px rgba(0,0,0,0.3)",
                   transform: "rotate(-0.4deg)",
                 }}
               >
@@ -107,6 +82,31 @@ export default function Events() {
           {/* Past Events Tab */}
           {activeTab === "past" && (
             <div className="space-y-6">
+              <div
+                className="bg-white p-6 rounded-2xl border-3 border-black overflow-hidden transform hover:scale-[1.01] transition-transform"
+                style={{
+                  boxShadow: "6px 6px 0px rgba(0,0,0,0.3)",
+                  transform: "rotate(0.4deg)",
+                }}
+              >
+                <div className="w-full rounded-2xl border-3 border-black overflow-hidden mb-5">
+                  <ImageWithFallback
+                    src="/images/events/lunch til breakfast.jpeg"
+                    alt="From Lunch Till Breakfast event"
+                    className="w-full h-auto object-contain object-center"
+                  />
+                </div>
+
+                <div className="bg-[#138A5A] text-white px-4 py-2 rounded-full inline-block mb-3">
+                  <span className="font-['Bangers'] text-sm">PAST EVENT</span>
+                </div>
+                <h2 className="font-['Fredoka'] text-xl sm:text-2xl mb-2 leading-snug break-words">
+                  Living Dub VZW presents: From Lunch Till Breakfast - Roots
+                  till Steppa with Break Bread, Zion Town, Saga Soundstation &
+                  Lowie - @Minus One, Ghent (20/05/2026)
+                </h2>
+              </div>
+
               <div
                 className="bg-white p-6 rounded-2xl border-3 border-black overflow-hidden transform hover:scale-[1.01] transition-transform"
                 style={{

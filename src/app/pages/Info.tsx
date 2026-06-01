@@ -66,8 +66,8 @@ export default function Info() {
               Ticket prices are:
             </p>
             <ul className="font-['Poppins'] text-base text-gray-700 space-y-2 list-disc list-inside mb-4">
-              <li>€60 = weekend ticket (3 days)</li>
-              <li>€25 = day ticket</li>
+              <li>€60 = weekend ticket at the door</li>
+              <li>€35 = day ticket at the door</li>
               <li>€5 = parking</li>
               <li>€5 = campervan-camping</li>
               <li>€5 = bus Sleidinge Station - Festival there and back</li>
