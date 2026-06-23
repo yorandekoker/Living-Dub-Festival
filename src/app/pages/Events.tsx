@@ -51,6 +51,13 @@ export default function Events() {
           {/* Upcoming Events Tab */}
           {activeTab === "upcoming" && (
             <div className="space-y-6">
+              <div className="text-center font-['Poppins'] text-gray-700">No upcoming events at the moment.</div>
+            </div>
+          )}
+
+          {/* Past Events Tab */}
+          {activeTab === "past" && (
+            <div className="space-y-6">
               <div
                 className="bg-white p-6 rounded-2xl border-3 border-black overflow-hidden transform hover:scale-[1.01] transition-transform"
                 style={{
@@ -66,22 +73,13 @@ export default function Events() {
                   />
                 </div>
 
-                <div className="bg-[#F48C06] text-white px-4 py-2 rounded-full inline-block mb-3">
-                  <span className="font-['Bangers'] text-sm">UPCOMING</span>
+                <div className="bg-[#138A5A] text-white px-4 py-2 rounded-full inline-block mb-3">
+                  <span className="font-['Bangers'] text-sm">PAST EVENT</span>
                 </div>
                 <h2 className="font-['Fredoka'] text-xl sm:text-2xl mb-2 leading-snug break-words">
-                  Living Dub VZW presents: Last Pre-Party Before The Festival -
-                  Little Man, Deliverance &amp; Suncharmdub all playing on the
-                  improved Little Man Soundsystem - @Tuin Van Heden, Ghent
-                  (13/06) - FREE!
+                  Living Dub VZW presents: Last Pre-Party Before The Festival - Little Man, Deliverance &amp; Suncharmdub - @Tuin Van Heden, Ghent (13/06/2026) - FREE!
                 </h2>
               </div>
-            </div>
-          )}
-
-          {/* Past Events Tab */}
-          {activeTab === "past" && (
-            <div className="space-y-6">
               <div
                 className="bg-white p-6 rounded-2xl border-3 border-black overflow-hidden transform hover:scale-[1.01] transition-transform"
                 style={{

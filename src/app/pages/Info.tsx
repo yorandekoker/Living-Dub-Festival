@@ -17,6 +17,7 @@ export default function Info() {
       answer:
         "Camping gear (tent, sleeping bag), comfortable shoes, weather-appropriate clothing, reusable water bottle, sunscreen, and good vibes!",
     },
+    {question: "Can I pay with card?", answer: "Unfortunately we don't accept card payments, but you can easily pay with cash or by scanning the QR code displayed at the counter."},
     {
       question: "Is camping included?",
       answer:
@@ -137,7 +138,7 @@ export default function Info() {
               <li>Vrijdag 03/07: 11:00 - 22:00</li>
               <li>Zaterdag 04/07: 11:00 - 22:00</li>
               <li>Zondag 05/07: 11:00 - 22:00</li>
-              <li>Maandag 06/07: 11:00 - 22:00</li>
+              <li>Maandag 06/07: 9:00 - 11:00</li>
             </ul>
 
             <h4 className="font-['Fredoka'] text-xl font-bold text-gray-800 mb-3">

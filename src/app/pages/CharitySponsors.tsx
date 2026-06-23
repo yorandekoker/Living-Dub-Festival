@@ -17,6 +17,7 @@ export default function CharitySponsors() {
     "/images/charity_sponsors/zilveren%20sponsors/vandelanotte.jpeg",
     "/images/charity_sponsors/zilveren%20sponsors/bostoen.jpeg",
     "/images/charity_sponsors/zilveren%20sponsors/bfbconstructant.jpeg",
+    "/images/charity_sponsors/zilveren%20sponsors/dockxrental.jpeg",
   ];
 
   const bronzeSponsors = [
@@ -34,6 +35,8 @@ export default function CharitySponsors() {
     "/images/charity_sponsors/bronzen%20sponsers/WOW.jpeg",
     "/images/charity_sponsors/bronzen%20sponsers/provincie%20oost%20vlaanderen.jpeg",
     "/images/charity_sponsors/bronzen%20sponsers/aubbordufluyon.jpeg",
+    "/images/charity_sponsors/bronzen%20sponsers/redbull.jpeg",
+    "/images/charity_sponsors/bronzen%20sponsers/slagerij%20vermeulen.jpeg",
   ];
 
   const renderSponsorRow = (images: string[], imageSizeClass: string) => (
