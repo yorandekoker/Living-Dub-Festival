@@ -12,10 +12,12 @@ export default function Info() {
   const [showTerms, setShowTerms] = useState(false);
 
   const faqs = [
+    {question: "Can I park at the festival?", answer: "Yes, there is a parking area available for festival visitors. A parking ticket costs €5 and can be purchased in our ticket shop."},
+
     {
       question: "What should I bring?",
       answer:
-        "Camping gear (tent, sleeping bag), comfortable shoes, weather-appropriate clothing, reusable water bottle, sunscreen, and good vibes!",
+        "Camping gear (tent, sleeping bag), comfortable shoes, weather-appropriate clothing, water bottles (no free water available), sunscreen, and good vibes!",
     },
     {question: "Can I pay with card?", answer: "Unfortunately we don't accept card payments, but you can easily pay with cash or by scanning the QR code displayed at the counter."},
     {
@@ -67,7 +69,9 @@ export default function Info() {
               Ticket prices are:
             </p>
             <ul className="font-['Poppins'] text-base text-gray-700 space-y-2 list-disc list-inside mb-4">
-              <li>€60 = weekend ticket at the door</li>
+              <li>€60 = weekend ticket presale</li>
+              <li>€30 = day ticket presale</li>
+              <li>€65 = weekend ticket at the door</li>
               <li>€35 = day ticket at the door</li>
               <li>€5 = parking</li>
               <li>€5 = campervan-camping</li>
